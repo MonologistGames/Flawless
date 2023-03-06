@@ -1,0 +1,71 @@
+{
+    "name": "PlanetInput",
+    "maps": [
+        {
+            "name": "PlanetMove",
+            "id": "3aed7806-8c5a-4ae9-b959-8d8881fd4331",
+            "actions": [
+                {
+                    "name": "MoveDirection",
+                    "type": "Value",
+                    "id": "dfda6634-21f1-42c2-be97-5fef1bfa290e",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "SpeedUp",
+                    "type": "Button",
+                    "id": "e1c53ce2-7e02-41e3-8caa-b26feece0a98",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2770be26-b921-4310-8f01-e5a2108877fe",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "MoveDirection",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bd6cf241-b3a6-4b7f-808a-e194985bac1a",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "SpeedUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keyboard&Mouse",
+            "bindingGroup": "Keyboard&Mouse",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

@@ -31,7 +31,7 @@ public class PlanetMove : MonoBehaviour
         _camera = this.transform.Find("Main Camera");
         _point = this.transform.Find("Point");
         _rb = GetComponent<Rigidbody>();
-        _rb.AddForce(this.transform.forward*2,ForceMode.VelocityChange);
+        
     }
 
     // Update is called once per frame
@@ -40,9 +40,6 @@ public class PlanetMove : MonoBehaviour
         OnTriggerStay(c1);
         OnTriggerStay(c2);
         OnTriggerStay(c3);
-        controllPlanet();
-        
-        
     }
 
     private void OnTriggerStay(Collider other)
@@ -58,13 +55,4 @@ public class PlanetMove : MonoBehaviour
         _rb.AddForce(_V*_gravity,ForceMode.Force);
     }
     
-    private void controllPlanet()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        _point.position = ray.origin + ray.direction * ((this.transform.position.y - ray.origin.y) / ray.direction.y);
-        _forceDir = _point.position - this.transform.position;
-         //_forceDir=Vector3.Normalize(_forceDir);
-         _rb.AddForce(_forceDir*moveForce);
-
-    }
 }
