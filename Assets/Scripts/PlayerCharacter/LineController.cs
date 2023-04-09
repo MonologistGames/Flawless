@@ -20,6 +20,7 @@ public class LineController : MonoBehaviour
     private GameObject _parent;
     private Rigidbody _rb;
     private PlanetController _planet;
+    private float _materialValue;
 
     private Vector3 _mousePosition;
     
@@ -48,7 +49,7 @@ public class LineController : MonoBehaviour
         //Set the number of points
         _lineRenderer.positionCount = 2;
         
-        _lineRenderer.useWorldSpace = false;
+        _lineRenderer.useWorldSpace = true;
         #endregion
 
         #region VelocityRenderer
@@ -89,14 +90,16 @@ public class LineController : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
         _mousePosition = ray.origin + ray.direction * ((this.transform.position.y - ray.origin.y) / ray.direction.y);
-        _lineRenderer.SetPosition(0,Vector3.zero);
-        _lineRenderer.SetPosition(1,_planet.moveDir*_planet.motivation+_planet.moveDir*2);
+        _lineRenderer.SetPosition(0,this.transform.position);
+        _lineRenderer.SetPosition(1,_mousePosition);
     }
 
     private void DrawVelocity()
     {
         _velocityRenderer.SetPosition(0,Vector3.zero);
-        _velocityRenderer.SetPosition(1,_planet.velocity*2);
+        _velocityRenderer.SetPosition(1,_planet.velocity.normalized*4);
+        _materialValue = _planet.velocity.magnitude / 4;
+        m2.SetFloat("_stepValue",_materialValue);
     }
     #endregion
 }

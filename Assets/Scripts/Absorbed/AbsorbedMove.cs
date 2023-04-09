@@ -15,7 +15,7 @@ public class AbsorbedMove : MonoBehaviour
     {
         _moveVector = fatherObj.transform.position - this.transform.position;
         this.transform.Translate(_moveVector*moveSpeed*Time.deltaTime,Space.World);
-        if (_moveVector.magnitude <=0.2f)
+        if (_moveVector.magnitude <=0.4f)
         {
             Destroy(this.gameObject);
         }
