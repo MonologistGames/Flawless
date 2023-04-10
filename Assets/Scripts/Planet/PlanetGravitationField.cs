@@ -29,7 +29,7 @@ public class PlanetGravitationField : MonoBehaviour
         SphereCollider gravitationFieldTrigger = GetComponents<SphereCollider>()
             .First(sphereCollider => sphereCollider.isTrigger);
 
-        gravitationFieldTrigger.radius = planetCollider.radius * FieldRatio*_mass;
+        gravitationFieldTrigger.radius = planetCollider.radius * FieldRatio;
     }
 #endif
 

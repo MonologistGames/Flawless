@@ -395,7 +395,7 @@ Shader "VelocityIndicator"
 
 				float2 texCoord18 = IN.ase_texcoord3.xy * float2( 1,1 ) + float2( 0,0 );
 				float2 texCoord10 = IN.ase_texcoord3.xy * float2( 1,1 ) + float2( 0,0 );
-				float temp_output_22_0 = ( step( texCoord18.x , _stepValue ) * sin( ( texCoord10.x * 30 ) ) );
+				float temp_output_22_0 = ( step( texCoord18.x , _stepValue ) * sin( ( texCoord10.x * 10 ) ) );
 				
 				float3 BakedAlbedo = 0;
 				float3 BakedEmission = 0;
@@ -671,7 +671,7 @@ Shader "VelocityIndicator"
 
 				float2 texCoord18 = IN.ase_texcoord2.xy * float2( 1,1 ) + float2( 0,0 );
 				float2 texCoord10 = IN.ase_texcoord2.xy * float2( 1,1 ) + float2( 0,0 );
-				float temp_output_22_0 = ( step( texCoord18.x , _stepValue ) * sin( ( texCoord10.x * 30 ) ) );
+				float temp_output_22_0 = ( step( texCoord18.x , _stepValue ) * sin( ( texCoord10.x * 10 ) ) );
 				
 
 				float Alpha = temp_output_22_0;
@@ -906,7 +906,7 @@ Shader "VelocityIndicator"
 
 				float2 texCoord18 = IN.ase_texcoord2.xy * float2( 1,1 ) + float2( 0,0 );
 				float2 texCoord10 = IN.ase_texcoord2.xy * float2( 1,1 ) + float2( 0,0 );
-				float temp_output_22_0 = ( step( texCoord18.x , _stepValue ) * sin( ( texCoord10.x * 30 ) ) );
+				float temp_output_22_0 = ( step( texCoord18.x , _stepValue ) * sin( ( texCoord10.x * 10 ) ) );
 				
 
 				float Alpha = temp_output_22_0;
@@ -1120,7 +1120,7 @@ Shader "VelocityIndicator"
 
 				float2 texCoord18 = IN.ase_texcoord.xy * float2( 1,1 ) + float2( 0,0 );
 				float2 texCoord10 = IN.ase_texcoord.xy * float2( 1,1 ) + float2( 0,0 );
-				float temp_output_22_0 = ( step( texCoord18.x , _stepValue ) * sin( ( texCoord10.x * 30 ) ) );
+				float temp_output_22_0 = ( step( texCoord18.x , _stepValue ) * sin( ( texCoord10.x * 10 ) ) );
 				
 
 				surfaceDescription.Alpha = temp_output_22_0;
@@ -1329,7 +1329,7 @@ Shader "VelocityIndicator"
 
 				float2 texCoord18 = IN.ase_texcoord.xy * float2( 1,1 ) + float2( 0,0 );
 				float2 texCoord10 = IN.ase_texcoord.xy * float2( 1,1 ) + float2( 0,0 );
-				float temp_output_22_0 = ( step( texCoord18.x , _stepValue ) * sin( ( texCoord10.x * 30 ) ) );
+				float temp_output_22_0 = ( step( texCoord18.x , _stepValue ) * sin( ( texCoord10.x * 10 ) ) );
 				
 
 				surfaceDescription.Alpha = temp_output_22_0;
@@ -1560,7 +1560,7 @@ Shader "VelocityIndicator"
 
 				float2 texCoord18 = IN.ase_texcoord1.xy * float2( 1,1 ) + float2( 0,0 );
 				float2 texCoord10 = IN.ase_texcoord1.xy * float2( 1,1 ) + float2( 0,0 );
-				float temp_output_22_0 = ( step( texCoord18.x , _stepValue ) * sin( ( texCoord10.x * 30 ) ) );
+				float temp_output_22_0 = ( step( texCoord18.x , _stepValue ) * sin( ( texCoord10.x * 10 ) ) );
 				
 
 				surfaceDescription.Alpha = temp_output_22_0;
@@ -1624,8 +1624,8 @@ Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;7;0,0;Float;False;False;-1;
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;8;0,0;Float;False;False;-1;2;UnityEditor.ShaderGraphUnlitGUI;0;13;New Amplify Shader;2992e84f91cbeb14eab234972e07ea9d;True;DepthNormals;0;8;DepthNormals;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;False;False;False;True;3;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;True;5;True;12;all;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;1;False;;True;3;False;;False;True;1;LightMode=DepthNormalsOnly;False;False;0;;0;0;Standard;0;False;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;9;0,0;Float;False;False;-1;2;UnityEditor.ShaderGraphUnlitGUI;0;13;New Amplify Shader;2992e84f91cbeb14eab234972e07ea9d;True;DepthNormalsOnly;0;9;DepthNormalsOnly;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;False;False;False;True;3;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;True;5;True;12;all;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;1;False;;True;3;False;;False;True;1;LightMode=DepthNormalsOnly;False;True;9;d3d11;metal;vulkan;xboxone;xboxseries;playstation;ps4;ps5;switch;0;;0;0;Standard;0;False;0
 Node;AmplifyShaderEditor.StepOpNode;20;59.99955,-84.661;Inherit;True;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.IntNode;14;-273.1808,241.4117;Inherit;False;Constant;_Int0;Int 0;0;0;Create;True;0;0;0;False;0;False;30;60;False;0;1;INT;0
-Node;AmplifyShaderEditor.RangedFloatNode;21;-163.9014,-26.7581;Inherit;False;Property;_stepValue;stepValue;1;0;Create;True;0;0;0;False;0;False;0.5;0.5;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.IntNode;14;-273.1808,241.4117;Inherit;False;Constant;_Int0;Int 0;0;0;Create;True;0;0;0;False;0;False;10;60;False;0;1;INT;0
+Node;AmplifyShaderEditor.RangedFloatNode;21;-163.9014,-26.7581;Inherit;False;Property;_stepValue;stepValue;1;0;Create;True;0;0;0;False;0;False;0.5;1;0;0;0;1;FLOAT;0
 WireConnection;1;2;16;0
 WireConnection;1;3;24;0
 WireConnection;22;0;20;0
@@ -1640,4 +1640,4 @@ WireConnection;13;1;14;0
 WireConnection;20;0;18;1
 WireConnection;20;1;21;0
 ASEEND*/
-//CHKSM=4580C8542726EDBAE5B5BCC22CE8E77B1EB987F2
+//CHKSM=2DC17068CB660DC9B496E010319322E989358234

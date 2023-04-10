@@ -97,16 +97,16 @@ public class LineController : MonoBehaviour
         _lineEnd = _planet.moveDir.normalized;
         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
         _mousePosition = ray.origin + ray.direction * ((this.transform.position.y - ray.origin.y) / ray.direction.y);
-        _lineRenderer.SetPosition(0,Vector3.zero);
-        _lineRenderer.SetPosition(1,_lineEnd*4);
-        mouseArrow.SetLocalPositionAndRotation(_lineEnd * 4,Quaternion.LookRotation(_lineEnd));
+        _lineRenderer.SetPosition(0,_lineEnd*0.8f);
+        _lineRenderer.SetPosition(1,_lineEnd*1.6f);
+        mouseArrow.SetLocalPositionAndRotation(_lineEnd * 1.6f,Quaternion.LookRotation(_lineEnd));
         
     }
 
     private void DrawVelocity()
     {
-        _velocityEnd = _planet.velocity + _planet.velocity.normalized * 0.3f;
-        _velocityRenderer.SetPosition(0,Vector3.zero);
+        _velocityEnd = _planet.velocity + _planet.velocity.normalized * 1.6f;
+        _velocityRenderer.SetPosition(0,_planet.velocity.normalized * 0.8f);
         _velocityRenderer.SetPosition(1,_velocityEnd);
         velocityArrow.SetLocalPositionAndRotation(_velocityEnd,Quaternion.LookRotation(_velocityEnd));
     }
