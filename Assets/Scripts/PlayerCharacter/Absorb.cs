@@ -23,29 +23,6 @@ public class Absorb : MonoBehaviour
     }
 #endif
     
-
-    private void OnTriggerStay(Collider other)
-    {
-        // IEnumerator InstantiateAbsorbed()
-        // {
-        //     while (other.CompareTag("Planet"))
-        //     {
-        //         GameObject obj=Instantiate(absorbedItem, other.transform.position, other.transform.rotation);
-        //         AbsorbedMove absorbedObj = obj.GetComponent<AbsorbedMove>();
-        //         absorbedObj.SetFather(_fatherObj);
-        //         Debug.Log("ins");
-        //         yield return new WaitForSeconds(0.3f);
-        //     }
-        // }
-
-        // if (other.CompareTag("Planet"))
-        // {
-        //     GameObject obj=Instantiate(absorbedItem, other.transform.position, other.transform.rotation);
-        //     AbsorbedMove absorbedObj = obj.GetComponent<AbsorbedMove>();
-        //     absorbedObj.SetFather(_fatherObj);
-        // }
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Planet"))

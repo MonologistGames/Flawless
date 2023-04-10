@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,17 +11,22 @@ using UnityEngine.InputSystem;
 public class LineController : MonoBehaviour
 {
     public Material m1;
-    public Material m2;
+    public Material m2;//Materials of lines
+    
     public float startWidth = 0.1f;
     public float endWidth = 0.1f;
-    
+
+    public Transform mouseArrow;
+    public Transform velocityArrow;//Arrows
 
     private LineRenderer _lineRenderer;
     private LineRenderer _velocityRenderer;
     private GameObject _parent;
     private Rigidbody _rb;
     private PlanetController _planet;
-    private float _materialValue;
+    private Vector3 _lineEnd;
+    private Vector3 _velocityEnd;
+    
 
     private Vector3 _mousePosition;
     
@@ -49,7 +55,7 @@ public class LineController : MonoBehaviour
         //Set the number of points
         _lineRenderer.positionCount = 2;
         
-        _lineRenderer.useWorldSpace = true;
+        _lineRenderer.useWorldSpace = false;
         #endregion
 
         #region VelocityRenderer
@@ -88,18 +94,21 @@ public class LineController : MonoBehaviour
     #region Draw Lines
     private  void DrawLine()
     {
+        _lineEnd = _planet.moveDir.normalized;
         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
         _mousePosition = ray.origin + ray.direction * ((this.transform.position.y - ray.origin.y) / ray.direction.y);
-        _lineRenderer.SetPosition(0,this.transform.position);
-        _lineRenderer.SetPosition(1,_mousePosition);
+        _lineRenderer.SetPosition(0,Vector3.zero);
+        _lineRenderer.SetPosition(1,_lineEnd*4);
+        mouseArrow.SetLocalPositionAndRotation(_lineEnd * 4,Quaternion.LookRotation(_lineEnd));
+        
     }
 
     private void DrawVelocity()
     {
+        _velocityEnd = _planet.velocity + _planet.velocity.normalized * 0.3f;
         _velocityRenderer.SetPosition(0,Vector3.zero);
-        _velocityRenderer.SetPosition(1,_planet.velocity.normalized*4);
-        _materialValue = _planet.velocity.magnitude / 4;
-        m2.SetFloat("_stepValue",_materialValue);
+        _velocityRenderer.SetPosition(1,_velocityEnd);
+        velocityArrow.SetLocalPositionAndRotation(_velocityEnd,Quaternion.LookRotation(_velocityEnd));
     }
     #endregion
 }

@@ -38,9 +38,12 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaCutoff: 0.5
-    - _Int0: 30
+    - _Float0: 0
+    - _Int0: 60
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _StepValue: 0.5
+    - _stepValue: 1
     m_Colors:
     - _Color0: {r: 0.03083201, g: 0.9150943, b: 0.8984683, a: 0.9058824}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
