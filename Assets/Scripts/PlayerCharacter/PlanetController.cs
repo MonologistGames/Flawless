@@ -98,7 +98,7 @@ public class PlanetController : MonoBehaviour
         }
         else
         {
-            motivation -= accleration * Time.deltaTime;
+            motivation =0f;
         }
     }
 
