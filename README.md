@@ -6,5 +6,13 @@ Enjoy and have fun.
 
 # Framework
 - Unity 2022.2
-- Universal Render Pipline
+- Universal Render Pipeline
 - IL2CPP backend
+
+# Language
+- C#
+- ShaderLab
+
+# Tools
+- Jetbrains Rider
+- 

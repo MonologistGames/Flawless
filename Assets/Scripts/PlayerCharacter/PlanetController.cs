@@ -1,142 +1,136 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(PlayerInput))]
-public class PlanetController : MonoBehaviour
+namespace Flawless.PlayerCharacter
 {
-    private Rigidbody _rigidbody;
-    private Vector3 _gravitation;
-    private Vector3 _moveDir;
-
-    private bool isAccelerating;
-    private float _motivation;
-    private float motivation
+    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(PlayerInput))]
+    public class PlanetController : MonoBehaviour
     {
-        get => _motivation;
-        set
+        private Rigidbody _rigidbody;
+        private Vector3 _gravitation;
+        private Vector3 _moveDir;
+        public Vector3 MoveDir => _moveDir;
+
+        private bool _isAccelerating;
+        private float _motivation;
+
+        private float Motivation
         {
-            if (value >= maxMotivation)
+            get => _motivation;
+            set
             {
-                _motivation = maxMotivation;
-                return;
+                if (value >= MaxMotivation)
+                {
+                    _motivation = MaxMotivation;
+                    return;
+                }
+
+                if (value <= 0)
+                {
+                    _motivation = 0;
+                    return;
+                }
+
+                _motivation = value;
+            }
+        }
+
+        public float Acceleration = 2f;
+        public float MaxMotivation = 5f;
+
+        /// <summary>
+        /// Gravitation the player planet get.
+        /// </summary>
+        public Vector3 Gravitation
+        {
+            get => _gravitation;
+            set => _gravitation = value;
+        }
+
+        /// <summary>
+        /// Current Velocity of the player planet.
+        /// </summary>
+        public Vector3 Velocity => _rigidbody.velocity;
+
+        private PlayerInput _playerInput;
+
+        /// <summary>
+        /// Target camera that film the character and move along with.
+        /// </summary>
+        public Camera TargetCamera;
+
+        #region Input Actions
+
+        private InputAction _moveStick;
+        private InputAction _speedUpButton;
+
+        #endregion
+
+        #region MonoBehaviours
+
+        void OnEnable()
+        {
+            _playerInput = GetComponent<PlayerInput>();
+            _rigidbody = GetComponent<Rigidbody>();
+
+            // Bind input actions
+            _moveStick = _playerInput.actions["MoveDirection"];
+            _speedUpButton = _playerInput.actions["SpeedUp"];
+
+            if (_moveStick != null)
+            {
+                _moveStick.performed += OnMoveInput;
             }
 
-            if (value <= 0)
+            if (_speedUpButton != null)
             {
-                _motivation = 0;
-                return;
+                _speedUpButton.started += OnSpeedUpStart;
+                _speedUpButton.canceled += OnSpeedUpCancel;
+            }
+        }
+
+        private void FixedUpdate()
+        {
+            // Apply motivation and Gravitation
+            if (_isAccelerating)
+                _rigidbody.AddForce(
+                    Acceleration * _moveDir + _gravitation,
+                    ForceMode.Acceleration);
+
+            _rigidbody.velocity = Velocity.normalized * Mathf.Min(MaxMotivation, Velocity.magnitude);
+        }
+
+        #endregion
+
+        /// <summary>
+        /// Get move direction input.
+        /// </summary>
+        /// <param name="context">Input action callbacks. (Where to read value from)</param>
+        private void OnMoveInput(InputAction.CallbackContext context)
+        {
+            Vector2 inputDir = context.ReadValue<Vector2>();
+            _moveDir = new Vector3(inputDir.x, 0, inputDir.y);
+
+            // If using mouse, get relative vector
+            if (_playerInput.currentControlScheme == "Keyboard&Mouse")
+            {
+                Vector3 screenPos = TargetCamera.WorldToScreenPoint(this.transform.position);
+                _moveDir.x -= screenPos.x;
+                _moveDir.z -= screenPos.y;
             }
 
-            _motivation = value;
+            _moveDir = _moveDir.normalized;
         }
-    }
-    public float accleration = 2f;
-    public float maxMotivation = 5f;
 
-    /// <summary>
-    /// Gravitation the player planet get.
-    /// </summary>
-    public Vector3 gravitation
-    {
-        get => _gravitation; 
-        set => _gravitation = value;
-    }
-    
-    /// <summary>
-    /// Current velocity of the player planet.
-    /// </summary>
-    public Vector3 velocity => _rigidbody.velocity;
-
-    private PlayerInput _playerInput;
-    
-    /// <summary>
-    /// Target camera that film the character and move along with.
-    /// </summary>
-    public Camera targetCamera;
-    /// <summary>
-    /// Direction pointer for moving Direction.
-    /// </summary>
-    public Transform pointer;
-
-    #region Input Actions
-
-    private InputAction _moveStick;
-    private InputAction _speedUpButton;
-
-    #endregion
-
-    #region MonoBehaviours
-
-    // Start is called before the first frame update
-    void OnEnable()
-    {
-        _playerInput = GetComponent<PlayerInput>();
-        _rigidbody = GetComponent<Rigidbody>();
-        // Bind input actions
-        _moveStick = _playerInput.actions["MoveDirection"];
-        _speedUpButton = _playerInput.actions["SpeedUp"];
-        if (_moveStick != null)
+        private void OnSpeedUpStart(InputAction.CallbackContext context)
         {
-            _moveStick.performed += OnMoveInput;
-            _moveStick.canceled += OnMoveInput;
+            _isAccelerating = true;
         }
-        if (_speedUpButton != null)
+
+        private void OnSpeedUpCancel(InputAction.CallbackContext context)
         {
-            _speedUpButton.started += OnSpeedUpStart;
-            _speedUpButton.canceled += OnSpeedUpCancel;
+            _isAccelerating = false;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // Set acceleration vector magnitude
-        if (isAccelerating)
-        {
-            motivation += accleration * Time.deltaTime;
-        }
-        else
-        {
-            motivation =0f;
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        // Apply motivation and gravitation
-        _rigidbody.AddForce(_motivation * _moveDir + _gravitation, ForceMode.Acceleration);
-    }
-
-    #endregion
-    
-    /// <summary>
-    /// Get move direction input.
-    /// </summary>
-    /// <param name="context">Input action callbacks. (Where to read value from)</param>
-    private void OnMoveInput(InputAction.CallbackContext context)
-    {
-        Vector2 inputDir = context.ReadValue<Vector2>();
-        _moveDir = new Vector3(inputDir.x, 0, inputDir.y);
-        
-        // If using mouse, get relative vector
-        if (_playerInput.currentControlScheme == "Keyboard&Mouse")
-        {
-            Vector3 screenPos = targetCamera.WorldToScreenPoint(this.transform.position);
-            _moveDir.x -= screenPos.x;
-            _moveDir.z -= screenPos.y;
-        }
-
-        _moveDir = _moveDir.normalized;
-    }
-
-    private void OnSpeedUpStart(InputAction.CallbackContext context)
-    {
-        isAccelerating = true;
-    }
-
-    private void OnSpeedUpCancel(InputAction.CallbackContext context)
-    {
-        isAccelerating = false;
     }
 }
