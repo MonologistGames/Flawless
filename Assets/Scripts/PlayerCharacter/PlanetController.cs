@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace Flawless.PlayerCharacter
 {
@@ -7,37 +8,36 @@ namespace Flawless.PlayerCharacter
     [RequireComponent(typeof(PlayerInput))]
     public class PlanetController : MonoBehaviour
     {
+        /// <summary>
+        /// Rigidbody of the character planet.
+        /// </summary>
         private Rigidbody _rigidbody;
+        
+        /// <summary>
+        /// Gravitation that the player planet get.
+        /// </summary>
         private Vector3 _gravitation;
+        
         private Vector3 _moveDir;
+        
+        /// <summary>
+        /// Desired move direction of the player planet.
+        /// </summary>
         public Vector3 MoveDir => _moveDir;
 
         private bool _isAccelerating;
         private float _motivation;
-
-        private float Motivation
-        {
-            get => _motivation;
-            set
-            {
-                if (value >= MaxMotivation)
-                {
-                    _motivation = MaxMotivation;
-                    return;
-                }
-
-                if (value <= 0)
-                {
-                    _motivation = 0;
-                    return;
-                }
-
-                _motivation = value;
-            }
-        }
-
+        
+        /// <summary>
+        /// Acceleration of the player planet.
+        /// </summary>
         public float Acceleration = 2f;
-        public float MaxMotivation = 5f;
+        
+        /// <summary>
+        /// Max Motivation of the character.
+        /// </summary>
+        [FormerlySerializedAs("MaxMotivation")] 
+        public float MaxSpeed = 5f;
 
         /// <summary>
         /// Gravitation the player planet get.
@@ -98,7 +98,7 @@ namespace Flawless.PlayerCharacter
                     Acceleration * _moveDir + _gravitation,
                     ForceMode.Acceleration);
 
-            _rigidbody.velocity = Velocity.normalized * Mathf.Min(MaxMotivation, Velocity.magnitude);
+            _rigidbody.velocity = Velocity.normalized * Mathf.Min(MaxSpeed, Velocity.magnitude);
         }
 
         #endregion
@@ -122,12 +122,18 @@ namespace Flawless.PlayerCharacter
 
             _moveDir = _moveDir.normalized;
         }
-
+        
+        /// <summary>
+        /// Start accelerating when speed up button is pressed.
+        /// </summary>
         private void OnSpeedUpStart(InputAction.CallbackContext context)
         {
             _isAccelerating = true;
         }
-
+        
+        /// <summary>
+        /// Stop accelerating when speed up button is released.
+        /// </summary>
         private void OnSpeedUpCancel(InputAction.CallbackContext context)
         {
             _isAccelerating = false;

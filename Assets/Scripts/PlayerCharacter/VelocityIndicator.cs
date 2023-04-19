@@ -49,7 +49,7 @@ namespace Flawless.PlayerCharacter
         private void UpdateVelocityIndicator()
         {
             _velocity = _planet.Velocity;
-            _velocityMagnitudePercent = _velocity.magnitude / _planet.MaxMotivation;
+            _velocityMagnitudePercent = _velocity.magnitude / _planet.MaxSpeed;
 
             // Calculate start and end position of the velocity indicator
             var position = _planet.transform.position;
