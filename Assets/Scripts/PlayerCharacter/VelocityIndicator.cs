@@ -1,3 +1,4 @@
+using Flawless.Utilities;
 using UnityEngine;
 
 namespace Flawless.PlayerCharacter

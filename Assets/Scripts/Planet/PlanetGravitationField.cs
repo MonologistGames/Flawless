@@ -1,9 +1,9 @@
 using System.Linq;
+using Flawless.PlayerCharacter;
 using UnityEngine;
 
-namespace Flawless.PlayerCharacter
+namespace Flawless.Planet
 {
-
     [RequireComponent(typeof(SphereCollider))]
     [RequireComponent(typeof(Rigidbody))]
     public class PlanetGravitationField : MonoBehaviour
@@ -16,12 +16,11 @@ namespace Flawless.PlayerCharacter
 
         private Vector3 _prevGrav;
 
-        private PlanetController planet;
+        private PlanetController _planet;
 
-        private void OnEnable()
-        {
-            _mass = GetComponent<Rigidbody>().mass;
-        }
+
+        #region Editor
+
 #if UNITY_EDITOR
         private void OnValidate()
         {
@@ -35,34 +34,48 @@ namespace Flawless.PlayerCharacter
         }
 #endif
 
+        #endregion
+
+        #region MonoBehaviours
+
+        private void OnEnable()
+        {
+            _mass = GetComponent<Rigidbody>().mass;
+        }
+
+        #endregion
 
         private void OnTriggerStay(Collider other)
         {
-            planet = other.GetComponent<PlanetController>();
-            if (planet)
-            {
-                Vector3 gravitationVector =
-                    this.transform.position - planet.transform.position; //Vector from player to this planet
-                Vector3 gravitation = (gravitationVector.normalized) *
-                                      (GravitationFactor * _mass /
-                                       Mathf.Pow(gravitationVector.magnitude, 1.5f)); //Calculate Gravitation
+            // Returns if the object is not a player
+            if (!other.CompareTag("Player")) return;
 
-                planet.Gravitation += gravitation - _prevGrav; //Set Gravitation
-                _prevGrav = gravitation;
-                return;
-            }
+            // Get the PlanetController Component of the other object
+            _planet = other.GetComponent<PlanetController>();
+            if (!_planet) return; // Return if null
+
+            Vector3 gravitationVector =
+                this.transform.position - _planet.transform.position; //Vector from player to this planet
+
+            // TODO: Adjust Gravitation Calculation to have a more interesting movement controller
+            Vector3 gravitation = (gravitationVector.normalized) *
+                                  (GravitationFactor * _mass /
+                                   Mathf.Pow(gravitationVector.magnitude, 1.5f)); //Calculate Gravitation
+
+            _planet.Gravitation += gravitation - _prevGrav; //Set Gravitation
+            _prevGrav = gravitation;
         }
 
         private void OnTriggerExit(Collider other)
         {
-            planet = other.GetComponent<PlanetController>();
-            if (planet)
-            {
-                planet.Gravitation -= _prevGrav;
-                _prevGrav = Vector3.zero;
+            // Returns if the object is not a player
+            if (!other.CompareTag("Player")) return;
 
-                return;
-            }
+            _planet = other.GetComponent<PlanetController>();
+            if (!_planet) return; // Return if null
+
+            _planet.Gravitation -= _prevGrav;
+            _prevGrav = Vector3.zero;
         }
     }
 }
