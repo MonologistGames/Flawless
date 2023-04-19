@@ -6,7 +6,7 @@ namespace Flawless.Utilities
     public class CircleDrawer : MonoBehaviour
     {
         private const float SegRadiusRatio = 8f;
-        
+
         /// <summary>
         /// Radius of the circle.
         /// </summary>
@@ -32,7 +32,7 @@ namespace Flawless.Utilities
         /// Decides whether to update the circle every frame.
         /// </summary>
         public bool AutoUpdate = true;
-        
+
         /// <summary>
         /// Adaptively adjust the number of segments based on the radius.
         /// Makes the circle smoother when the radius is large.
@@ -49,7 +49,8 @@ namespace Flawless.Utilities
             if (_lineRenderer == null)
                 _lineRenderer = GetComponent<LineRenderer>();
 
-            Segments = (int)(Radius * SegRadiusRatio);
+            if (AdaptiveSegments)
+                Segments = Mathf.Max((int)(Radius * SegRadiusRatio), 16);
             DrawCircle();
         }
 #endif
@@ -66,8 +67,10 @@ namespace Flawless.Utilities
         private void Update()
         {
             if (!AutoUpdate) return;
-            
-            Segments = (int)(Radius * SegRadiusRatio);
+
+            if (AdaptiveSegments)
+                Segments = Mathf.Max((int)(Radius * SegRadiusRatio), 16);
+
             DrawCircle();
         }
 
