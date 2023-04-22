@@ -45,6 +45,8 @@ namespace Flawless.Planet
 
         #endregion
 
+        #region Trigger Events
+
         private void OnTriggerStay(Collider other)
         {
             // Returns if the object is not a player
@@ -76,6 +78,9 @@ namespace Flawless.Planet
 
             _planet.Gravitation -= _prevGrav;
             _prevGrav = Vector3.zero;
-        }
+        }        
+
+        #endregion
+
     }
 }

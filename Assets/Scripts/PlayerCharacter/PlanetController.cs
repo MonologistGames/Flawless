@@ -12,14 +12,30 @@ namespace Flawless.PlayerCharacter
         /// Rigidbody of the character planet.
         /// </summary>
         private Rigidbody _rigidbody;
-        
+
+        private PlayerInput _playerInput;
+
+        /// <summary>
+        /// Target camera that film the character and move along with.
+        /// </summary>
+        public Camera TargetCamera;
+
+        #region Input Actions
+
+        private InputAction _moveStick;
+        private InputAction _speedUpButton;
+
+        #endregion
+
+        #region Movement
+
         /// <summary>
         /// Gravitation that the player planet get.
         /// </summary>
         private Vector3 _gravitation;
-        
+
         private Vector3 _moveDir;
-        
+
         /// <summary>
         /// Desired move direction of the player planet.
         /// </summary>
@@ -27,16 +43,16 @@ namespace Flawless.PlayerCharacter
 
         private bool _isAccelerating;
         private float _motivation;
-        
+
         /// <summary>
         /// Acceleration of the player planet.
         /// </summary>
-        public float Acceleration = 2f;
-        
+        [Header("Movement")] public float Acceleration = 2f;
+
         /// <summary>
         /// Max Motivation of the character.
         /// </summary>
-        [FormerlySerializedAs("MaxMotivation")] 
+        [FormerlySerializedAs("MaxMotivation")]
         public float MaxSpeed = 5f;
 
         /// <summary>
@@ -53,22 +69,10 @@ namespace Flawless.PlayerCharacter
         /// </summary>
         public Vector3 Velocity => _rigidbody.velocity;
 
-        private PlayerInput _playerInput;
-
-        /// <summary>
-        /// Target camera that film the character and move along with.
-        /// </summary>
-        public Camera TargetCamera;
-
-        #region Input Actions
-
-        private InputAction _moveStick;
-        private InputAction _speedUpButton;
-
         #endregion
 
         #region MonoBehaviours
-
+            
         void OnEnable()
         {
             _playerInput = GetComponent<PlayerInput>();
@@ -103,6 +107,10 @@ namespace Flawless.PlayerCharacter
 
         #endregion
 
+        #region Input Handling
+
+        #region Movement
+
         /// <summary>
         /// Get move direction input.
         /// </summary>
@@ -122,7 +130,7 @@ namespace Flawless.PlayerCharacter
 
             _moveDir = _moveDir.normalized;
         }
-        
+
         /// <summary>
         /// Start accelerating when speed up button is pressed.
         /// </summary>
@@ -130,7 +138,7 @@ namespace Flawless.PlayerCharacter
         {
             _isAccelerating = true;
         }
-        
+
         /// <summary>
         /// Stop accelerating when speed up button is released.
         /// </summary>
@@ -138,5 +146,9 @@ namespace Flawless.PlayerCharacter
         {
             _isAccelerating = false;
         }
+
+        #endregion
+
+        #endregion
     }
 }
