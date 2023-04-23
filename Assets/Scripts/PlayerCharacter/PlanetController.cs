@@ -72,7 +72,7 @@ namespace Flawless.PlayerCharacter
         #endregion
 
         #region MonoBehaviours
-            
+
         void OnEnable()
         {
             _playerInput = GetComponent<PlayerInput>();
@@ -96,11 +96,12 @@ namespace Flawless.PlayerCharacter
 
         private void FixedUpdate()
         {
+            var accelerateVector = _gravitation;
             // Apply motivation and Gravitation
             if (_isAccelerating)
-                _rigidbody.AddForce(
-                    Acceleration * _moveDir + _gravitation,
-                    ForceMode.Acceleration);
+                accelerateVector += _moveDir * Acceleration;
+
+            _rigidbody.AddForce(accelerateVector, ForceMode.Acceleration);
 
             _rigidbody.velocity = Velocity.normalized * Mathf.Min(MaxSpeed, Velocity.magnitude);
         }
