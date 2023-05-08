@@ -6,6 +6,8 @@ namespace Flawless.LifeSys
     [RequireComponent(typeof(SphereCollider))]
     public class PlayerLifeAmount : LifeAmount
     {
+        public float MaxAmount = 100000f;
+        
         [Header("Life Decrease Speed")] public float BasePlantDecreaseSpeed = 10f;
         public float BaseAnimalDecreaseSpeed = 10f;
 
