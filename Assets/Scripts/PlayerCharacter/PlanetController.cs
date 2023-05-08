@@ -52,8 +52,11 @@ namespace Flawless.PlayerCharacter
         /// <summary>
         /// Max Motivation of the character.
         /// </summary>
-        [FormerlySerializedAs("MaxMotivation")]
-        public float MaxSpeed = 5f;
+        public float MaxSpeed = 3f;
+
+        public float DashSpeed = 10f;
+
+        public float MaxDashSpeed = 5f;
 
         /// <summary>
         /// Gravitation the player planet get.

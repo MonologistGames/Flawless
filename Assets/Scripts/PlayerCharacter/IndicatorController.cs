@@ -74,10 +74,9 @@ namespace Flawless.PlayerCharacter
             _velocityMagnitudePercent = _velocity.magnitude / _planet.MaxSpeed;
 
             // Calculate start and end position of the velocity indicator
-            var position = _planet.transform.position;
-            _velocityStart = position + _velocity.normalized * VelocityDistanceFromOrigin;
-            _velocityEnd = position +
-                           _velocity.normalized * (_velocityMagnitudePercent * IndicatorLength + VelocityDistanceFromOrigin);
+            //var position = _planet.transform.position;
+            _velocityStart = _velocity.normalized * VelocityDistanceFromOrigin;
+            _velocityEnd = _velocity.normalized * (_velocityMagnitudePercent * IndicatorLength + VelocityDistanceFromOrigin);
 
             // Set LineRenderer start and end position
             VelocityLineRenderer.SetPosition(0, _velocityStart);
