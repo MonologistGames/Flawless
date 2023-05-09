@@ -14,6 +14,9 @@ namespace Flawless.LifeSys
         [Header("Absorb")] public float AbsorbSpeed = 100f;
         public float AbsorbRange = 2f;
 
+        [Header("Collide")] public float CollideForce = 10f;
+        public float CollideDamage = 100f;
+
         private PlayerInput _playerInput;
         private InputAction _absorbButton;
 
@@ -52,8 +55,11 @@ namespace Flawless.LifeSys
         private void Update()
         {
             // Life amount fade with time
-            PlantAmount -= BasePlantDecreaseSpeed * Time.deltaTime;
-            AnimalAmount -= BaseAnimalDecreaseSpeed * Time.deltaTime;
+            if (!_isAbsorbing || !_otherPlanetLifeAmount)
+            {
+                PlantAmount -= BasePlantDecreaseSpeed * Time.deltaTime;
+                AnimalAmount -= BaseAnimalDecreaseSpeed * Time.deltaTime;
+            }
 
             //Debug.Log("is absorbing: " + _isAbsorbing + " " + _otherPlanetLifeAmount.gameObject.name);
             // Absorb other planets
@@ -69,35 +75,7 @@ namespace Flawless.LifeSys
         }
 
         #endregion
-
-        #region Input Callbacks
-
-        #region Absorb
-
-        private void OnAbsorbStart(InputAction.CallbackContext context)
-        {
-            _isAbsorbing = true;
-        }
-
-        private void OnAbsorbCancel(InputAction.CallbackContext context)
-        {
-            _isAbsorbing = false;
-        }
-
-        #endregion
-
-        #endregion
-
-        #region Collision Events
-
-        private void OnCollisionEnter(Collision other)
-        {
-            if (!other.gameObject.CompareTag("Planet")) return;
-            Debug.Log("Player Hit Planet");
-        }
-
-        #endregion
-
+        
         #region Trigger Events
 
         private void OnTriggerEnter(Collider other)
@@ -129,7 +107,25 @@ namespace Flawless.LifeSys
 
         #endregion
 
-        #region Life Amount Methods
+        #region Input Callbacks
+
+        #region Absorb
+
+        private void OnAbsorbStart(InputAction.CallbackContext context)
+        {
+            _isAbsorbing = true;
+        }
+
+        private void OnAbsorbCancel(InputAction.CallbackContext context)
+        {
+            _isAbsorbing = false;
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Internal Methods
 
         /// <summary>
         /// End the absorb process, and set the absorbing planet to absorbed.
@@ -174,6 +170,20 @@ namespace Flawless.LifeSys
             this.PlantAmount += plantAbsorbAmount;
 
             return true;
+        }
+
+        #endregion
+
+        #region APIs
+
+        public void CollideAndDamageLife(Collision other, Rigidbody player)
+        {
+            // TODO: To make more detailed damage calculation and effects.
+            player.AddForce(other.GetContact(0).normal * CollideForce,
+                ForceMode.VelocityChange);
+            
+            PlantAmount -= CollideDamage;
+            AnimalAmount -= CollideDamage;
         }
 
         #endregion

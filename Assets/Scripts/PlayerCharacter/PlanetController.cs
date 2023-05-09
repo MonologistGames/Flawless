@@ -1,4 +1,5 @@
 using System;
+using Flawless.LifeSys;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -22,6 +23,7 @@ namespace Flawless.PlayerCharacter
         public Camera TargetCamera;
 
         public PlayerStateMachine StateMachine { get; private set; }
+        private PlayerLifeAmount LifeAmount { get; set; }
 
         #region Input Actions
 
@@ -71,10 +73,12 @@ namespace Flawless.PlayerCharacter
         /// - Bind input actions
         /// - Initialize state machine
         /// </summary>
-        void OnEnable()
+        void Start()
         {
             PlayerInput = GetComponent<PlayerInput>();
             Rigidbody = GetComponent<Rigidbody>();
+
+            LifeAmount = GetComponentInChildren<PlayerLifeAmount>();
 
             // Bind input actions
             MoveStick = PlayerInput.actions["MoveDirection"];
@@ -101,6 +105,17 @@ namespace Flawless.PlayerCharacter
         {
             StateMachine.FixedUpdate();
         }
+
+        #region Collision Events
+
+        private void OnCollisionEnter(Collision other)
+        {
+            if (!other.gameObject.CompareTag("Planet")) return;
+            Debug.Log("Hit other planets.");
+            LifeAmount.CollideAndDamageLife(other, Rigidbody);
+        }
+
+        #endregion
 
         #endregion
 
