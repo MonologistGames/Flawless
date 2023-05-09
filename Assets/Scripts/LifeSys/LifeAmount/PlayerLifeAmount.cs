@@ -9,10 +9,12 @@ namespace Flawless.LifeSys
     {
         public float MaxAmount = 100000f;
         
-        [Header("Life Decrease Speed")] public float BasePlantDecreaseSpeed = 10f;
+        [Header("Life Decrease Speed")]
+        public float BasePlantDecreaseSpeed = 10f;
         public float BaseAnimalDecreaseSpeed = 10f;
 
-        [Header("Absorb")] public float AbsorbSpeed = 100f;
+        [Header("Absorb")]
+        public float AbsorbSpeed = 100f;
         public float AbsorbRange = 2f;
 
         [Header("Collide")] public float CollideForce = 10f;
@@ -190,7 +192,6 @@ namespace Flawless.LifeSys
             AnimalAmount -= CollideDamage;
             
             // Camera shake
-            // TODO: To make more detailed camera shake.(According to velocity)
             _impulseSource.GenerateImpulse();
         }
 
