@@ -496,7 +496,6 @@ MonoBehaviour:
   Width: 0.04
   Color: {r: 1, g: 1, b: 1, a: 1}
   AutoUpdate: 1
-  AdaptiveSegments: 0
 --- !u!1 &7435407606904175678
 GameObject:
   m_ObjectHideFlags: 0
