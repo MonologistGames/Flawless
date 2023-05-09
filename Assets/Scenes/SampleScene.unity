@@ -7331,6 +7331,81 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7764108479002623104, guid: 9270674c054194145aa2fe3c5e93a358,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 330585545}
+    - target: {fileID: 7764108479002623104, guid: 9270674c054194145aa2fe3c5e93a358,
+        type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764108479002623104, guid: 9270674c054194145aa2fe3c5e93a358,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764108479002623104, guid: 9270674c054194145aa2fe3c5e93a358,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionId
+      value: dfda6634-21f1-42c2-be97-5fef1bfa290e
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764108479002623104, guid: 9270674c054194145aa2fe3c5e93a358,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: e1c53ce2-7e02-41e3-8caa-b26feece0a98
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764108479002623104, guid: 9270674c054194145aa2fe3c5e93a358,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: a65f5001-69fb-469a-b205-83060748d33b
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764108479002623104, guid: 9270674c054194145aa2fe3c5e93a358,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionId
+      value: f64b9bec-f76d-4734-8cd5-968ee06477b1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764108479002623104, guid: 9270674c054194145aa2fe3c5e93a358,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
+      value: b625acea-f372-479d-b588-f575858d601b
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764108479002623104, guid: 9270674c054194145aa2fe3c5e93a358,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionId
+      value: 934c3aac-2357-4901-93e7-31c3ec61d03b
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764108479002623104, guid: 9270674c054194145aa2fe3c5e93a358,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionName
+      value: PlanetMove/MoveDirection[/Mouse/position]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764108479002623104, guid: 9270674c054194145aa2fe3c5e93a358,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: PlanetMove/SpeedUp[/Mouse/leftButton]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764108479002623104, guid: 9270674c054194145aa2fe3c5e93a358,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: PlanetMove/Dash[/Mouse/rightButton]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764108479002623104, guid: 9270674c054194145aa2fe3c5e93a358,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionName
+      value: PlanetMove/Absorb[/Keyboard/e]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764108479002623104, guid: 9270674c054194145aa2fe3c5e93a358,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
+      value: PlanetMove/LifeSys[/Keyboard/q]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764108479002623104, guid: 9270674c054194145aa2fe3c5e93a358,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionName
+      value: PlanetMove/Scan[/Keyboard/tab]
+      objectReference: {fileID: 0}
     - target: {fileID: 9178126996579924323, guid: 9270674c054194145aa2fe3c5e93a358,
         type: 3}
       propertyPath: TargetCamera
