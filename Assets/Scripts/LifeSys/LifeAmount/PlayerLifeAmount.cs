@@ -1,3 +1,4 @@
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,6 +24,8 @@ namespace Flawless.LifeSys
         private PlanetLifeAmount _otherPlanetLifeAmount;
         private float _otherPlanetLifeAmountRatio;
         private bool _isAbsorbing;
+        
+        private CinemachineImpulseSource _impulseSource;
 
         #region Editor
 
@@ -42,9 +45,10 @@ namespace Flawless.LifeSys
 
         #region MonoBehaviours
 
-        private void OnEnable()
+        private void Start()
         {
             _playerInput = GetComponentInParent<PlayerInput>();
+            _impulseSource = GetComponent<CinemachineImpulseSource>();
 
             // Input Actions and bind callbacks
             _absorbButton = _playerInput.actions["Absorb"];
@@ -184,6 +188,10 @@ namespace Flawless.LifeSys
             
             PlantAmount -= CollideDamage;
             AnimalAmount -= CollideDamage;
+            
+            // Camera shake
+            // TODO: To make more detailed camera shake.(According to velocity)
+            _impulseSource.GenerateImpulse();
         }
 
         #endregion
