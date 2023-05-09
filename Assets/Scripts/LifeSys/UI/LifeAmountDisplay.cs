@@ -17,6 +17,7 @@ namespace Flawless.LifeSys.UI
         private PlayerLifeAmount _player;
 
         public Color DisabledColor = new Color(0.2f, 0.2f, 0.2f, 0.5f);
+        public float FadeThreshold = 0.05f;
         [Header("Slider Offset")]
         public float PlantSliderOffset = 0.46f;
         public float AnimalSliderOffset = 0.174f;
@@ -36,10 +37,17 @@ namespace Flawless.LifeSys.UI
         // Update is called once per frame
         void Update()
         {
-            if (_player.PlantAmount <= 0f)
+            float plantValue = _player.PlantAmount / _player.MaxAmount;
+            float animalValue = _player.AnimalAmount / _player.MaxAmount;
+
+            #region Slider Color
+            
+            if (plantValue <= FadeThreshold)
             {
-                _plantSliderFill.color = DisabledColor;
-                _plantScroller.color = DisabledColor;
+                Color fadedColor = 
+                    Color.Lerp(DisabledColor, Color.white, plantValue / FadeThreshold);
+                _plantSliderFill.color = fadedColor;
+                _plantScroller.color = fadedColor;
             }
             else
             {
@@ -47,16 +55,27 @@ namespace Flawless.LifeSys.UI
                 _plantScroller.color = Color.white;
             }
 
-            if (_player.AnimalAmount <= 0f)
+            if (animalValue <= FadeThreshold)
             {
-                _animalSliderFill.color = DisabledColor;
-                _animalScroller.color = DisabledColor;
+                Color fadedColor = 
+                    Color.Lerp(DisabledColor, Color.white, animalValue / FadeThreshold);
+                _animalSliderFill.color = fadedColor;
+                _animalScroller.color = fadedColor;
             }
             else
             {
                 _animalSliderFill.color = Color.white;
                 _animalScroller.color = Color.white;
             }
+            
+            #endregion
+
+            #region Slider Value
+
+            PlantSlider.value = plantValue + PlantSliderOffset;
+            AnimalSlider.value = plantValue + animalValue + AnimalSliderOffset;
+            
+            #endregion
         }
     }
 }

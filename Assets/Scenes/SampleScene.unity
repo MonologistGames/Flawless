@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2141307250}
-  m_IndirectSpecularColor: {r: 0.0007591691, g: 0.006302209, b: 0.015082158, a: 1}
+  m_IndirectSpecularColor: {r: 0.0007588655, g: 0.00630694, b: 0.015062129, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2427,9 +2427,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 2
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.174
+  m_Value: 0.092
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -4630,10 +4630,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _plantAmount: 0
   _animalAmount: 0
-  MaxAmount: 100
-  BasePlantDecreaseSpeed: 10
-  BaseAnimalDecreaseSpeed: 10
-  AbsorbSpeed: 100
+  MaxAmount: 5000
+  BasePlantDecreaseSpeed: 50
+  BaseAnimalDecreaseSpeed: 50
+  AbsorbSpeed: 200
   AbsorbRange: 5
 --- !u!135 &1220363614
 SphereCollider:
@@ -6571,8 +6571,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1886602961}
-  - component: {fileID: 1886602960}
-  - component: {fileID: 1886602959}
   - component: {fileID: 1886602957}
   - component: {fileID: 1886602958}
   - component: {fileID: 1886602962}
@@ -6632,56 +6630,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1886602959
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1886602956}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: e7d9d807fe7bb8541a7ffeaac4b8f6a8, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1886602960
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1886602956}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1886602961
 Transform:
   m_ObjectHideFlags: 0
@@ -6746,7 +6694,7 @@ MonoBehaviour:
   TargetCamera: {fileID: 330585545}
   Acceleration: 1
   MaxSpeed: 3
-  DashSpeed: 10
+  LeapAcceleration: 10
   MaxDashSpeed: 0
 --- !u!1 &1918707636
 GameObject:
@@ -6938,9 +6886,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlantSlider: {fileID: 2066664105}
   AnimalSlider: {fileID: 760125355}
-  DisabledColor: {r: 0.2, g: 0.2, b: 0.2, a: 0.5}
-  PlantSliderOffset: 0.46
-  AnimalSliderOffset: 0.174
+  DisabledColor: {r: 1, g: 1, b: 1, a: 0.1254902}
+  FadeThreshold: 0.03
+  PlantSliderOffset: 0.046
+  AnimalSliderOffset: 0.092
 --- !u!1 &1951322913
 GameObject:
   m_ObjectHideFlags: 0

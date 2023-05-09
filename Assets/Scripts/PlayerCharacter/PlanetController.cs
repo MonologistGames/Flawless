@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -11,39 +12,32 @@ namespace Flawless.PlayerCharacter
         /// <summary>
         /// Rigidbody of the character planet.
         /// </summary>
-        private Rigidbody _rigidbody;
+        public Rigidbody Rigidbody { get; private set; }
 
-        private PlayerInput _playerInput;
+        public PlayerInput PlayerInput { get; private set; }
 
         /// <summary>
         /// Target camera that film the character and move along with.
         /// </summary>
         public Camera TargetCamera;
 
+        public PlayerStateMachine StateMachine { get; private set; }
+
         #region Input Actions
 
-        private InputAction _moveStick;
-        private InputAction _speedUpButton;
+        public InputAction MoveStick { get; set; }
+        public InputAction SpeedUpButton { get; private set; }
+        public InputAction LeapButton { get; private set; }
 
         #endregion
 
         #region Movement
 
         /// <summary>
-        /// Gravitation that the player planet get.
-        /// </summary>
-        private Vector3 _gravitation;
-
-        private Vector3 _moveDir;
-
-        /// <summary>
         /// Desired move direction of the player planet.
         /// </summary>
-        public Vector3 MoveDir => _moveDir;
-
-        private bool _isAccelerating;
-        private float _motivation;
-
+        public Vector3 MoveDir { get; private set; }
+        
         /// <summary>
         /// Acceleration of the player planet.
         /// </summary>
@@ -54,66 +48,63 @@ namespace Flawless.PlayerCharacter
         /// </summary>
         public float MaxSpeed = 3f;
 
-        public float DashSpeed = 10f;
+        public float LeapAcceleration = 10f;
 
         public float MaxDashSpeed = 5f;
 
         /// <summary>
         /// Gravitation the player planet get.
         /// </summary>
-        public Vector3 Gravitation
-        {
-            get => _gravitation;
-            set => _gravitation = value;
-        }
+        public Vector3 Gravitation { get; set; }
 
         /// <summary>
         /// Current Velocity of the player planet.
         /// </summary>
-        public Vector3 Velocity => _rigidbody.velocity;
+        public Vector3 Velocity => Rigidbody.velocity;
 
         #endregion
 
         #region MonoBehaviours
-
+        /// <summary>
+        /// Do the initialization work, including:
+        /// - Get components: Rigidbody, PlayerInput
+        /// - Bind input actions
+        /// - Initialize state machine
+        /// </summary>
         void OnEnable()
         {
-            _playerInput = GetComponent<PlayerInput>();
-            _rigidbody = GetComponent<Rigidbody>();
+            PlayerInput = GetComponent<PlayerInput>();
+            Rigidbody = GetComponent<Rigidbody>();
 
             // Bind input actions
-            _moveStick = _playerInput.actions["MoveDirection"];
-            _speedUpButton = _playerInput.actions["SpeedUp"];
+            MoveStick = PlayerInput.actions["MoveDirection"];
+            SpeedUpButton = PlayerInput.actions["SpeedUp"];
+            LeapButton = PlayerInput.actions["Dash"];
+            
+            // Add input callbacks
+            MoveStick.performed += OnMoveInput;
+            
+            // Initialize state machine
+            StateMachine = new PlayerStateMachine(this);
+            StateMachine.Initialize();
+            
+            // Start state machine
+            StateMachine.TransitTo("MoveState");
+        }
 
-            if (_moveStick != null)
-            {
-                _moveStick.performed += OnMoveInput;
-            }
-
-            if (_speedUpButton != null)
-            {
-                _speedUpButton.started += OnSpeedUpStart;
-                _speedUpButton.canceled += OnSpeedUpCancel;
-            }
+        private void Update()
+        {
+            StateMachine.Update();
         }
 
         private void FixedUpdate()
         {
-            var accelerateVector = _gravitation;
-            // Apply motivation and Gravitation
-            if (_isAccelerating)
-                accelerateVector += _moveDir * Acceleration;
-
-            _rigidbody.AddForce(accelerateVector, ForceMode.Acceleration);
-
-            _rigidbody.velocity = Velocity.normalized * Mathf.Min(MaxSpeed, Velocity.magnitude);
+            StateMachine.FixedUpdate();
         }
 
         #endregion
 
         #region Input Handling
-
-        #region Movement
 
         /// <summary>
         /// Get move direction input.
@@ -122,36 +113,18 @@ namespace Flawless.PlayerCharacter
         private void OnMoveInput(InputAction.CallbackContext context)
         {
             Vector2 inputDir = context.ReadValue<Vector2>();
-            _moveDir = new Vector3(inputDir.x, 0, inputDir.y);
+            MoveDir = new Vector3(inputDir.x, 0, inputDir.y);
 
             // If using mouse, get relative vector
-            if (_playerInput.currentControlScheme == "Keyboard&Mouse")
+            if (PlayerInput.currentControlScheme == "Keyboard&Mouse")
             {
-                Vector3 screenPos = TargetCamera.WorldToScreenPoint(this.transform.position);
-                _moveDir.x -= screenPos.x;
-                _moveDir.z -= screenPos.y;
+                Vector3 screenPos = TargetCamera.WorldToScreenPoint(transform.position);
+                MoveDir -= new Vector3(screenPos.x,0,0);
+                MoveDir -= new Vector3(0,0,screenPos.y);
             }
 
-            _moveDir = _moveDir.normalized;
+            MoveDir = MoveDir.normalized;
         }
-
-        /// <summary>
-        /// Start accelerating when speed up button is pressed.
-        /// </summary>
-        private void OnSpeedUpStart(InputAction.CallbackContext context)
-        {
-            _isAccelerating = true;
-        }
-
-        /// <summary>
-        /// Stop accelerating when speed up button is released.
-        /// </summary>
-        private void OnSpeedUpCancel(InputAction.CallbackContext context)
-        {
-            _isAccelerating = false;
-        }
-
-        #endregion
 
         #endregion
     }
