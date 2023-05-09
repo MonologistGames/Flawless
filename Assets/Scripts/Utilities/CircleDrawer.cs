@@ -10,34 +10,33 @@ namespace Flawless.Utilities
         /// <summary>
         /// Radius of the circle.
         /// </summary>
+        [Tooltip("Radius of the circle.")]
         public float Radius = 1f;
 
         /// <summary>
         /// Number of segments used to draw the circle.
         /// More segments = smoother circle.
         /// </summary>
+        [Tooltip("Number of segments used to draw the circle.\nMore segments = smoother circle.")]
         public int Segments = 64;
 
         /// <summary>
         /// Width of the line to draw the circle.
         /// </summary>
+        [Tooltip("Width of the line to draw the circle.")]
         public float Width = 0.1f;
 
         /// <summary>
         /// Color of the circle.
         /// </summary>
+        [Tooltip("Color of the circle.")]
         public Color Color = Color.white;
 
         /// <summary>
         /// Decides whether to update the circle every frame.
         /// </summary>
+        [Tooltip("Decides whether to update the circle every frame.")]
         public bool AutoUpdate = true;
-
-        /// <summary>
-        /// Adaptively adjust the number of segments based on the radius.
-        /// Makes the circle smoother when the radius is large.
-        /// </summary>
-        public bool AdaptiveSegments = true;
 
         private LineRenderer _lineRenderer;
 
@@ -48,9 +47,7 @@ namespace Flawless.Utilities
         {
             if (_lineRenderer == null)
                 _lineRenderer = GetComponent<LineRenderer>();
-
-            if (AdaptiveSegments)
-                Segments = Mathf.Max((int)(Radius * SegRadiusRatio), 16);
+            
             DrawCircle();
         }
 #endif
@@ -67,10 +64,7 @@ namespace Flawless.Utilities
         private void Update()
         {
             if (!AutoUpdate) return;
-
-            if (AdaptiveSegments)
-                Segments = Mathf.Max((int)(Radius * SegRadiusRatio), 16);
-
+            
             DrawCircle();
         }
 
