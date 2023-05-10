@@ -26,6 +26,7 @@ namespace Flawless.LifeSys
         private PlanetLifeAmount _otherPlanetLifeAmount;
         private float _otherPlanetLifeAmountRatio;
         private bool _isAbsorbing;
+        private bool _isAbsorbBegun;
         
         private CinemachineImpulseSource _impulseSource;
 
@@ -138,8 +139,10 @@ namespace Flawless.LifeSys
         /// </summary>
         private void EndAbsorb()
         {
+            if (!_isAbsorbBegun) return;
+            _isAbsorbBegun = false;
             if (!_otherPlanetLifeAmount) return;
-
+        
             _otherPlanetLifeAmount.AnimalAmount = 0;
             _otherPlanetLifeAmount.PlantAmount = 0;
             
@@ -164,6 +167,8 @@ namespace Flawless.LifeSys
             {
                 return false;
             }
+            
+            _isAbsorbBegun = true;
 
             var animalAbsorbAmount =
                 AbsorbSpeed * _otherPlanetLifeAmountRatio * deltaTime;

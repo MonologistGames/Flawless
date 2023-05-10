@@ -15,14 +15,14 @@ namespace Flawless.Planet
 
         #endregion
         
-        private void OnTriggerEnter(Collider other)
+        private void TurnCameraOn(Collider other)
         {
             if (!other.CompareTag("Player")) return;
-
+    
             VirtualCamera.enabled = true;
         }
         
-        private void OnTriggerExit(Collider other)
+        private void TurnCameraOff(Collider other)
         {
             if (!other.CompareTag("Player")) return;
 

@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Flawless.LifeSys;
 
-namespace Flawless.LifeSys.UI
+namespace Flawless.UI.LifeAmount
 {
     public class LifeAmountDisplay : MonoBehaviour
     {
