@@ -6,7 +6,8 @@ namespace Flawless.PlayerCharacter
     {
         private PlayerStateMachine _stateMachine;
         private PlanetController _planetController;
-        
+
+        public float TimeLapse;
         public LeapState(PlayerStateMachine playerStateMachine)
         {
             _stateMachine = playerStateMachine;
@@ -15,7 +16,7 @@ namespace Flawless.PlayerCharacter
         
         public void OnEnter()
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public void Update()
