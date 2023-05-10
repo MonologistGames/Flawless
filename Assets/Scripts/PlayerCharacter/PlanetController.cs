@@ -1,8 +1,6 @@
-using System;
 using Flawless.LifeSys;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 namespace Flawless.PlayerCharacter
 {
@@ -39,7 +37,7 @@ namespace Flawless.PlayerCharacter
         /// Desired move direction of the player planet.
         /// </summary>
         public Vector3 MoveDir { get; private set; }
-        
+
         /// <summary>
         /// Acceleration of the player planet.
         /// </summary>
@@ -50,9 +48,22 @@ namespace Flawless.PlayerCharacter
         /// </summary>
         public float MaxSpeed = 3f;
 
-        public float LeapAcceleration = 10f;
+        [Header("Leap")] public float LeapAcceleration = 10f;
 
         public float MaxDashSpeed = 5f;
+        
+        
+        public float LeapDuration = 5f;
+        public float LeapTimer { get; set; }
+
+        /// <summary>
+        /// Whether player is ready to leap.
+        /// </summary>
+        public bool IsLeapReady => LeapTimer <= 0;
+
+        public float OverClockDuration = 0.5f;
+        public float OverClockTimer { get; set; }
+        public bool IsOverClocking => OverClockTimer > 0;
 
         /// <summary>
         /// Gravitation the player planet get.
@@ -67,6 +78,7 @@ namespace Flawless.PlayerCharacter
         #endregion
 
         #region MonoBehaviours
+
         /// <summary>
         /// Do the initialization work, including:
         /// - Get components: Rigidbody, PlayerInput
@@ -83,15 +95,15 @@ namespace Flawless.PlayerCharacter
             // Bind input actions
             MoveStick = PlayerInput.actions["MoveDirection"];
             SpeedUpButton = PlayerInput.actions["SpeedUp"];
-            LeapButton = PlayerInput.actions["Dash"];
-            
+            LeapButton = PlayerInput.actions["Leap"];
+
             // Add input callbacks
             MoveStick.performed += OnMoveInput;
-            
+
             // Initialize state machine
             StateMachine = new PlayerStateMachine(this);
             StateMachine.Initialize();
-            
+
             // Start state machine
             StateMachine.TransitTo("MoveState");
         }
@@ -99,6 +111,13 @@ namespace Flawless.PlayerCharacter
         private void Update()
         {
             StateMachine.Update();
+
+            // Update leap timer
+            if (LeapTimer >= 0)
+                LeapTimer -= Time.deltaTime;
+
+            if (OverClockTimer >= 0)
+                OverClockTimer -= Time.deltaTime;
         }
 
         private void FixedUpdate()
@@ -111,7 +130,7 @@ namespace Flawless.PlayerCharacter
         private void OnCollisionEnter(Collision other)
         {
             if (!other.gameObject.CompareTag("Planet")) return;
-            Debug.Log("Hit other planets.");
+            
             LifeAmount.CollideAndDamageLife(other, Rigidbody);
         }
 
@@ -134,8 +153,8 @@ namespace Flawless.PlayerCharacter
             if (PlayerInput.currentControlScheme == "Keyboard&Mouse")
             {
                 Vector3 screenPos = TargetCamera.WorldToScreenPoint(transform.position);
-                MoveDir -= new Vector3(screenPos.x,0,0);
-                MoveDir -= new Vector3(0,0,screenPos.y);
+                MoveDir -= new Vector3(screenPos.x, 0, 0);
+                MoveDir -= new Vector3(0, 0, screenPos.y);
             }
 
             MoveDir = MoveDir.normalized;

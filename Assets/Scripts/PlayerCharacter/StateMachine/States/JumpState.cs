@@ -2,13 +2,12 @@ using Monologist.Patterns.State;
 
 namespace Flawless.PlayerCharacter
 {
-    public class LeapState : IState
+    public class JumpState : IState
     {
         private PlayerStateMachine _stateMachine;
         private PlanetController _planetController;
-
-        public float TimeLapse;
-        public LeapState(PlayerStateMachine playerStateMachine)
+        
+        public JumpState(PlayerStateMachine playerStateMachine)
         {
             _stateMachine = playerStateMachine;
             _planetController = playerStateMachine.PlanetController;
@@ -38,5 +37,14 @@ namespace Flawless.PlayerCharacter
         {
             throw new System.NotImplementedException();
         }
+
+        #region Bind Input Actions
+
+        private void BindInputActions()
+        {
+            
+        }
+
+        #endregion
     }
 }

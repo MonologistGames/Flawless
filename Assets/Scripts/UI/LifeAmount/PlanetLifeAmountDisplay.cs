@@ -55,15 +55,11 @@ namespace Flawless.UI.LifeAmount
 
         public void TurnCanvasOn(Collider other)
         {
-            if (!other.CompareTag("Player")) return;
-
             IsCanvasOn = true;
         }
 
         public void TurnCanvasOff(Collider other)
         {
-            if (!other.CompareTag("Player")) return;
-
             IsCanvasOn = false;
         }
     }

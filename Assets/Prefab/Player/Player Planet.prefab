@@ -263,6 +263,8 @@ MonoBehaviour:
   MaxSpeed: 3
   LeapAcceleration: 10
   MaxDashSpeed: 0
+  LeapDuration: 5
+  OverClockDuration: 0.5
 --- !u!1 &1518960233334517753
 GameObject:
   m_ObjectHideFlags: 0

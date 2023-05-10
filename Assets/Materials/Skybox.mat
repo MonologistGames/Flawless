@@ -15,6 +15,7 @@ Material:
   - _MAPPING_6_FRAMES_LAYOUT
   m_InvalidKeywords:
   - _EMISSION
+  - _MIRRORONBACK_ON
   - _SUNDISK_HIGH_QUALITY
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
@@ -124,15 +125,15 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Exposure: 0.25
+    - _Exposure: 0.48
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _ImageType: 1
-    - _Layout: 0
+    - _Layout: 2
     - _Mapping: 0
     - _Metallic: 0
-    - _MirrorOnBack: 0
+    - _MirrorOnBack: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
@@ -155,7 +156,7 @@ Material:
     - _GroundColor: {r: 0.41509432, g: 0.40530434, b: 0.40530434, a: 1}
     - _SkyTint: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Tint: {r: 0.767, g: 0.8383825, b: 1, a: 1}
+    - _Tint: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &1568698648937170346
 MonoBehaviour:
