@@ -26,8 +26,6 @@ namespace Flawless.PlayerCharacter
         [Min(0f)] public float VelocityDistanceFromOrigin = 0.5f;
         [Min(0f)]public float IndicatorLength = 0.5f;
         public LineRenderer VelocityLineRenderer;
-        
-        public CircleDrawer IndicatorRim;
 
         #region MonoBehaviours
 
@@ -81,10 +79,6 @@ namespace Flawless.PlayerCharacter
             // Set LineRenderer start and end position
             VelocityLineRenderer.SetPosition(0, _velocityStart);
             VelocityLineRenderer.SetPosition(1, _velocityEnd);
-
-
-            // Set the rim size of the velocity indicator
-            IndicatorRim.Radius = VelocityDistanceFromOrigin + _velocityMagnitudePercent * IndicatorLength;
         }
     }
 }

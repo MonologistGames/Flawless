@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace Flawless.UI.LifeAmount
 {
-    public class PlanetLifeAmountDisplay : MonoBehaviour
+    public class PlanetLifeAmountUI : MonoBehaviour
     {
         private CanvasGroup LifeAmountCanvas { get; set; }
         private bool IsCanvasOn { get; set; }

@@ -4,7 +4,7 @@ using Flawless.LifeSys;
 
 namespace Flawless.UI.LifeAmount
 {
-    public class LifeAmountDisplay : MonoBehaviour
+    public class LifeAmountUI : MonoBehaviour
     {
         [Header("Slider UIs")] public Slider PlantSlider;
         private Image _plantSliderFill;
