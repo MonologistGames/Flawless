@@ -12,6 +12,8 @@ namespace Flawless.PlayerCharacter
         public float TrailDistanceFromOrigin = 0.1f;
         public float TrailLengthThreshold = 0.2f;
         public TrailRenderer Trail;
+        public Gradient OverDriveColor;
+        public Gradient NormalColor;
         
         // Motivation
         [Header("Motivation")]
@@ -39,6 +41,7 @@ namespace Flawless.PlayerCharacter
             UpdateIndicatorDirection();
             
             UpdateTrailPosition();
+            UpdateTrailColor();
             
             UpdateVelocityIndicator();
         }
@@ -63,6 +66,12 @@ namespace Flawless.PlayerCharacter
             
             // Set the TrailRenderer at the opposite position of velocity
             Trail.transform.position = _planet.transform.position - _planet.Velocity.normalized * TrailDistanceFromOrigin;
+        }
+        
+        private void UpdateTrailColor()
+        {
+            if (_planet.IsOverDriving) Trail.colorGradient = OverDriveColor;
+            else Trail.colorGradient = NormalColor;
         }
         
         // Update the position and size of the velocity indicator
