@@ -14,8 +14,8 @@ namespace Flawless.PlayerCharacter
         public override void Initialize()
         {
             base.Initialize();
-            StatePool.Add("MoveState", new MoveState(this));
-            StatePool.Add("JumpState", new JumpState(this));
+            StatePool.Add("Move", new MoveState(this));
+            StatePool.Add("Jump", new JumpState(this));
         }
     }
 }

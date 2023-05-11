@@ -190,7 +190,10 @@ namespace Flawless.LifeSys
         public void CollideAndDamageLife(Collision other, Rigidbody player)
         {
             // TODO: To make more detailed damage calculation and effects.
-            player.AddForce(other.GetContact(0).normal * CollideForce,
+            Vector3 velocityDir = player.velocity.normalized;
+            Vector3 normalDir = other.GetContact(0).normal;
+            Vector3 boundDirection = velocityDir - 2 * Vector3.Dot(velocityDir, normalDir) * normalDir;
+            player.AddForce(boundDirection * CollideForce,
                 ForceMode.VelocityChange);
             
             PlantAmount -= CollideDamage;

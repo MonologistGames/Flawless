@@ -20,12 +20,12 @@ namespace Flawless.PlayerCharacter
         /// </summary>
         public Camera TargetCamera;
 
-        public PlayerStateMachine StateMachine { get; private set; }
+        private PlayerStateMachine StateMachine { get; set; }
         private PlayerLifeAmount LifeAmount { get; set; }
 
         #region Input Actions
 
-        public InputAction MoveStick { get; set; }
+        private InputAction MoveStick { get; set; }
         public InputAction SpeedUpButton { get; private set; }
         public InputAction LeapButton { get; private set; }
 
@@ -51,8 +51,9 @@ namespace Flawless.PlayerCharacter
         [Header("Leap")] public float LeapAcceleration = 10f;
 
         public float MaxDashSpeed = 5f;
-        
-        
+
+        #region Leap
+
         public float LeapDuration = 5f;
         public float LeapTimer { get; set; }
 
@@ -61,9 +62,16 @@ namespace Flawless.PlayerCharacter
         /// </summary>
         public bool IsLeapReady => LeapTimer <= 0;
 
-        public float OverClockDuration = 0.5f;
-        public float OverClockTimer { get; set; }
-        public bool IsOverClocking => OverClockTimer > 0;
+        #endregion
+
+        #region OverDrive
+
+        public float OverDriveDuration = 0.5f;
+        public float OverDriveTimer { get; set; }
+        public bool IsOverDriving => OverDriveTimer > 0;
+
+        #endregion
+
 
         /// <summary>
         /// Gravitation the player planet get.
@@ -105,7 +113,7 @@ namespace Flawless.PlayerCharacter
             StateMachine.Initialize();
 
             // Start state machine
-            StateMachine.TransitTo("MoveState");
+            StateMachine.TransitTo("Move");
         }
 
         private void Update()
@@ -116,8 +124,8 @@ namespace Flawless.PlayerCharacter
             if (LeapTimer >= 0)
                 LeapTimer -= Time.deltaTime;
 
-            if (OverClockTimer >= 0)
-                OverClockTimer -= Time.deltaTime;
+            if (OverDriveTimer >= 0)
+                OverDriveTimer -= Time.deltaTime;
         }
 
         private void FixedUpdate()
@@ -130,7 +138,7 @@ namespace Flawless.PlayerCharacter
         private void OnCollisionEnter(Collision other)
         {
             if (!other.gameObject.CompareTag("Planet")) return;
-            
+
             LifeAmount.CollideAndDamageLife(other, Rigidbody);
         }
 
@@ -158,6 +166,25 @@ namespace Flawless.PlayerCharacter
             }
 
             MoveDir = MoveDir.normalized;
+        }
+
+        #endregion
+
+        #region APIs
+
+        public void SetOverDrive(float overDriveTime)
+        {
+            OverDriveTimer = overDriveTime;
+        }
+        public void Jump()
+        {
+            Rigidbody.velocity = Vector3.zero;
+            StateMachine.TransitTo("Jump");
+        }
+
+        public void EndJump()
+        {
+            StateMachine.TransitTo("Move");
         }
 
         #endregion
