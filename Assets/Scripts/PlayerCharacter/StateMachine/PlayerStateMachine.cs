@@ -15,7 +15,7 @@ namespace Flawless.PlayerCharacter
         {
             base.Initialize();
             StatePool.Add("Move", new MoveState(this));
-            StatePool.Add("Jump", new JumpState(this));
+            StatePool.Add("Controlled", new ControlledState(this));
         }
     }
 }

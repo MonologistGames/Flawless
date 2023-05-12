@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Flawless.PlayerCharacter
 {
-    public class JumpState : IState
+    public class ControlledState : IState
     {
         private PlayerStateMachine _stateMachine;
         private PlanetController _planetController;
         
-        public JumpState(PlayerStateMachine playerStateMachine)
+        public ControlledState(PlayerStateMachine playerStateMachine)
         {
             _stateMachine = playerStateMachine;
             _planetController = playerStateMachine.PlanetController;

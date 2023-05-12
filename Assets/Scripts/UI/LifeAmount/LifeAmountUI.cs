@@ -1,87 +1,62 @@
+using System;
+using System.Collections.Generic;
+using Flawless.LifeSys;
 using UnityEngine;
 using UnityEngine.UI;
-using Flawless.LifeSys;
 
 namespace Flawless.UI.LifeAmount
 {
     public class LifeAmountUI : MonoBehaviour
     {
-        [Header("Slider UIs")] public Slider PlantSlider;
-        private Image _plantSliderFill;
-        private Image _plantScroller;
+        public float FillOffset = 0.2f;
+        public List<Image> UnitFills;
 
-        public Slider AnimalSlider;
-        private Image _animalSliderFill;
-        private Image _animalScroller;
-
-        private PlayerLifeAmount _player;
-
-        public Color DisabledColor = new Color(0.2f, 0.2f, 0.2f, 0.5f);
-        public float FadeThreshold = 0.05f;
-        [Header("Slider Offset")] public float PlantSliderOffset = 0.46f;
-        public float AnimalSliderOffset = 0.174f;
-
-        #region MonoBehaviours
-
-        void Start()
+        private void Awake()
         {
-            _plantSliderFill = PlantSlider.transform.GetChild(0).GetChild(0).GetComponent<Image>();
-            _plantScroller = _plantSliderFill.transform.GetChild(0).GetComponent<Image>();
-
-            _animalSliderFill = AnimalSlider.transform.GetChild(0).GetChild(0).GetComponent<Image>();
-            _animalScroller = _animalSliderFill.transform.GetChild(0).GetComponentInChildren<Image>();
-
-            _player = GameObject.FindWithTag("Player").GetComponentInChildren<PlayerLifeAmount>();
+            GameObject.FindWithTag("Player").GetComponentInChildren<PlayerLifeAmount>().OnLifeAmountChanged +=
+                UpdateLifeAmountUI;
         }
 
-        // Update is called once per frame
-        void Update()
+        public void UpdateLifeAmountUI(float lifeAmount, float lifeUnit, int lifeUnitsCount)
         {
-            float plantValue = _player.PlantAmount / _player.MaxAmount;
-            float animalValue = _player.AnimalAmount / _player.MaxAmount;
+            var unitCountFloor = Mathf.FloorToInt(lifeAmount / lifeUnit);
+            var unitCountCeil = Mathf.CeilToInt(lifeAmount / lifeUnit);
+            var fillValue = (lifeAmount - unitCountFloor * lifeUnit) / lifeUnit;
 
-            #region Slider Color
-
-            // Change the slider color to dark. In order to make this
-            // Slider more obvious for players.
-            // Uses a threshold to control where to begin fading.
-            if (plantValue <= FadeThreshold)
+            // Extend or delete life units
+            if (lifeUnitsCount > UnitFills.Count)
             {
-                Color fadedColor =
-                    Color.Lerp(DisabledColor, Color.white, plantValue / FadeThreshold);
-                _plantSliderFill.color = fadedColor;
-                _plantScroller.color = fadedColor;
-            }
-            else
-            {
-                _plantSliderFill.color = Color.white;
-                _plantScroller.color = Color.white;
+                var unitsToAdd = lifeUnitsCount - UnitFills.Count;
+                for (var i = 0; i < unitsToAdd; i++)
+                {
+                    var newFill = Instantiate(UnitFills[0].transform.parent, this.transform, true);
+                    UnitFills.Add(newFill.GetChild(0).GetComponent<Image>());
+                }
             }
 
-            if (animalValue <= FadeThreshold)
+            if (lifeUnitsCount < UnitFills.Count)
             {
-                Color fadedColor =
-                    Color.Lerp(DisabledColor, Color.white, animalValue / FadeThreshold);
-                _animalSliderFill.color = fadedColor;
-                _animalScroller.color = fadedColor;
-            }
-            else
-            {
-                _animalSliderFill.color = Color.white;
-                _animalScroller.color = Color.white;
+                for (var i = lifeUnitsCount; i < UnitFills.Count; i++)
+                {
+                    UnitFills[i].transform.parent.gameObject.SetActive(false);
+                }
             }
 
-            #endregion
+            // Set fill amount
+            for (var i = 0; i < unitCountFloor; i++)
+            {
+                UnitFills[i].transform.parent.gameObject.SetActive(true);
+                UnitFills[i].fillAmount = 1;
+            }
 
-            #region Slider Value
+            UnitFills[unitCountFloor].transform.parent.gameObject.SetActive(true);
+            UnitFills[unitCountFloor].fillAmount = fillValue * (1 - FillOffset) + FillOffset;
 
-            PlantSlider.value = plantValue + PlantSliderOffset;
-            AnimalSlider.value = plantValue + animalValue + AnimalSliderOffset;
-
-            #endregion
+            for (var i = unitCountCeil; i < lifeUnitsCount; i++)
+            {
+                UnitFills[i].transform.parent.gameObject.SetActive(true);
+                UnitFills[i].fillAmount = 0;
+            }
         }
-
-        #endregion
-
     }
 }

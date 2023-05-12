@@ -1,33 +1,86 @@
+using System;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace Flawless.LifeSys
 {
     [RequireComponent(typeof(SphereCollider))]
-    public class PlayerLifeAmount : LifeAmount
+    public class PlayerLifeAmount : MonoBehaviour
     {
-        public float MaxAmount = 100000f;
-        
-        [Header("Life Decrease Speed")]
-        public float BasePlantDecreaseSpeed = 10f;
-        public float BaseAnimalDecreaseSpeed = 10f;
+        [Header("Life Units")] 
+        public int MaxLifeUnits = 6;
+        [SerializeField]
+        private int _lifeUnitsCountCount = 2;
 
-        [Header("Absorb")]
-        public float AbsorbSpeed = 100f;
+        public int LifeUnitsCount
+        {
+            get => _lifeUnitsCountCount;
+            set
+            {
+                if (value < 0)
+                {
+                    _lifeUnitsCountCount = 0;
+                    return;
+                }
+
+                if (value > MaxLifeUnits)
+                {
+                    _lifeUnitsCountCount = MaxLifeUnits;
+                    return;
+                }
+
+                _lifeUnitsCountCount = value;
+            }
+        }
+
+        public static float LifeUnit = 1000f;
+        public float MaxLifeAmount => LifeUnitsCount * LifeUnit;
+
+        public event Action<float, float, int> OnLifeAmountChanged;
+        
+        [Header("Life Amount")]
+        [SerializeField]
+        private float _lifeAmount;
+        public float LifeAmount
+        {
+            get => _lifeAmount;
+            set
+            {
+                if (value < 0)
+                {
+                    _lifeAmount = 0;
+                }
+                else
+                {
+                    if (value > MaxLifeAmount)
+                    {
+                        _lifeAmount = MaxLifeAmount;
+                        return;
+                    }
+                    else
+                        _lifeAmount = value;
+                }
+                OnLifeAmountChanged?.Invoke(LifeAmount, LifeUnit, LifeUnitsCount);
+            }
+        }
+
+        public float BaseDecreaseSpeed = 10f;
+
+        [Header("Absorb")] public float AbsorbSpeed = 100f;
         public float AbsorbRange = 2f;
 
-        [Header("Collide")] public float CollideForce = 10f;
+        [Header("Collide")] 
         public float CollideDamage = 100f;
 
         private PlayerInput _playerInput;
         private InputAction _absorbButton;
 
         private PlanetLifeAmount _otherPlanetLifeAmount;
-        private float _otherPlanetLifeAmountRatio;
         private bool _isAbsorbing;
         private bool _isAbsorbBegun;
-        
+
         private CinemachineImpulseSource _impulseSource;
 
         #region Editor
@@ -64,8 +117,7 @@ namespace Flawless.LifeSys
             // Life amount fade with time
             if (!_isAbsorbing || !_otherPlanetLifeAmount)
             {
-                PlantAmount -= BasePlantDecreaseSpeed * Time.deltaTime;
-                AnimalAmount -= BaseAnimalDecreaseSpeed * Time.deltaTime;
+                LifeAmount -= Time.deltaTime * BaseDecreaseSpeed;
             }
 
             //Debug.Log("is absorbing: " + _isAbsorbing + " " + _otherPlanetLifeAmount.gameObject.name);
@@ -82,7 +134,7 @@ namespace Flawless.LifeSys
         }
 
         #endregion
-        
+
         #region Trigger Events
 
         private void OnTriggerEnter(Collider other)
@@ -96,8 +148,6 @@ namespace Flawless.LifeSys
                 return;
             }
 
-            _otherPlanetLifeAmountRatio = _otherPlanetLifeAmount.AnimalPlanetRatio /
-                                          (1 + _otherPlanetLifeAmount.AnimalPlanetRatio);
             Debug.Log("Ready to absorb " + _otherPlanetLifeAmount.transform.parent.name);
         }
 
@@ -142,10 +192,9 @@ namespace Flawless.LifeSys
             if (!_isAbsorbBegun) return;
             _isAbsorbBegun = false;
             if (!_otherPlanetLifeAmount) return;
-        
-            _otherPlanetLifeAmount.AnimalAmount = 0;
-            _otherPlanetLifeAmount.PlantAmount = 0;
-            
+
+            _otherPlanetLifeAmount.LifeAmount = 0;
+
             // Planet die effects
             _otherPlanetLifeAmount.SetPlanetDead();
         }
@@ -162,23 +211,17 @@ namespace Flawless.LifeSys
                 return false;
             }
 
-            if (_otherPlanetLifeAmount.PlantAmount + _otherPlanetLifeAmount.AnimalAmount
-                < AbsorbSpeed * deltaTime)
+            if (_otherPlanetLifeAmount.LifeAmount < AbsorbSpeed * deltaTime)
             {
                 return false;
             }
-            
+
             _isAbsorbBegun = true;
+            
+            var absorbAmount = deltaTime * AbsorbSpeed;
+            _otherPlanetLifeAmount.LifeAmount -= AbsorbSpeed * deltaTime;
 
-            var animalAbsorbAmount =
-                AbsorbSpeed * _otherPlanetLifeAmountRatio * deltaTime;
-            var plantAbsorbAmount = deltaTime * AbsorbSpeed - animalAbsorbAmount;
-
-            _otherPlanetLifeAmount.AnimalAmount -= animalAbsorbAmount;
-            _otherPlanetLifeAmount.PlantAmount -= plantAbsorbAmount;
-
-            this.AnimalAmount += animalAbsorbAmount;
-            this.PlantAmount += plantAbsorbAmount;
+            this.LifeAmount += absorbAmount;
 
             return true;
         }
@@ -187,20 +230,19 @@ namespace Flawless.LifeSys
 
         #region APIs
 
-        public void CollideAndDamageLife(Collision other, Rigidbody player)
+        public void CollideAndDamageLife()
         {
             // TODO: To make more detailed damage calculation and effects.
-            Vector3 velocityDir = player.velocity.normalized;
-            Vector3 normalDir = other.GetContact(0).normal;
-            Vector3 boundDirection = velocityDir - 2 * Vector3.Dot(velocityDir, normalDir) * normalDir;
-            player.AddForce(boundDirection * CollideForce,
-                ForceMode.VelocityChange);
-            
-            PlantAmount -= CollideDamage;
-            AnimalAmount -= CollideDamage;
-            
+
+            _lifeAmount -= CollideDamage;
+
             // Camera shake
             _impulseSource.GenerateImpulse();
+        }
+
+        public void DecreaseLifeByUnit(int units)
+        {
+            LifeAmount -= LifeUnit * units;
         }
 
         #endregion

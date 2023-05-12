@@ -6,7 +6,7 @@ namespace Flawless.Levels.Gates
 {
     public class JumpGate : MonoBehaviour
     {
-        public float JumpTimeFactor = 0.5f;
+        public float JumpTimeFactor = 0.1f;
         public float JumpForce = 15f;
         public float JumpLapse = 0.5f;
         public float OverDriveTime = 2f;
@@ -56,7 +56,7 @@ namespace Flawless.Levels.Gates
         
         private void EndJump()
         {
-            Player.Rigidbody.AddForce(Player.MoveDir * JumpForce, ForceMode.Impulse);
+            Player.Rigidbody.AddForce(Player.MoveDir * JumpForce - Player.Velocity, ForceMode.VelocityChange);
             Player.EndJump();
             Player = null;
             

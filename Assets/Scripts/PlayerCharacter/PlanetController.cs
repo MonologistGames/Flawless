@@ -84,6 +84,9 @@ namespace Flawless.PlayerCharacter
         public Vector3 Velocity => Rigidbody.velocity;
 
         #endregion
+        
+        [Header("Collide")]
+        public float CollideForce = 10f;
 
         #region MonoBehaviours
 
@@ -138,8 +141,15 @@ namespace Flawless.PlayerCharacter
         private void OnCollisionEnter(Collision other)
         {
             if (!other.gameObject.CompareTag("Planet")) return;
-
-            LifeAmount.CollideAndDamageLife(other, Rigidbody);
+            
+            var velocityDir = Velocity.normalized;
+            var normalDir = other.GetContact(0).normal;
+            var boundDirection = velocityDir +
+                                 Mathf.Abs(2 * Vector3.Dot(velocityDir, normalDir)) * normalDir;
+            Rigidbody.AddForce(boundDirection * CollideForce - Velocity,
+                ForceMode.VelocityChange);
+            
+            LifeAmount.CollideAndDamageLife();
         }
 
         #endregion
@@ -178,8 +188,7 @@ namespace Flawless.PlayerCharacter
         }
         public void Jump()
         {
-            Rigidbody.velocity = Vector3.zero;
-            StateMachine.TransitTo("Jump");
+            StateMachine.TransitTo("Controlled");
         }
 
         public void EndJump()

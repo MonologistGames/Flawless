@@ -87,12 +87,10 @@ namespace Flawless.PlayerCharacter
 
         private void OnLeap(InputAction.CallbackContext context)
         {
-            Debug.Log(_planetController.IsLeapReady);
-            Debug.Log(_planetController.LeapTimer);
             if (!_planetController.IsLeapReady) return;
             
             _planetController.LeapTimer = _planetController.LeapDuration;
-            _planetController.SetOverDrive(_planetController.OverDriveDuration);
+            _planetController.SetOverDrive(_planetController.OverDriveDuration + _planetController.OverDriveTimer);
             _planetController.Rigidbody.AddForce(_planetController.LeapAcceleration * _planetController.MoveDir,
                 ForceMode.Impulse);
         }

@@ -13,12 +13,7 @@ namespace Flawless.UI.LifeAmount
         private bool IsCanvasOn { get; set; }
         private PlanetLifeAmount LifeAmount { get; set; }
         public float ShowUpSpeed = 2f;
-        public Image PlantImage;
-
-        public Image AnimalImage;
-        
-        [Tooltip("Decides how much space there is between plant and animal")]
-        public float Offset = 0.05f;
+        public Image LifeFill;
 
         #region MonoBehaviours
         
@@ -41,14 +36,8 @@ namespace Flawless.UI.LifeAmount
                 LifeAmountCanvas.alpha -= Time.unscaledDeltaTime * ShowUpSpeed;
             }
             
-            float plantValue = LifeAmount.PlantAmount / PlanetLifeAmount.MaxLifeAmount;
-            float animalValue = LifeAmount.AnimalAmount / PlanetLifeAmount.MaxLifeAmount;
-
-            PlantImage.fillAmount = plantValue - Offset;
-            AnimalImage.fillAmount = animalValue;
+            LifeFill.fillAmount = LifeAmount.LifeAmount / PlanetLifeAmount.MaxLifeAmount;
             
-            AnimalImage.transform.localRotation =
-                Quaternion.Euler(0,0,- (plantValue + Offset) * 360);
         }
         
         #endregion
