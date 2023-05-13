@@ -37,6 +37,42 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Marble_BaseColor:
+        m_Texture: {fileID: 2800000, guid: edb5a76453d154a459c2621eb2676921, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Marble_Normal:
+        m_Texture: {fileID: 2800000, guid: e63815d12917b6744be646d8ce36fd2a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Marble_Normal_1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Moss_BaseColor:
+        m_Texture: {fileID: 2800000, guid: 2bdcff5662bd906458a54a025d43d842, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Moss_Light_BaseColor:
+        m_Texture: {fileID: 2800000, guid: 2bdcff5662bd906458a54a025d43d842, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Moss_Light_Normal:
+        m_Texture: {fileID: 2800000, guid: 2a5b9bfc394bd814495ea32e357c4e75, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Moss_Normal:
+        m_Texture: {fileID: 2800000, guid: 2a5b9bfc394bd814495ea32e357c4e75, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mud_BaseColor:
+        m_Texture: {fileID: 2800000, guid: 6abce594f46e5ce4f8240161c0e8edb0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mud_Normal:
+        m_Texture: {fileID: 2800000, guid: 2a5b9bfc394bd814495ea32e357c4e75, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_4dd5eb89a78846179e7fa61b13bfee03_Texture_1:
         m_Texture: {fileID: 2800000, guid: b5f97d01700488b41bb20977935da3d5, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -55,6 +91,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_7d178cace2684f7697f704afac9cad93_Texture_1:
         m_Texture: {fileID: 2800000, guid: ee57f5def52a21840bfbb3a96e442e59, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_892865023cce484797d8d9e80c65b86f_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 5159ab130f2d3ab4aa347c2f095884c4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_8b1516d9564a4237bcca915a2c09c92e_Texture_1:
@@ -79,6 +119,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_b914bab7bc5b4c2dbe956a9784e15c80_Texture_1:
         m_Texture: {fileID: 2800000, guid: 417986a2f0203bf4e928da903bcb5b2b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_ca00c6c407c84eba9b038234e53754ec_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 4a5bfde9a3b2d4442b3268ad59765078, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_cb6e2fbd4b3f4167ae3afa37797e6de4_Texture_1:
@@ -111,11 +155,22 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Marble_Matellatic: 0.7
     - _MettelicValue: 0
+    - _Moss_BaseColor_Saturation: 0
+    - _Mud_Saturatiuon: 0.33
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RimValue1: 0.03
-    - _RimValue2: 0.05
-    - _SwitchValue: 0.48
-    m_Colors: []
+    - _RimValue1: 0
+    - _RimValue2: 0.043
+    - _SwitchValue: 0.64
+    m_Colors:
+    - _Marble_BaseColor: {r: 0, g: 0, b: 0, a: 0}
+    - _Marble_Normal: {r: 0, g: 0, b: 0, a: 0}
+    - _Moss_BaseColor: {r: 0, g: 0, b: 0, a: 0}
+    - _Moss_Light_BaseColor: {r: 0, g: 0, b: 0, a: 0}
+    - _Moss_Light_Normal: {r: 0, g: 0, b: 0, a: 0}
+    - _Moss_Normal: {r: 0, g: 0, b: 0, a: 0}
+    - _Mud_BaseColor: {r: 0, g: 0, b: 0, a: 0}
+    - _Mud_Normal: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
