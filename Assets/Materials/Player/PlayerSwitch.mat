@@ -162,8 +162,8 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RimValue1: 0
-    - _RimValue2: 0.043
-    - _SwitchValue: 0.64
+    - _RimValue2: 0
+    - _SwitchValue: 0.31
     m_Colors:
     - _Marble_BaseColor: {r: 0, g: 0, b: 0, a: 0}
     - _Marble_Normal: {r: 0, g: 0, b: 0, a: 0}
