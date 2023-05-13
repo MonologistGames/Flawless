@@ -4,16 +4,15 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.VFX;
+using UnityEngine.VFX.Utility;
 
 namespace Flawless.LifeSys
 {
     [RequireComponent(typeof(SphereCollider))]
     public class PlayerLifeAmount : MonoBehaviour
     {
-        [Header("Life Units")] 
-        public int MaxLifeUnits = 6;
-        [SerializeField]
-        private int _lifeUnitsCountCount = 2;
+        [Header("Life Units")] public int MaxLifeUnits = 6;
+        [SerializeField] private int _lifeUnitsCountCount = 2;
 
         public int LifeUnitsCount
         {
@@ -38,12 +37,11 @@ namespace Flawless.LifeSys
 
         public static float LifeUnit = 1000f;
         public float MaxLifeAmount => LifeUnitsCount * LifeUnit;
-
         public event Action<float, float, int> OnLifeAmountChanged;
-        
-        [Header("Life Amount")]
-        [SerializeField]
+
+        [Header("Life Amount")] [SerializeField]
         private float _lifeAmount;
+
         public float LifeAmount
         {
             get => _lifeAmount;
@@ -63,6 +61,7 @@ namespace Flawless.LifeSys
                     else
                         _lifeAmount = value;
                 }
+
                 OnLifeAmountChanged?.Invoke(LifeAmount, LifeUnit, LifeUnitsCount);
             }
         }
@@ -72,16 +71,16 @@ namespace Flawless.LifeSys
         [Header("Absorb")] public float AbsorbSpeed = 100f;
         public float AbsorbRange = 2f;
 
-        [Header("Collide")] 
-        public float CollideDamage = 100f;
+        [Header("Collide")] public float CollideDamage = 100f;
 
         private PlayerInput _playerInput;
         private InputAction _absorbButton;
 
         private PlanetLifeAmount _otherPlanetLifeAmount;
-        public VisualEffect AbsorbEffect;
         private bool _isAbsorbing;
         private bool _isAbsorbBegun;
+        
+        public event Action<bool, PlanetLifeAmount> OnAbsorbStateChanged; 
 
         private CinemachineImpulseSource _impulseSource;
 
@@ -108,7 +107,6 @@ namespace Flawless.LifeSys
             _playerInput = GetComponentInParent<PlayerInput>();
             _impulseSource = GetComponent<CinemachineImpulseSource>();
             
-            AbsorbEffect.Stop();
             // Input Actions and bind callbacks
             _absorbButton = _playerInput.actions["Absorb"];
             _absorbButton.started += OnAbsorbStart;
@@ -122,17 +120,12 @@ namespace Flawless.LifeSys
             {
                 LifeAmount -= Time.deltaTime * BaseDecreaseSpeed;
             }
-
-            //Debug.Log("is absorbing: " + _isAbsorbing + " " + _otherPlanetLifeAmount.gameObject.name);
+            
             // Absorb other planets
             if (_isAbsorbing)
             {
                 if (!Absorb(Time.deltaTime))
                     EndAbsorb();
-                else
-                {
-                    _otherPlanetLifeAmount.IsAbsorbed = true;
-                }
             }
         }
 
@@ -150,8 +143,6 @@ namespace Flawless.LifeSys
                 _otherPlanetLifeAmount = null;
                 return;
             }
-
-            AbsorbEffect.transform.position = other.transform.position;
         }
 
         private void OnTriggerExit(Collider other)
@@ -161,7 +152,6 @@ namespace Flawless.LifeSys
             if (_otherPlanetLifeAmount == other.GetComponent<PlanetLifeAmount>())
             {
                 EndAbsorb();
-                _otherPlanetLifeAmount = null;
             }
         }
 
@@ -174,11 +164,14 @@ namespace Flawless.LifeSys
         private void OnAbsorbStart(InputAction.CallbackContext context)
         {
             _isAbsorbing = true;
+            if (!_otherPlanetLifeAmount) return;
+            OnAbsorbStateChanged?.Invoke(true, _otherPlanetLifeAmount);
         }
 
         private void OnAbsorbCancel(InputAction.CallbackContext context)
         {
             _isAbsorbing = false;
+            OnAbsorbStateChanged?.Invoke(false, _otherPlanetLifeAmount);
         }
 
         #endregion
@@ -195,12 +188,14 @@ namespace Flawless.LifeSys
             if (!_isAbsorbBegun) return;
             _isAbsorbBegun = false;
             if (!_otherPlanetLifeAmount) return;
-
+            
+            OnAbsorbStateChanged?.Invoke(false, _otherPlanetLifeAmount);
+            _otherPlanetLifeAmount.IsAbsorbed = true;
             _otherPlanetLifeAmount.LifeAmount = 0;
-            AbsorbEffect.Stop();
 
             // Planet die effects
             _otherPlanetLifeAmount.SetPlanetDead();
+            _otherPlanetLifeAmount = null;
         }
 
         /// <summary>
@@ -219,16 +214,20 @@ namespace Flawless.LifeSys
             {
                 return false;
             }
+            
+            if (Math.Abs(LifeAmount - MaxLifeAmount) < AbsorbSpeed * deltaTime)
+            {
+                LifeAmount = MaxLifeAmount;
+                return false;
+            }
 
             if (!_isAbsorbBegun)
             {
                 _isAbsorbBegun = true;
-                AbsorbEffect.Play();
             }
-            
+
             var absorbAmount = deltaTime * AbsorbSpeed;
             _otherPlanetLifeAmount.LifeAmount -= AbsorbSpeed * deltaTime;
-            AbsorbEffect.transform.position = _otherPlanetLifeAmount.transform.position;
 
             this.LifeAmount += absorbAmount;
 

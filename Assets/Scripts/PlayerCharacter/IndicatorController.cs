@@ -14,7 +14,7 @@ namespace Flawless.PlayerCharacter
         public TrailRenderer Trail;
         public Gradient OverDriveColor;
         public Gradient NormalColor;
-        
+
         // Motivation
         [Header("Motivation")]
         public Transform Indicator;
@@ -55,7 +55,7 @@ namespace Flawless.PlayerCharacter
             if (_planet.MoveDir.x > 0)
                 angleY = -angleY;
 
-            Indicator.eulerAngles = new Vector3(0, angleY, 0);
+            Indicator.eulerAngles = new Vector3(90, angleY, 0);
         }
         
         // Update the position of the trail renderer

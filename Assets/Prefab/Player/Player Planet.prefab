@@ -67,14 +67,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 749161803a494456a7806c55727efa16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantAmount: 0
-  _animalAmount: 0
-  MaxAmount: 5000
-  BasePlantDecreaseSpeed: 20
-  BaseAnimalDecreaseSpeed: 20
+  MaxLifeUnits: 6
+  _lifeUnitsCountCount: 2
+  _lifeAmount: 0
+  BaseDecreaseSpeed: 10
   AbsorbSpeed: 200
   AbsorbRange: 5
-  CollideForce: 10
   CollideDamage: 100
 --- !u!114 &8007779002352360889
 MonoBehaviour:
@@ -264,7 +262,8 @@ MonoBehaviour:
   LeapAcceleration: 10
   MaxDashSpeed: 0
   LeapDuration: 5
-  OverClockDuration: 0.5
+  OverDriveDuration: 0.5
+  CollideForce: 10
 --- !u!1 &1518960233334517753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,8 +1233,67 @@ MonoBehaviour:
   TrailDistanceFromOrigin: 0.55
   TrailLengthThreshold: 0.2
   Trail: {fileID: 5469216338472687630}
+  OverDriveColor:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  NormalColor:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
   Indicator: {fileID: 3320519743017075270}
   VelocityDistanceFromOrigin: 1
   IndicatorLength: 0.5
   VelocityLineRenderer: {fileID: 1386250734583855341}
-  IndicatorRim: {fileID: 7789914238984170110}

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Flawless.LifeSys;
 using UnityEngine;
@@ -49,6 +48,11 @@ namespace Flawless.UI.LifeAmount
                 UnitFills[i].fillAmount = 1;
             }
 
+            if (unitCountFloor == unitCountCeil)
+            {
+                return;
+            }
+            
             UnitFills[unitCountFloor].transform.parent.gameObject.SetActive(true);
             UnitFills[unitCountFloor].fillAmount = fillValue * (1 - FillOffset) + FillOffset;
 

@@ -34,6 +34,7 @@ namespace Flawless.Levels.Gates
         private void OnTriggerEnter(Collider other)
         {
             if (!other.gameObject.CompareTag("Player")) return;
+            if (other.isTrigger) return;
             
             PlanetController planetController = other.gameObject.GetComponentInParent<PlanetController>();
             if (planetController == null) return;

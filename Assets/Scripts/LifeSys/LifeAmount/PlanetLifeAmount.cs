@@ -17,6 +17,8 @@ namespace Flawless.LifeSys
             
         [SerializeField]
         private float _lifeAmount = 1000f;
+        
+        public event Action<float> OnLifeAmountChanged; 
 
         public float LifeAmount
         {
@@ -31,6 +33,8 @@ namespace Flawless.LifeSys
                 {
                     _lifeAmount = value;
                 }
+                
+                OnLifeAmountChanged?.Invoke(LifeAmount);
             }
         }
 
