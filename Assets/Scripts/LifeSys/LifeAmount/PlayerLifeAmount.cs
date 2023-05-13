@@ -3,6 +3,7 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.VFX;
 
 namespace Flawless.LifeSys
 {
@@ -78,6 +79,7 @@ namespace Flawless.LifeSys
         private InputAction _absorbButton;
 
         private PlanetLifeAmount _otherPlanetLifeAmount;
+        public VisualEffect AbsorbEffect;
         private bool _isAbsorbing;
         private bool _isAbsorbBegun;
 
@@ -105,7 +107,8 @@ namespace Flawless.LifeSys
         {
             _playerInput = GetComponentInParent<PlayerInput>();
             _impulseSource = GetComponent<CinemachineImpulseSource>();
-
+            
+            AbsorbEffect.Stop();
             // Input Actions and bind callbacks
             _absorbButton = _playerInput.actions["Absorb"];
             _absorbButton.started += OnAbsorbStart;
@@ -148,7 +151,7 @@ namespace Flawless.LifeSys
                 return;
             }
 
-            Debug.Log("Ready to absorb " + _otherPlanetLifeAmount.transform.parent.name);
+            AbsorbEffect.transform.position = other.transform.position;
         }
 
         private void OnTriggerExit(Collider other)
@@ -194,6 +197,7 @@ namespace Flawless.LifeSys
             if (!_otherPlanetLifeAmount) return;
 
             _otherPlanetLifeAmount.LifeAmount = 0;
+            AbsorbEffect.Stop();
 
             // Planet die effects
             _otherPlanetLifeAmount.SetPlanetDead();
@@ -216,10 +220,15 @@ namespace Flawless.LifeSys
                 return false;
             }
 
-            _isAbsorbBegun = true;
+            if (!_isAbsorbBegun)
+            {
+                _isAbsorbBegun = true;
+                AbsorbEffect.Play();
+            }
             
             var absorbAmount = deltaTime * AbsorbSpeed;
             _otherPlanetLifeAmount.LifeAmount -= AbsorbSpeed * deltaTime;
+            AbsorbEffect.transform.position = _otherPlanetLifeAmount.transform.position;
 
             this.LifeAmount += absorbAmount;
 
