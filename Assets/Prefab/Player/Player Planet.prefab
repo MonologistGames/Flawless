@@ -163,7 +163,7 @@ Transform:
   - {fileID: 4899798224012828135}
   - {fileID: 6469189206576755572}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &6216282043997754123
 Rigidbody:
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 6e6bd4d779c22fc478cc19a51f67b605,
     type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -238,7 +238,31 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dfda6634-21f1-42c2-be97-5fef1bfa290e
+    m_ActionName: PlanetMove/MoveDirection[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e1c53ce2-7e02-41e3-8caa-b26feece0a98
+    m_ActionName: PlanetMove/SpeedUp[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a65f5001-69fb-469a-b205-83060748d33b
+    m_ActionName: PlanetMove/Dash[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f64b9bec-f76d-4734-8cd5-968ee06477b1
+    m_ActionName: PlanetMove/Absorb[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b625acea-f372-479d-b588-f575858d601b
+    m_ActionName: PlanetMove/LifeSys[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 934c3aac-2357-4901-93e7-31c3ec61d03b
+    m_ActionName: PlanetMove/Scan[/Keyboard/tab]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: PlanetMove
@@ -785,7 +809,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4565194286987757384}
-  m_Mesh: {fileID: -4747934584666923024, guid: 14eda66d39e072c458d55cf1d6696a53, type: 3}
+  m_Mesh: {fileID: -4747934584666923024, guid: 48f50ea29213b1d479dd73659e59a2bf, type: 3}
 --- !u!23 &6216273150197024324
 MeshRenderer:
   m_ObjectHideFlags: 0
