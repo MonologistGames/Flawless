@@ -8,7 +8,7 @@ namespace Flawless
 {
     public class GetLightDirection : MonoBehaviour
     {
-        private Transform lightPos;
+        public Transform lightPos;
 
         private Material material;
 
@@ -16,7 +16,7 @@ namespace Flawless
 
         private void Start()
         {
-            lightPos= GameObject.Find("Sun").transform;
+            
             material= GetComponent<Renderer>().material;
             id = Shader.PropertyToID("_LightDir");
         }
