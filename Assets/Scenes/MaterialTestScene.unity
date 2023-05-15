@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2141307250}
-  m_IndirectSpecularColor: {r: 0.0007591691, g: 0.006302209, b: 0.015082158, a: 1}
+  m_IndirectSpecularColor: {r: 0.004431684, g: 0.032321475, b: 0.05264368, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -397,8 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 937835537e214799b27e5e60e670678b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantAmount: 2000
-  _animalAmount: 500
+  _lifeAmount: 1000
   IsAbsorbed: 0
 --- !u!114 &49515720
 MonoBehaviour:
@@ -2062,8 +2061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 937835537e214799b27e5e60e670678b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantAmount: 2000
-  _animalAmount: 500
+  _lifeAmount: 1000
   IsAbsorbed: 0
 --- !u!1 &429207209
 GameObject:
@@ -3598,8 +3596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 937835537e214799b27e5e60e670678b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantAmount: 2000
-  _animalAmount: 500
+  _lifeAmount: 1000
   IsAbsorbed: 0
 --- !u!114 &956153014
 MonoBehaviour:
@@ -5696,9 +5693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowUpSpeed: 2
-  PlantImage: {fileID: 1473827663}
-  AnimalImage: {fileID: 2097416904}
-  Offset: 0.005
+  LifeFill: {fileID: 0}
 --- !u!1 &1622766697
 GameObject:
   m_ObjectHideFlags: 0
@@ -6041,8 +6036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 937835537e214799b27e5e60e670678b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantAmount: 2000
-  _animalAmount: 500
+  _lifeAmount: 1000
   IsAbsorbed: 0
 --- !u!114 &1640781074
 MonoBehaviour:
@@ -6326,7 +6320,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648687992}
   m_CullTransparentMesh: 1
---- !u!1001 &1656851319
+--- !u!1001 &1662538425
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -6334,117 +6328,122 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: a7784e78e41a9a0429c0fc7cab3d367c,
+    - target: {fileID: -8679921383154817045, guid: 0b3807f04ecb79946a594d34ab294597,
         type: 3}
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a7784e78e41a9a0429c0fc7cab3d367c,
+    - target: {fileID: -8679921383154817045, guid: 0b3807f04ecb79946a594d34ab294597,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a7784e78e41a9a0429c0fc7cab3d367c,
+    - target: {fileID: -8679921383154817045, guid: 0b3807f04ecb79946a594d34ab294597,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a7784e78e41a9a0429c0fc7cab3d367c,
+    - target: {fileID: -8679921383154817045, guid: 0b3807f04ecb79946a594d34ab294597,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a7784e78e41a9a0429c0fc7cab3d367c,
+    - target: {fileID: -8679921383154817045, guid: 0b3807f04ecb79946a594d34ab294597,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a7784e78e41a9a0429c0fc7cab3d367c,
+    - target: {fileID: -8679921383154817045, guid: 0b3807f04ecb79946a594d34ab294597,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a7784e78e41a9a0429c0fc7cab3d367c,
+    - target: {fileID: -8679921383154817045, guid: 0b3807f04ecb79946a594d34ab294597,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a7784e78e41a9a0429c0fc7cab3d367c,
+    - target: {fileID: -8679921383154817045, guid: 0b3807f04ecb79946a594d34ab294597,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a7784e78e41a9a0429c0fc7cab3d367c,
+    - target: {fileID: -8679921383154817045, guid: 0b3807f04ecb79946a594d34ab294597,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a7784e78e41a9a0429c0fc7cab3d367c,
+    - target: {fileID: -8679921383154817045, guid: 0b3807f04ecb79946a594d34ab294597,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a7784e78e41a9a0429c0fc7cab3d367c,
+    - target: {fileID: -8679921383154817045, guid: 0b3807f04ecb79946a594d34ab294597,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -710760675331121164, guid: a7784e78e41a9a0429c0fc7cab3d367c,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -710760675331121164, guid: a7784e78e41a9a0429c0fc7cab3d367c,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.346
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: a7784e78e41a9a0429c0fc7cab3d367c,
-        type: 3}
-      propertyPath: m_Name
-      value: Gate_Du
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: a7784e78e41a9a0429c0fc7cab3d367c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4244914468155332221, guid: a7784e78e41a9a0429c0fc7cab3d367c,
-        type: 3}
-      propertyPath: m_Name
-      value: Ring1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4625062493837557154, guid: a7784e78e41a9a0429c0fc7cab3d367c,
+    - target: {fileID: -892087695160434964, guid: 0b3807f04ecb79946a594d34ab294597,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2c9a55853c498f54da38d206c7da99c9, type: 2}
-    - target: {fileID: 4625062493837557154, guid: a7784e78e41a9a0429c0fc7cab3d367c,
+    - target: {fileID: -892087695160434964, guid: 0b3807f04ecb79946a594d34ab294597,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 82fdb59d28a14034d9d5a249bb0d5144, type: 2}
-    - target: {fileID: 4625062493837557154, guid: a7784e78e41a9a0429c0fc7cab3d367c,
+    - target: {fileID: -892087695160434964, guid: 0b3807f04ecb79946a594d34ab294597,
         type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: 82fdb59d28a14034d9d5a249bb0d5144, type: 2}
-    - target: {fileID: 5036666246336646893, guid: a7784e78e41a9a0429c0fc7cab3d367c,
+    - target: {fileID: 919132149155446097, guid: 0b3807f04ecb79946a594d34ab294597,
         type: 3}
       propertyPath: m_Name
-      value: Ring2
+      value: Black_1
       objectReference: {fileID: 0}
-    - target: {fileID: 6514335277548776967, guid: a7784e78e41a9a0429c0fc7cab3d367c,
+    - target: {fileID: 3242414360650023675, guid: 0b3807f04ecb79946a594d34ab294597,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242414360650023675, guid: 0b3807f04ecb79946a594d34ab294597,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242414360650023675, guid: 0b3807f04ecb79946a594d34ab294597,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242414360650023675, guid: 0b3807f04ecb79946a594d34ab294597,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242414360650023675, guid: 0b3807f04ecb79946a594d34ab294597,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242414360650023675, guid: 0b3807f04ecb79946a594d34ab294597,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7417475085731284002, guid: 0b3807f04ecb79946a594d34ab294597,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2c9a55853c498f54da38d206c7da99c9, type: 2}
-    - target: {fileID: 6514335277548776967, guid: a7784e78e41a9a0429c0fc7cab3d367c,
+    - target: {fileID: 7417475085731284002, guid: 0b3807f04ecb79946a594d34ab294597,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 82fdb59d28a14034d9d5a249bb0d5144, type: 2}
-    - target: {fileID: 6514335277548776967, guid: a7784e78e41a9a0429c0fc7cab3d367c,
+    - target: {fileID: 7417475085731284002, guid: 0b3807f04ecb79946a594d34ab294597,
         type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
@@ -6453,7 +6452,7 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a7784e78e41a9a0429c0fc7cab3d367c, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 0b3807f04ecb79946a594d34ab294597, type: 3}
 --- !u!1 &1664659950
 GameObject:
   m_ObjectHideFlags: 0
@@ -7162,12 +7161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb11485dd185af49a77d37747a28bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlantSlider: {fileID: 2066664105}
-  AnimalSlider: {fileID: 760125355}
-  DisabledColor: {r: 1, g: 1, b: 1, a: 0.1254902}
-  FadeThreshold: 0.03
-  PlantSliderOffset: 0.046
-  AnimalSliderOffset: 0.092
+  FillOffset: 0.2
+  UnitFills: []
 --- !u!1 &1951322913
 GameObject:
   m_ObjectHideFlags: 0
