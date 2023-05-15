@@ -3,8 +3,6 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using UnityEngine.VFX;
-using UnityEngine.VFX.Utility;
 
 namespace Flawless.LifeSys
 {

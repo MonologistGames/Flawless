@@ -18,7 +18,7 @@ namespace Flawless.LifeSys
         private void UpdateLifeAmountEffect(float lifeAmount, float lifeUnit, int lifeUnitsCount)
         {
             MeshRenderer.material.SetFloat(SwitchValue, lifeAmount / (lifeUnit * lifeUnitsCount));
-            VisualEffect.SetFloat("LifeAmount", lifeAmount / lifeUnit * 2);
+            VisualEffect.SetFloat("LifeAmount", lifeAmount / lifeUnit * 4);
         }
     }
 }

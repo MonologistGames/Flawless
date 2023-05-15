@@ -43,8 +43,8 @@ Material:
     - _QueueOffset: 0
     - _SizeEffect: -6.08
     m_Colors:
-    - _Color: {r: 0.5566038, g: 0.48242554, b: 0.28617838, a: 1}
-    - _Color2: {r: 0.28773582, g: 0.7654219, b: 1, a: 1}
+    - _Color: {r: 0.28627452, g: 0.52920127, b: 0.5568628, a: 1}
+    - _Color2: {r: 1, g: 0.28627455, b: 0.9579586, a: 1}
     - _LightDir: {r: -1.27, g: 0.5, b: 0, a: 0}
     - _LightDirection: {r: 0.5, g: 0.5, b: 0, a: 0}
   m_BuildTextureStacks: []

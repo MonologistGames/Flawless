@@ -50,19 +50,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Moss_BaseColor:
-        m_Texture: {fileID: 2800000, guid: 2bdcff5662bd906458a54a025d43d842, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3d922e3d33389974fa4e5fb83479a991, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Moss_Light_BaseColor:
-        m_Texture: {fileID: 2800000, guid: 2bdcff5662bd906458a54a025d43d842, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3d922e3d33389974fa4e5fb83479a991, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Moss_Light_Normal:
-        m_Texture: {fileID: 2800000, guid: 2a5b9bfc394bd814495ea32e357c4e75, type: 3}
+        m_Texture: {fileID: 2800000, guid: 52c38841d546d6546921d28e635822f1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Moss_Normal:
-        m_Texture: {fileID: 2800000, guid: 2a5b9bfc394bd814495ea32e357c4e75, type: 3}
+        m_Texture: {fileID: 2800000, guid: 52c38841d546d6546921d28e635822f1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Mud_BaseColor:
@@ -70,7 +70,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Mud_Normal:
-        m_Texture: {fileID: 2800000, guid: 2a5b9bfc394bd814495ea32e357c4e75, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8e548ad1e99ca5245bcd655293140d48, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_4dd5eb89a78846179e7fa61b13bfee03_Texture_1:
@@ -155,15 +155,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Marble_Matellatic: 0.7
+    - _Marble_Matellatic: 1
     - _MettelicValue: 0
     - _Moss_BaseColor_Saturation: 0
-    - _Mud_Saturatiuon: 0.33
+    - _Mud_Saturatiuon: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RimValue1: 0
-    - _RimValue2: 0
-    - _SwitchValue: 0.31
+    - _RimValue2: 0.05
+    - _SwitchValue: 0
     m_Colors:
     - _Marble_BaseColor: {r: 0, g: 0, b: 0, a: 0}
     - _Marble_Normal: {r: 0, g: 0, b: 0, a: 0}

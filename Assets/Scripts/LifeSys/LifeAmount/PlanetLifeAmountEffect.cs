@@ -16,6 +16,9 @@ namespace Flawless
         public PlanetLifeAmount PlanetLifeAmount;
 
         private float _initLifeAmount;
+
+        private static readonly int Saturation = Shader.PropertyToID("_Saturation");
+
         // Start is called before the first frame update
         void Start()
         {
@@ -34,7 +37,7 @@ namespace Flawless
 
         private void UpdateMaterial(float lifeAmount)
         {
-            MeshRenderer.material.color = Color.Lerp(Color.black, Color.white, lifeAmount / _initLifeAmount);
+            MeshRenderer.material.SetFloat(Saturation, lifeAmount / _initLifeAmount);
         }
     }
 }
