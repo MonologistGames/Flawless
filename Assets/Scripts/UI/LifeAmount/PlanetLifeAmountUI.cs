@@ -11,7 +11,7 @@ namespace Flawless.UI.LifeAmount
     {
         private CanvasGroup LifeAmountCanvas { get; set; }
         private bool IsCanvasOn { get; set; }
-        private PlanetLifeAmount LifeAmount { get; set; }
+        public PlanetLifeAmount LifeAmount;
         public float ShowUpSpeed = 2f;
         public Image LifeFill;
 
@@ -21,7 +21,6 @@ namespace Flawless.UI.LifeAmount
         private void Start()
         {
             LifeAmountCanvas = GetComponent<CanvasGroup>();
-            LifeAmount = GetComponentInParent<PlanetLifeAmount>();
         }
 
         // Update is called once per frame
@@ -37,7 +36,6 @@ namespace Flawless.UI.LifeAmount
             }
             
             LifeFill.fillAmount = LifeAmount.LifeAmount / PlanetLifeAmount.MaxLifeAmount;
-            
         }
         
         #endregion
