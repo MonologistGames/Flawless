@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2141307250}
-  m_IndirectSpecularColor: {r: 0.01882701, g: 0.033020873, b: 0.03614229, a: 1}
+  m_IndirectSpecularColor: {r: 0.01883833, g: 0.033279993, b: 0.036297195, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -578,7 +578,7 @@ Transform:
   - {fileID: 1216248665}
   - {fileID: 2140828197}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &72987072
 GameObject:
@@ -1150,7 +1150,7 @@ Transform:
   - {fileID: 1218690404}
   - {fileID: 137178468}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &180709908
 GameObject:
@@ -5421,7 +5421,7 @@ Transform:
   - {fileID: 1173006972}
   - {fileID: 781310130}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1548037143
 GameObject:
@@ -6924,7 +6924,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 725b7b9e9090d7e42972a1e701e4a4a5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 725b7b9e9090d7e42972a1e701e4a4a5,
         type: 3}
@@ -8314,7 +8314,7 @@ PrefabInstance:
     - target: {fileID: 6420291829414371234, guid: fb4fbdefaf9d69342b00f03d1d2683d6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8425,6 +8425,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Satellite
+      objectReference: {fileID: 0}
+    - target: {fileID: 85343552638696896, guid: 76586dc185ea1f549b2182d25885b3cb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 748973228253669242, guid: 76586dc185ea1f549b2182d25885b3cb,
         type: 3}

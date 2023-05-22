@@ -66,7 +66,7 @@ PrefabInstance:
     - target: {fileID: 5653545368345025744, guid: a96763f8f0b33e444a4a77905234cbe1,
         type: 3}
       propertyPath: m_Name
-      value: PlanetAir Variant
+      value: PlanetAir_State2
       objectReference: {fileID: 0}
     - target: {fileID: 6157988590965832965, guid: a96763f8f0b33e444a4a77905234cbe1,
         type: 3}
