@@ -53,9 +53,9 @@ Material:
     m_Floats:
     - _ClampMax: 1
     - _ClampMin: 0
-    - _Edge: 17.07
+    - _Edge: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _EmitColor: {r: 0.36898056, g: 2.6369402, b: 3.380044, a: 0}
+    - _EmitColor: {r: 1.186005, g: 3.2859316, b: 3.9533498, a: 1}
   m_BuildTextureStacks: []

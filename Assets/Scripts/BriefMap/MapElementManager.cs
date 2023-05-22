@@ -77,9 +77,8 @@ namespace Flawless
                 var planetPosition = PlanetOrbits[i].Planet.position;
                 var planetIcon = _planetIcons[i];
                 distVector = (planetPosition - PlayerPosition.position) / UnitRatio;
-                Debug.Log(distVector);
                 planetIcon.rectTransform.anchoredPosition = PlayerIcon.rectTransform.anchoredPosition +
-                                                    new Vector2(distVector.x, distVector.z);
+                                                            new Vector2(distVector.x, distVector.z);
             }
 
             // Update Sun Position

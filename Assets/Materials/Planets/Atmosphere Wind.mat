@@ -7,14 +7,14 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Emission
-  m_Shader: {fileID: -6465566751694194690, guid: 44ca90dbc6db3914fbac14833d0de96f,
+  m_Name: Atmosphere Wind
+  m_Shader: {fileID: -6465566751694194690, guid: f9069166c5e9cb8468babd11fd49e33d,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 2
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -38,12 +38,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Alpha: 0.41
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _SizeEffect: -6.08
     m_Colors:
-    - _Emission: {r: 0.62611943, g: 1.3091589, b: 1.1725509, a: 1}
+    - _Color: {r: 0.5394268, g: 0.8207547, b: 0.5638901, a: 1}
+    - _Color2: {r: 0.13836467, g: 0.37816215, b: 1, a: 1}
+    - _LightDir: {r: -1.27, g: 0.5, b: 0, a: 0}
+    - _LightDirection: {r: 0.5, g: 0.5, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &2167392387683465645
+--- !u!114 &2689617100535334388
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
