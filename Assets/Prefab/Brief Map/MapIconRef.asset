@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c76c94de9be485439c30453614b3350, type: 3}
   m_Name: MapIconRef
   m_EditorClassIdentifier: 
-  SunIcon: {fileID: 21300000, guid: 602e123fa08745648809ea2b02d6590f, type: 3}
-  PlanetIcon: {fileID: 21300000, guid: f7a8d28ac3aebf14d93c97b3bd739f93, type: 3}
-  PlayerIcon: {fileID: 21300000, guid: 75aea8cc979e3da46b30df73e14b9dfb, type: 3}
-  JumpGateIcon: {fileID: 21300000, guid: 24304910fac00384182326934f2251aa, type: 3}
+  SunIcon: {fileID: 1551969757276118868, guid: 00ab57eb920db1944b1e28dc1cafb850, type: 3}
+  PlanetIcon: {fileID: 5870089616781903865, guid: 716794873da75e642a68eeb78e3d58ea,
+    type: 3}
+  BlackIcon: {fileID: 426268141295662198, guid: 2d42deec081d5444fa46a28d33c248cf,
+    type: 3}
+  PlayerIcon: {fileID: 4117424263978943647, guid: d8b31a8f24f836244bd03c49827403b4,
+    type: 3}
+  JumpGateIcon: {fileID: 258628484413743496, guid: acc82be41fd8393478639a7e3d4eb9f1,
+    type: 3}
   ViewGateIcon: {fileID: 21300000, guid: ac8da02444287b7489433a8af13338d1, type: 3}
