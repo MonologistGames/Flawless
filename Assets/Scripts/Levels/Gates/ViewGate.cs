@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,16 +7,15 @@ namespace Flawless
 {
     public class ViewGate : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        public Animator Animator;
+        private static readonly int Triggered = Animator.StringToHash("Triggered");
 
-        // Update is called once per frame
-        void Update()
+        private void OnTriggerEnter(Collider other)
         {
-        
+            if (!other.CompareTag("Player")) return;
+            {
+                Animator.SetBool(Triggered, true);
+            }
         }
     }
 }

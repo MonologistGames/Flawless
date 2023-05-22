@@ -58,13 +58,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Alpha: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
     - _BaseColor: {r: 0.9056604, g: 0.20993744, b: 0.20993744, a: 0}
-    - _Emission1: {r: 1, g: 0, b: 0, a: 0}
-    - _Emission2: {r: 0.033692718, g: 0.80157787, b: 1, a: 0}
-    - _Emission3: {r: 0.79328567, g: 0.005390823, b: 1, a: 0}
+    - _Emission1: {r: 1.5644947, g: 3.8867924, b: 2.1231124, a: 1}
+    - _Emission2: {r: 0.033692718, g: 0.80157787, b: 1, a: 1}
+    - _Emission3: {r: 0.2913137, g: 0.1022012, b: 0.6132076, a: 1}
     - _EmissionColor: {r: 0.28184915, g: 0.59555215, b: 0.6415094, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &7807220963436415117

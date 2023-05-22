@@ -8,23 +8,23 @@ namespace Flawless
 {
     public class GetLightDirection : MonoBehaviour
     {
-        public Transform lightPos;
+        public Transform LightPos;
 
-        private Material material;
+        private Material _material;
 
         private int id;
 
         private void Start()
         {
             
-            material= GetComponent<Renderer>().material;
+            _material= GetComponent<Renderer>().material;
             id = Shader.PropertyToID("_LightDir");
         }
 
         // Update is called once per frame
         void Update()
         {
-            material.SetVector(id, Vector4.Normalize(lightPos.position-this.transform.position));
+            _material.SetVector(id, Vector4.Normalize(LightPos.position-this.transform.position));
         }
     }
 }
