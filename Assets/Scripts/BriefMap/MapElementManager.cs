@@ -1,10 +1,8 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Flawless.BriefMap;
-using Flawless.Planet;
+using TMPro;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 namespace Flawless
@@ -17,54 +15,72 @@ namespace Flawless
 
         public Transform PlayerPosition;
         public Transform BlackPosition;
-        public List<Transform> JumpGatePositions;
-        public List<PlanetOrbit> PlanetOrbits;
-        public List<Transform> SunPositions;
 
-        private List<Image> _jumpGateIcons;
-        private List<Image> _planetIcons;
-        private List<Image> _sunIcons;
+        private List<Transform> _jumpGatePositions = new List<Transform>();
+        private List<Transform> _planetOrbits = new List<Transform>();
+        private List<Transform> _sunPositions = new List<Transform>();
+
+        private List<Image> _jumpGateIcons = new List<Image>();
+        private List<Image> _planetIcons = new List<Image>();
+        private List<Image> _sunIcons = new List<Image>();
 
         public Image PlayerIcon;
         public Image BlackIcon;
+        public TextMeshProUGUI AreaNameText;
 
         private void Start()
         {
-            // Initialize Jump Gates
-            _jumpGateIcons = new List<Image>();
-            foreach (var jumpGatePosition in JumpGatePositions)
+            Debug.Log(FindObjectsOfType<MapIconMarker>().Length);
+            foreach (var iconElement in GameObject.FindObjectsOfType<MapIconMarker>())
             {
-                var jumpGateIcon = Instantiate(MapIconReference.JumpGateIcon, transform);
+                switch (iconElement.MapTag)
+                {
+                    case "JumpGate":
+                        _jumpGatePositions.Add(iconElement.transform);
+                        break;
+                    case "Planet":
+                        _planetOrbits.Add(iconElement.transform);
+                        break;
+                    case "Sun":
+                        _sunPositions.Add(iconElement.transform);
+                        break;
+                }
+            }
+            
+            // Initialize Jump Gates
+            foreach (var jumpGateIcon in _jumpGatePositions.Select(jumpGatePosition => Instantiate(MapIconReference.JumpGateIcon, transform)))
+            {
                 _jumpGateIcons.Add(jumpGateIcon.GetComponent<Image>());
             }
             
-            _planetIcons = new List<Image>();
+
             // Initialize Planets
-            foreach (var planetOrbit in PlanetOrbits)
+            foreach (var planetIcon in _planetOrbits.Select(planetOrbit => Instantiate(MapIconReference.PlanetIcon, transform)))
             {
-                var planetIcon = Instantiate(MapIconReference.PlanetIcon, transform);
                 _planetIcons.Add(planetIcon.GetComponent<Image>());
             }
 
-            _sunIcons = new List<Image>();
+
             // Initialize Suns
-            foreach (var sunPosition in SunPositions)
+            foreach (var sunIcon in _sunPositions.Select(sunPosition => Instantiate(MapIconReference.SunIcon, transform)))
             {
-                var sunIcon = Instantiate(MapIconReference.SunIcon, transform);
                 _sunIcons.Add(sunIcon.GetComponent<Image>());
             }
         }
 
+        
         private void Update()
         {
+            AreaNameText.text = AreaName;
+            
             // Update Black Position
             var distVector = (BlackPosition.position - PlayerPosition.position) / UnitRatio;
             BlackIcon.rectTransform.anchoredPosition = PlayerIcon.rectTransform.anchoredPosition +
                                                new Vector2(distVector.x, distVector.z);
             // Update Jump Gates Position
-            for (int i = 0; i < JumpGatePositions.Count; i++)
+            for (int i = 0; i < _jumpGatePositions.Count; i++)
             {
-                var jumpGatePosition = JumpGatePositions[i].transform.position;
+                var jumpGatePosition = _jumpGatePositions[i].transform.position;
                 var jumpGateIcon = _jumpGateIcons[i];
                 distVector = (jumpGatePosition - PlayerPosition.position) / UnitRatio;
                 jumpGateIcon.rectTransform.anchoredPosition = PlayerIcon.rectTransform.anchoredPosition +
@@ -72,9 +88,9 @@ namespace Flawless
             }
 
             // Update Planet Position
-            for (int i = 0; i < PlanetOrbits.Count; i++)
+            for (int i = 0; i < _planetOrbits.Count; i++)
             {
-                var planetPosition = PlanetOrbits[i].Planet.position;
+                var planetPosition = _planetOrbits[i].position;
                 var planetIcon = _planetIcons[i];
                 distVector = (planetPosition - PlayerPosition.position) / UnitRatio;
                 planetIcon.rectTransform.anchoredPosition = PlayerIcon.rectTransform.anchoredPosition +
@@ -82,9 +98,9 @@ namespace Flawless
             }
 
             // Update Sun Position
-            for (int i = 0; i < SunPositions.Count; i++)
+            for (int i = 0; i < _sunPositions.Count; i++)
             {
-                var sunPosition = SunPositions[i].transform.position;
+                var sunPosition = _sunPositions[i].transform.position;
                 var sunIcon = _sunIcons[i];
                 distVector = (sunPosition - PlayerPosition.position) / UnitRatio;
                 sunIcon.rectTransform.anchoredPosition = PlayerIcon.rectTransform.anchoredPosition +
