@@ -1,6 +1,7 @@
 using Flawless.LifeSys;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace Flawless.PlayerCharacter
 {
@@ -8,6 +9,7 @@ namespace Flawless.PlayerCharacter
     [RequireComponent(typeof(PlayerInput))]
     public class PlanetController : MonoBehaviour
     {
+        #region Internal Components
         /// <summary>
         /// Rigidbody of the character planet.
         /// </summary>
@@ -22,6 +24,8 @@ namespace Flawless.PlayerCharacter
 
         private PlayerStateMachine StateMachine { get; set; }
         private PlayerLifeAmount LifeAmount { get; set; }
+        
+        #endregion
 
         #region Input Actions
 
@@ -42,17 +46,28 @@ namespace Flawless.PlayerCharacter
         /// Acceleration of the player planet.
         /// </summary>
         [Header("Movement")] public float Acceleration = 2f;
-
+        
+        /// <summary>
+        /// Bonus acceleration for obtaining much life amount.
+        /// </summary>
+        public float BonusAcceleration = 0.6f;
+        
         /// <summary>
         /// Max Motivation of the character.
         /// </summary>
         public float MaxSpeed = 3f;
-
-        [Header("Leap")] public float LeapAcceleration = 10f;
-
-        public float MaxDashSpeed = 5f;
+        
+        /// <summary>
+        /// Bonus max speed for obtaining much life amount.
+        /// </summary>
+        public float BonusMaxSpeed = 1f;
+        
+        [Header("Hyper Speed Mode")]
+        [FormerlySerializedAs("MaxDashSpeed")] public float MaxHyperSpeed = 5f;
 
         #region Leap
+        
+        [Header("Leap")] public float LeapAcceleration = 10f;
 
         public float LeapDuration = 5f;
         public float LeapTimer { get; set; }
@@ -183,11 +198,6 @@ namespace Flawless.PlayerCharacter
         #endregion
 
         #region APIs
-
-        public void SetOverDrive(float overDriveTime)
-        {
-            OverDriveTimer = overDriveTime;
-        }
         public void Jump()
         {
             StateMachine.TransitTo("Controlled");

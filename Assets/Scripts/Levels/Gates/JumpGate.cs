@@ -39,7 +39,7 @@ namespace Flawless.Levels.Gates
             if (!other.gameObject.CompareTag("Player")) return;
             if (other.isTrigger) return;
 
-            PlanetController planetController = other.gameObject.GetComponentInParent<PlanetController>();
+            var planetController = other.gameObject.GetComponentInParent<PlanetController>();
             if (planetController == null) return;
             if (planetController.IsOverDriving)
             {
@@ -53,7 +53,7 @@ namespace Flawless.Levels.Gates
             Player.Rigidbody.velocity =
                 (transform.position - Player.transform.position).normalized * Player.Velocity.magnitude;
             Player.Jump();
-            Player.SetOverDrive(OverDriveTime);
+            Player.OverDriveTimer = OverDriveTime;
 
             JumpTimer = JumpLapse;
             Time.timeScale *= JumpTimeFactor;

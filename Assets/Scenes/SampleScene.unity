@@ -2160,7 +2160,7 @@ MonoBehaviour:
     jitterScale: 1
     mipBias: 0
     varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    contrastAdaptiveSharpening: 0.168
 --- !u!114 &330585548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2382,6 +2382,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  IsLookingAt: 1
+  IsMovingTo: 1
 --- !u!1 &390461271
 GameObject:
   m_ObjectHideFlags: 0
@@ -4640,7 +4642,6 @@ GameObject:
   - component: {fileID: 930499409}
   - component: {fileID: 930499408}
   - component: {fileID: 930499407}
-  - component: {fileID: 930499410}
   m_Layer: 5
   m_Name: Value
   m_TagString: Untagged
@@ -4780,23 +4781,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 930499405}
   m_CullTransparentMesh: 1
---- !u!114 &930499410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930499405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3da55cde39ec02b4dab278afe02100ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 4571879258017814442}
-  Sun: {fileID: 1263324459}
-  StandardTemperature: 35
-  DistanceFactor: 6
-  DistanceThreshold: 50
 --- !u!1 &956153011
 GameObject:
   m_ObjectHideFlags: 0
@@ -7142,7 +7126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391045562}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.900997, y: -0.000000059604645, z: -7.1069984}
+  m_LocalPosition: {x: -6.900997, y: 0, z: -7.1069984}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12250,7 +12234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950465575}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.22, y: 0.82, z: -8.03}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13372,8 +13356,8 @@ MonoBehaviour:
   TargetCamera: {fileID: 330585545}
   Acceleration: 0.8
   MaxSpeed: 3
+  MaxHyperSpeed: 7
   LeapAcceleration: 12
-  MaxDashSpeed: 7
   LeapDuration: 5
   OverDriveDuration: 0.5
   CollideForce: 10
@@ -14557,7 +14541,7 @@ SpriteMask:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_MaskAlphaCutoff: 0.322
+  m_MaskAlphaCutoff: 0.122
   m_FrontSortingLayerID: 0
   m_BackSortingLayerID: 0
   m_FrontSortingLayer: 0
@@ -14895,9 +14879,12 @@ PrefabInstance:
       propertyPath: m_BounceIntensity
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5371777659516065781, guid: 0d7dfa647ff692c409da80df88c09d14, type: 3}
-    - {fileID: 6933824282725501939, guid: 0d7dfa647ff692c409da80df88c09d14, type: 3}
+    - target: {fileID: 7864650727017194097, guid: 0d7dfa647ff692c409da80df88c09d14,
+        type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
