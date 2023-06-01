@@ -137,8 +137,6 @@ namespace Flawless.PlayerCharacter
         private void Update()
         {
             StateMachine.Update();
-            
-            Debug.Log(Time.timeScale);
 
             // Update leap timer
             if (LeapTimer >= 0)
