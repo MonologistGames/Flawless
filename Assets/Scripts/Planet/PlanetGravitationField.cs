@@ -1,4 +1,3 @@
-using System.Linq;
 using Flawless.PlayerCharacter;
 using UnityEngine;
 
@@ -8,33 +7,14 @@ namespace Flawless.Planet
     [RequireComponent(typeof(Rigidbody))]
     public class PlanetGravitationField : MonoBehaviour
     {
-        public static readonly float FieldRatio = 8f;
-
-        private const float GravitationFactor = 3f;
+        private const float GravitationFactor = 5f;
+        private const float GravitationPower = 1.5f;
 
         private float _mass;
 
         private Vector3 _prevGrav;
 
         private PlanetController _planet;
-
-
-        #region Editor
-
-#if UNITY_EDITOR
-        private void OnValidate()
-        {
-            _mass = GetComponent<Rigidbody>().mass;
-            SphereCollider planetCollider = GetComponents<SphereCollider>()
-                .First(sphereCollider => !sphereCollider.isTrigger);
-            SphereCollider gravitationFieldTrigger = GetComponents<SphereCollider>()
-                .First(sphereCollider => sphereCollider.isTrigger);
-
-            gravitationFieldTrigger.radius = planetCollider.radius * FieldRatio;
-        }
-#endif
-
-        #endregion
 
         #region MonoBehaviours
 
@@ -62,7 +42,7 @@ namespace Flawless.Planet
             // TODO: Adjust Gravitation Calculation to have a more interesting movement controller
             Vector3 gravitation = (gravitationVector.normalized) *
                                   (GravitationFactor * _mass /
-                                   Mathf.Pow(gravitationVector.magnitude, 1.5f)); //Calculate Gravitation
+                                   Mathf.Pow(gravitationVector.magnitude, GravitationPower)); //Calculate Gravitation
 
             _planet.Gravitation += gravitation - _prevGrav; //Set Gravitation
             _prevGrav = gravitation;
@@ -78,9 +58,8 @@ namespace Flawless.Planet
 
             _planet.Gravitation -= _prevGrav;
             _prevGrav = Vector3.zero;
-        }        
+        }
 
         #endregion
-
     }
 }

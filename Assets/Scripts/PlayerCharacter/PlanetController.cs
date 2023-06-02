@@ -137,12 +137,14 @@ namespace Flawless.PlayerCharacter
             // Start state machine
             StateMachine.TransitTo("Move");
             
+            
             // Initialize Timers
             LeapTimer = TimerManager.Instance.AddTimer( LeapDuration,"LeapTimer");
+            LeapTimer.SetTime(0);
             IsLeapReady = true;
+            
             LeapTimer.OnTimerEnd += () => IsLeapReady = true;
             OverDriveTimer = TimerManager.Instance.AddTimer("OverDriveTimer");
-            //OverDriveTimer.IsPaused = true;
             OverDriveTimer.OnTimerEnd += () => IsOverDriving = false;
         }
 

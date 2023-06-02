@@ -94,7 +94,6 @@ namespace Flawless.PlayerCharacter
             _planetController.IsLeapReady = false;
             
             _planetController.OverDriveTimer.AddTime(_planetController.OverDriveDuration);
-            Debug.Log(_planetController.OverDriveTimer.TimeLeft);
             _planetController.OverDriveTimer.IsPaused = false;
             _planetController.IsOverDriving = true;
             
