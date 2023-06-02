@@ -65,7 +65,6 @@ namespace Flawless.Levels.Gates
 
         private void EndJump()
         {
-            Debug.Log("end jump");
             transform.forward = Player.MoveDir;
             Animator.SetTrigger(Launch);
 
