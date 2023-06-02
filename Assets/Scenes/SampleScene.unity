@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.01883833, g: 0.033279993, b: 0.036297195, a: 1}
+  m_IndirectSpecularColor: {r: 0.018879257, g: 0.03337278, b: 0.036385275, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13355,11 +13355,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetCamera: {fileID: 330585545}
   Acceleration: 0.8
+  BonusAcceleration: 0.6
   MaxSpeed: 3
-  MaxHyperSpeed: 7
+  BonusMaxSpeed: 1
+  MaxOverDriveSpeed: 7
   LeapAcceleration: 12
   LeapDuration: 5
+  IsLeapReady: 0
   OverDriveDuration: 0.5
+  IsOverDriving: 0
   CollideForce: 10
 --- !u!1 &919132149260465900
 GameObject:
@@ -13757,7 +13761,7 @@ PrefabInstance:
     - target: {fileID: 1626661578526558640, guid: ac5a04ca33181bf43beac879f31f6164,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.58
+      value: -15.5
       objectReference: {fileID: 0}
     - target: {fileID: 1626661578526558640, guid: ac5a04ca33181bf43beac879f31f6164,
         type: 3}
@@ -13767,7 +13771,7 @@ PrefabInstance:
     - target: {fileID: 1626661578526558640, guid: ac5a04ca33181bf43beac879f31f6164,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.58
+      value: 8.13
       objectReference: {fileID: 0}
     - target: {fileID: 1626661578526558640, guid: ac5a04ca33181bf43beac879f31f6164,
         type: 3}
@@ -13803,6 +13807,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1816918809917190696, guid: ac5a04ca33181bf43beac879f31f6164,
+        type: 3}
+      propertyPath: JumpLapse
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4952887918439571516, guid: ac5a04ca33181bf43beac879f31f6164,
         type: 3}

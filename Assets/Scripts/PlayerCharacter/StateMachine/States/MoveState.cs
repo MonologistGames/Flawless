@@ -35,7 +35,7 @@ namespace Flawless.PlayerCharacter
             _planetController.Rigidbody.AddForce(accelerateVector, ForceMode.Acceleration);
 
             _planetController.Rigidbody.velocity = _planetController.Velocity.normalized * 
-                                                   Mathf.Min(_planetController.IsOverDriving ?_planetController.MaxHyperSpeed : _planetController.MaxSpeed, 
+                                                   Mathf.Min(_planetController.IsOverDriving ?_planetController.MaxOverDriveSpeed : _planetController.MaxSpeed, 
                                                        _planetController.Velocity.magnitude);
         }
 
@@ -89,8 +89,15 @@ namespace Flawless.PlayerCharacter
         {
             if (!_planetController.IsLeapReady) return;
             
-            _planetController.LeapTimer = _planetController.LeapDuration;
-            _planetController.OverDriveTimer += _planetController.OverDriveDuration;
+            _planetController.LeapTimer.ResetTime();
+            _planetController.LeapTimer.IsPaused = false;
+            _planetController.IsLeapReady = false;
+            
+            _planetController.OverDriveTimer.AddTime(_planetController.OverDriveDuration);
+            Debug.Log(_planetController.OverDriveTimer.TimeLeft);
+            _planetController.OverDriveTimer.IsPaused = false;
+            _planetController.IsOverDriving = true;
+            
             _planetController.Rigidbody.AddForce(_planetController.LeapAcceleration * _planetController.MoveDir,
                 ForceMode.Impulse);
         }

@@ -27,15 +27,18 @@ namespace Monologist.Patterns.Singleton
 
             if (_instance != null) return;
 
-            var gameObj = new GameObject();
-            gameObj.name = typeof(T).Name;
+            var gameObj = new GameObject
+            {
+                name = typeof(T).Name
+            };
 
             _instance = gameObj.AddComponent<T>();
-            _instance.SetPersisdent(gameObj);
+            _instance.SetPersistent(gameObj);
         }
 
-        protected virtual void SetPersisdent(GameObject gameObj)
+        protected virtual void SetPersistent(GameObject gameObj)
         {
+            
         }
 
         private void RemoveDuplicates()
@@ -57,9 +60,9 @@ namespace Monologist.Patterns.Singleton
         }
     }
 
-    public class SingletonPersisdent<T> : Singleton<T> where T : Singleton<T>, new()
+    public class SingletonPersistent<T> : Singleton<T> where T : Singleton<T>, new()
     {
-        protected override void SetPersisdent(GameObject gameObj)
+        protected override void SetPersistent(GameObject gameObj)
         {
             DontDestroyOnLoad(gameObj);
         }

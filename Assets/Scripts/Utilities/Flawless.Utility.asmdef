@@ -1,7 +1,9 @@
 {
     "name": "Flawless.Utilities",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:0fde01cb56a3d954c91c94d0055e69f3"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
