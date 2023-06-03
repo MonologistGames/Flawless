@@ -11,10 +11,10 @@ namespace Flawless.LifeSys
     public class PlayerLifeAmount : MonoBehaviour
     {
         #region Life Amount
-        
+
         // Life Units Settings
         public static float LifeUnit = 1000f;
-        
+
         [Header("Life Units")] public int MaxLifeUnits = 6;
 
         [FormerlySerializedAs("_lifeUnitsCountCount")] [SerializeField]
@@ -40,7 +40,7 @@ namespace Flawless.LifeSys
                 _lifeUnitsCount = value;
             }
         }
-        
+
         /// <summary>
         /// Player‘s max life amount
         /// </summary>
@@ -49,6 +49,7 @@ namespace Flawless.LifeSys
         // Life amount property
         [Header("Life Amount")] [SerializeField]
         private float _lifeAmount;
+
         public float LifeAmount
         {
             get => _lifeAmount;
@@ -72,35 +73,38 @@ namespace Flawless.LifeSys
                 OnLifeAmountChanged?.Invoke(LifeAmount, LifeUnit, LifeUnitsCount);
             }
         }
+
         public event Action<float, float, int> OnLifeAmountChanged;
-        
+
         public float BaseDecreaseSpeed = 10f;
-        
+
         #endregion
-        
-        
+
 
         #region Absorb
 
         [Header("Absorb")] public float AbsorbSpeed = 100f;
         public float AbsorbRange = 2f;
-        
+
         #endregion
 
         [Header("Collide")] public float CollideDamage = 100f;
-        
+
         #region Internal Components
+
         private PlayerInput _playerInput;
         private InputAction _absorbButton;
 
-        private List<PlanetLifeAmount> _otherPlanetLifeAmount;
+        private readonly List<PlanetLifeAmount> _otherPlanetLifeAmount = new List<PlanetLifeAmount>();
         private bool _isAbsorbing;
         private bool _isAbsorbBegun;
 
         public event Action<bool, PlanetLifeAmount> OnAbsorbStateChanged;
 
         private CinemachineImpulseSource _impulseSource;
+
         #endregion
+
         #region Editor
 
 #if UNITY_EDITOR
@@ -131,7 +135,6 @@ namespace Flawless.LifeSys
 
         private void Update()
         {
-            if (_otherPlanetLifeAmount == null) _otherPlanetLifeAmount = new List<PlanetLifeAmount>();
             // Life amount fade with time
             if (!_isAbsorbing || _otherPlanetLifeAmount.Count != 0)
             {
@@ -158,7 +161,7 @@ namespace Flawless.LifeSys
             if (!other.gameObject.CompareTag("Planet") || other.isTrigger) return;
 
             var planetLifeAmount = other.GetComponent<PlanetLifeAmount>();
-            if (!planetLifeAmount.IsAbsorbed)
+            if (planetLifeAmount != null && !planetLifeAmount.IsAbsorbed)
             {
                 _otherPlanetLifeAmount.Add(planetLifeAmount);
             }
@@ -169,6 +172,11 @@ namespace Flawless.LifeSys
             if (!other.gameObject.CompareTag("Planet")) return;
 
             var planetLifeAmount = other.GetComponent<PlanetLifeAmount>();
+            if (planetLifeAmount != null && !planetLifeAmount.IsAbsorbed)
+            {
+                _otherPlanetLifeAmount.Remove(planetLifeAmount);
+            }
+
             EndAbsorb(planetLifeAmount);
         }
 
@@ -202,12 +210,10 @@ namespace Flawless.LifeSys
             if (!planetLifeAmount) return;
 
             OnAbsorbStateChanged?.Invoke(false, planetLifeAmount);
-            planetLifeAmount.IsAbsorbed = true;
+            if (!planetLifeAmount.IsAbsorbed) return;
+
             planetLifeAmount.LifeAmount = 0;
             planetLifeAmount.SetPlanetDead();
-
-            // Planet die effects
-            _otherPlanetLifeAmount = null;
         }
 
         /// <summary>
@@ -229,11 +235,12 @@ namespace Flawless.LifeSys
                 return false;
             }
 
+            planetLifeAmount.IsAbsorbed = true;
             var absorbAmount = deltaTime * AbsorbSpeed;
             planetLifeAmount.LifeAmount -= AbsorbSpeed * deltaTime;
 
             this.LifeAmount += absorbAmount;
-            
+
             OnAbsorbStateChanged?.Invoke(true, planetLifeAmount);
 
             return true;

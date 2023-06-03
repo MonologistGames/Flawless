@@ -31,6 +31,7 @@ namespace Flawless
         {
             if (planetLifeAmount != PlanetLifeAmount || !PlanetLifeAmount) return;
             if (_isEffectOn == state) return;
+            _isEffectOn = state;
             AbsorbEffect.SetBool("IsAbsorbing", state);
         }
 
