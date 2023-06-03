@@ -93,15 +93,14 @@ namespace Flawless.LifeSys
         private PlayerInput _playerInput;
         private InputAction _absorbButton;
 
-        private List<PlanetLifeAmount> _otherPlanetLifeAmount = new List<PlanetLifeAmount>();
+        private List<PlanetLifeAmount> _otherPlanetLifeAmount;
         private bool _isAbsorbing;
         private bool _isAbsorbBegun;
+
         public event Action<bool, PlanetLifeAmount> OnAbsorbStateChanged;
 
         private CinemachineImpulseSource _impulseSource;
-        
         #endregion
-        
         #region Editor
 
 #if UNITY_EDITOR
@@ -124,7 +123,6 @@ namespace Flawless.LifeSys
         {
             _playerInput = GetComponentInParent<PlayerInput>();
             _impulseSource = GetComponent<CinemachineImpulseSource>();
-
             // Input Actions and bind callbacks
             _absorbButton = _playerInput.actions["Absorb"];
             _absorbButton.started += OnAbsorbStart;
@@ -133,6 +131,7 @@ namespace Flawless.LifeSys
 
         private void Update()
         {
+            if (_otherPlanetLifeAmount == null) _otherPlanetLifeAmount = new List<PlanetLifeAmount>();
             // Life amount fade with time
             if (!_isAbsorbing || _otherPlanetLifeAmount.Count != 0)
             {
@@ -182,21 +181,11 @@ namespace Flawless.LifeSys
         private void OnAbsorbStart(InputAction.CallbackContext context)
         {
             _isAbsorbing = true;
-            if (_otherPlanetLifeAmount.Count == 0) return;
-            foreach (var planetLifeAmount in _otherPlanetLifeAmount)
-            {
-                OnAbsorbStateChanged?.Invoke(true, planetLifeAmount);
-            }
         }
 
         private void OnAbsorbCancel(InputAction.CallbackContext context)
         {
             _isAbsorbing = false;
-            if (_otherPlanetLifeAmount.Count == 0) return;
-            foreach (var planetLifeAmount in _otherPlanetLifeAmount)
-            {
-                OnAbsorbStateChanged?.Invoke(false, planetLifeAmount);
-            }
         }
 
         #endregion
@@ -210,10 +199,7 @@ namespace Flawless.LifeSys
         /// </summary>
         private void EndAbsorb(PlanetLifeAmount planetLifeAmount)
         {
-            if (planetLifeAmount) return;
-
-            if (!_isAbsorbBegun) return;
-            _isAbsorbBegun = false;
+            if (!planetLifeAmount) return;
 
             OnAbsorbStateChanged?.Invoke(false, planetLifeAmount);
             planetLifeAmount.IsAbsorbed = true;
@@ -243,15 +229,12 @@ namespace Flawless.LifeSys
                 return false;
             }
 
-            if (!_isAbsorbBegun)
-            {
-                _isAbsorbBegun = true;
-            }
-
             var absorbAmount = deltaTime * AbsorbSpeed;
             planetLifeAmount.LifeAmount -= AbsorbSpeed * deltaTime;
 
             this.LifeAmount += absorbAmount;
+            
+            OnAbsorbStateChanged?.Invoke(true, planetLifeAmount);
 
             return true;
         }

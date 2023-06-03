@@ -30,7 +30,7 @@ namespace Flawless
 
         private void Start()
         {
-            Debug.Log(FindObjectsOfType<MapIconMarker>().Length);
+            Debug.Log("Find Map Elements: " + FindObjectsOfType<MapIconMarker>().Length);
             foreach (var iconElement in GameObject.FindObjectsOfType<MapIconMarker>())
             {
                 switch (iconElement.MapTag)
@@ -46,37 +46,40 @@ namespace Flawless
                         break;
                 }
             }
-            
+
             // Initialize Jump Gates
-            foreach (var jumpGateIcon in _jumpGatePositions.Select(jumpGatePosition => Instantiate(MapIconReference.JumpGateIcon, transform)))
+            foreach (var jumpGateIcon in _jumpGatePositions.Select(jumpGatePosition =>
+                         Instantiate(MapIconReference.JumpGateIcon, transform)))
             {
                 _jumpGateIcons.Add(jumpGateIcon.GetComponent<Image>());
             }
-            
+
 
             // Initialize Planets
-            foreach (var planetIcon in _planetOrbits.Select(planetOrbit => Instantiate(MapIconReference.PlanetIcon, transform)))
+            foreach (var planetIcon in _planetOrbits.Select(planetOrbit =>
+                         Instantiate(MapIconReference.PlanetIcon, transform)))
             {
                 _planetIcons.Add(planetIcon.GetComponent<Image>());
             }
 
 
             // Initialize Suns
-            foreach (var sunIcon in _sunPositions.Select(sunPosition => Instantiate(MapIconReference.SunIcon, transform)))
+            foreach (var sunIcon in _sunPositions.Select(
+                         sunPosition => Instantiate(MapIconReference.SunIcon, transform)))
             {
                 _sunIcons.Add(sunIcon.GetComponent<Image>());
             }
         }
 
-        
+
         private void Update()
         {
             AreaNameText.text = AreaName;
-            
+
             // Update Black Position
             var distVector = (BlackPosition.position - PlayerPosition.position) / UnitRatio;
             BlackIcon.rectTransform.anchoredPosition = PlayerIcon.rectTransform.anchoredPosition +
-                                               new Vector2(distVector.x, distVector.z);
+                                                       new Vector2(distVector.x, distVector.z);
             // Update Jump Gates Position
             for (int i = 0; i < _jumpGatePositions.Count; i++)
             {
@@ -84,7 +87,7 @@ namespace Flawless
                 var jumpGateIcon = _jumpGateIcons[i];
                 distVector = (jumpGatePosition - PlayerPosition.position) / UnitRatio;
                 jumpGateIcon.rectTransform.anchoredPosition = PlayerIcon.rectTransform.anchoredPosition +
-                                                      new Vector2(distVector.x, distVector.z);
+                                                              new Vector2(distVector.x, distVector.z);
             }
 
             // Update Planet Position
@@ -104,7 +107,7 @@ namespace Flawless
                 var sunIcon = _sunIcons[i];
                 distVector = (sunPosition - PlayerPosition.position) / UnitRatio;
                 sunIcon.rectTransform.anchoredPosition = PlayerIcon.rectTransform.anchoredPosition +
-                                                 new Vector2(distVector.x, distVector.z);
+                                                         new Vector2(distVector.x, distVector.z);
             }
         }
     }
