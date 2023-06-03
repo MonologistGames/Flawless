@@ -16,7 +16,7 @@ namespace Flawless.UI.LifeAmount
                 UpdateLifeAmountUI;
         }
 
-        public void UpdateLifeAmountUI(float lifeAmount, float lifeUnit, int lifeUnitsCount)
+        private void UpdateLifeAmountUI(float lifeAmount, float lifeUnit, int lifeUnitsCount)
         {
             var unitCountFloor = Mathf.FloorToInt(lifeAmount / lifeUnit);
             var unitCountCeil = Mathf.CeilToInt(lifeAmount / lifeUnit);

@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Flawless.LifeSys;
 using UnityEngine;
 using UnityEngine.VFX;
@@ -16,6 +13,7 @@ namespace Flawless
         public PlanetLifeAmount PlanetLifeAmount;
 
         private float _initLifeAmount;
+        private bool _isEffectOn;
 
         private static readonly int Saturation = Shader.PropertyToID("_Saturation");
 
@@ -32,6 +30,7 @@ namespace Flawless
         private void UpdateAbsorbEffect(bool state, PlanetLifeAmount planetLifeAmount)
         {
             if (planetLifeAmount != PlanetLifeAmount || !PlanetLifeAmount) return;
+            if (_isEffectOn == state) return;
             AbsorbEffect.SetBool("IsAbsorbing", state);
         }
 

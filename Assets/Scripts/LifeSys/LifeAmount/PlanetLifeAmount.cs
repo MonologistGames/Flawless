@@ -14,7 +14,6 @@ namespace Flawless.LifeSys
         /// </summary>
         public static readonly float MaxLifeAmount = 8000f;
         
-            
         [SerializeField]
         private float _lifeAmount = 1000f;
         
