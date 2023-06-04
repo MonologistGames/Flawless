@@ -16,12 +16,13 @@ namespace Flawless.UI.LifeAmount
                 UpdateLifeAmountUI;
         }
 
-        public void UpdateLifeAmountUI(float lifeAmount, float lifeUnit, int lifeUnitsCount)
+        private void UpdateLifeAmountUI(float lifeAmount, float lifeUnit, int lifeUnitsCount)
         {
             var unitCountFloor = Mathf.FloorToInt(lifeAmount / lifeUnit);
             var unitCountCeil = Mathf.CeilToInt(lifeAmount / lifeUnit);
             var fillValue = (lifeAmount - unitCountFloor * lifeUnit) / lifeUnit;
-
+            
+           
             // Extend or delete life units
             if (lifeUnitsCount > UnitFills.Count)
             {
@@ -33,7 +34,7 @@ namespace Flawless.UI.LifeAmount
                 }
             }
 
-            if (lifeUnitsCount < UnitFills.Count)
+            if (lifeUnitsCount <= UnitFills.Count)
             {
                 for (var i = lifeUnitsCount; i < UnitFills.Count; i++)
                 {
@@ -48,18 +49,13 @@ namespace Flawless.UI.LifeAmount
                 UnitFills[i].fillAmount = 1;
             }
 
-            if (unitCountFloor == unitCountCeil)
-            {
-                return;
-            }
-            
             UnitFills[unitCountFloor].transform.parent.gameObject.SetActive(true);
             UnitFills[unitCountFloor].fillAmount = fillValue * (1 - FillOffset) + FillOffset;
 
             for (var i = unitCountCeil; i < lifeUnitsCount; i++)
             {
-                UnitFills[i].transform.parent.gameObject.SetActive(true);
                 UnitFills[i].fillAmount = 0;
+                UnitFills[i].transform.parent.gameObject.SetActive(true);
             }
         }
     }

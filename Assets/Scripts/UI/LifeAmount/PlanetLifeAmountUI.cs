@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using Flawless.LifeSys;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Flawless.UI.LifeAmount

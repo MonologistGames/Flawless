@@ -1,6 +1,6 @@
-using System;
 using Flawless.PlayerCharacter;
 using UnityEngine;
+using Utilities;
 
 namespace Flawless.Levels.Gates
 {
@@ -14,22 +14,21 @@ namespace Flawless.Levels.Gates
         private static readonly int Launch = Animator.StringToHash("Launch");
 
         private PlanetController Player { get; set; }
-        private float JumpTimer { get; set; }
+        private Timer _jumpTimer;
 
         #region MonoBehaviours
+
+        private void OnEnable()
+        {
+            _jumpTimer = TimerManager.Instance.AddTimer(JumpLapse, $"JumpTimer{this.gameObject.GetInstanceID()}",
+                Timer.TimeType.Unscaled);
+            _jumpTimer.IsPaused = true;
+            _jumpTimer.OnTimerEnd += EndJump;
+        }
 
         private void Update()
         {
             if (!Player) return;
-
-            if (JumpTimer > 0)
-            {
-                JumpTimer -= Time.unscaledDeltaTime;
-            }
-            else
-            {
-                EndJump();
-            }
         }
 
         #endregion
@@ -39,7 +38,7 @@ namespace Flawless.Levels.Gates
             if (!other.gameObject.CompareTag("Player")) return;
             if (other.isTrigger) return;
 
-            PlanetController planetController = other.gameObject.GetComponentInParent<PlanetController>();
+            var planetController = other.gameObject.GetComponentInParent<PlanetController>();
             if (planetController == null) return;
             if (planetController.IsOverDriving)
             {
@@ -53,9 +52,13 @@ namespace Flawless.Levels.Gates
             Player.Rigidbody.velocity =
                 (transform.position - Player.transform.position).normalized * Player.Velocity.magnitude;
             Player.Jump();
-            Player.SetOverDrive(OverDriveTime);
 
-            JumpTimer = JumpLapse;
+            Player.OverDriveTimer.SetTime(OverDriveTime);
+            Player.IsOverDriving = true;
+
+            _jumpTimer.ResetTime();
+            _jumpTimer.IsPaused = false;
+            
             Time.timeScale *= JumpTimeFactor;
             Time.fixedDeltaTime = JumpTimeFactor * 0.02f;
         }
@@ -69,7 +72,6 @@ namespace Flawless.Levels.Gates
             Player.EndJump();
             Player = null;
 
-            JumpTimer = 0;
             Time.timeScale /= JumpTimeFactor;
             Time.fixedDeltaTime = 0.02f;
         }

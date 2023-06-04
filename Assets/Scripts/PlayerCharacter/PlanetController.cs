@@ -1,6 +1,8 @@
 using Flawless.LifeSys;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
+using Utilities;
 
 namespace Flawless.PlayerCharacter
 {
@@ -8,6 +10,7 @@ namespace Flawless.PlayerCharacter
     [RequireComponent(typeof(PlayerInput))]
     public class PlanetController : MonoBehaviour
     {
+        #region Internal Components Refs
         /// <summary>
         /// Rigidbody of the character planet.
         /// </summary>
@@ -22,6 +25,8 @@ namespace Flawless.PlayerCharacter
 
         private PlayerStateMachine StateMachine { get; set; }
         private PlayerLifeAmount LifeAmount { get; set; }
+        
+        #endregion
 
         #region Input Actions
 
@@ -42,33 +47,47 @@ namespace Flawless.PlayerCharacter
         /// Acceleration of the player planet.
         /// </summary>
         [Header("Movement")] public float Acceleration = 2f;
-
+        
+        /// <summary>
+        /// Bonus acceleration for obtaining much life amount.
+        /// </summary>
+        public float BonusAcceleration = 0.6f;
+        
         /// <summary>
         /// Max Motivation of the character.
         /// </summary>
         public float MaxSpeed = 3f;
-
-        [Header("Leap")] public float LeapAcceleration = 10f;
-
-        public float MaxDashSpeed = 5f;
+        
+        /// <summary>
+        /// Bonus max speed for obtaining much life amount.
+        /// </summary>
+        public float BonusMaxSpeed = 1f;
+        
+        [FormerlySerializedAs("MaxHyperSpeed")]
+        [Header("OverDrive Mode")]
+        [FormerlySerializedAs("MaxDashSpeed")] public float MaxOverDriveSpeed = 5f;
 
         #region Leap
+        
+        [Header("Leap")] public float LeapAcceleration = 10f;
 
         public float LeapDuration = 5f;
-        public float LeapTimer { get; set; }
+        [HideInInspector]
+        public Timer LeapTimer;
 
         /// <summary>
         /// Whether player is ready to leap.
         /// </summary>
-        public bool IsLeapReady => LeapTimer <= 0;
+        public bool IsLeapReady;
 
         #endregion
 
         #region OverDrive
 
         public float OverDriveDuration = 0.5f;
-        public float OverDriveTimer { get; set; }
-        public bool IsOverDriving => OverDriveTimer > 0;
+        [HideInInspector]
+        public Timer OverDriveTimer;
+        public bool IsOverDriving;
 
         #endregion
 
@@ -117,20 +136,21 @@ namespace Flawless.PlayerCharacter
 
             // Start state machine
             StateMachine.TransitTo("Move");
+            
+            
+            // Initialize Timers
+            LeapTimer = TimerManager.Instance.AddTimer( LeapDuration,"LeapTimer");
+            LeapTimer.SetTime(0);
+            IsLeapReady = true;
+            
+            LeapTimer.OnTimerEnd += () => IsLeapReady = true;
+            OverDriveTimer = TimerManager.Instance.AddTimer("OverDriveTimer");
+            OverDriveTimer.OnTimerEnd += () => IsOverDriving = false;
         }
 
         private void Update()
         {
             StateMachine.Update();
-            
-            Debug.Log(Time.timeScale);
-
-            // Update leap timer
-            if (LeapTimer >= 0)
-                LeapTimer -= Time.deltaTime;
-
-            if (OverDriveTimer >= 0)
-                OverDriveTimer -= Time.deltaTime;
         }
 
         private void FixedUpdate()
@@ -183,17 +203,22 @@ namespace Flawless.PlayerCharacter
         #endregion
 
         #region APIs
-
-        public void SetOverDrive(float overDriveTime)
-        {
-            OverDriveTimer = overDriveTime;
-        }
         public void Jump()
         {
             StateMachine.TransitTo("Controlled");
         }
 
         public void EndJump()
+        {
+            StateMachine.TransitTo("Move");
+        }
+
+        public void SetControlled()
+        {
+            StateMachine.TransitTo("Controlled");
+        }
+
+        public void SetPlaying()
         {
             StateMachine.TransitTo("Move");
         }

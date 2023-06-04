@@ -14,20 +14,35 @@ namespace Flawless.PlayerCharacter
 
         public Vector3 PositionOffset;
         public AnimationCurve SpeedCurve;
-        
+
+        public bool IsLookingAt = true;
+        public bool IsMovingTo = true;
+
+        private Vector3 _offset = Vector3.forward;
+
         // Update is called once per frame
         void Update()
         {
-            var offset = Quaternion.LookRotation(FollowTarget.Velocity.normalized, Vector3.up) * PositionOffset;
+            if (FollowTarget.Velocity != Vector3.zero)
+                _offset = Quaternion.LookRotation(FollowTarget.Velocity.normalized, Vector3.up) * PositionOffset;
             // Update Rotation
-            var targetRotation = Quaternion.LookRotation((FollowTarget.transform.position + offset - transform.position).normalized, Vector3.up);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * LookAtSpeed);
-            
-            // Update Position
-            var distance = Vector3.Distance(transform.position, FollowTarget.transform.position + offset);
-            if (distance < DistanceThreshold ) return;
+            if (IsLookingAt)
+            {
+                var targetRotation =
+                    Quaternion.LookRotation((FollowTarget.transform.position + _offset - transform.position).normalized,
+                        Vector3.up);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * LookAtSpeed);
+            }
 
-            transform.position += (FollowTarget.transform.position + offset - transform.position).normalized * (FollowSpeed * SpeedCurve.Evaluate(distance / 7f) * Time.deltaTime);
+            // Update Position
+            if (IsMovingTo)
+            {
+                var distance = Vector3.Distance(transform.position, FollowTarget.transform.position + _offset);
+                if (distance < DistanceThreshold) return;
+
+                transform.position += (FollowTarget.transform.position + _offset - transform.position).normalized *
+                                      (FollowSpeed * SpeedCurve.Evaluate(distance / 7f) * Time.deltaTime);
+            }
         }
     }
 }

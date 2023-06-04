@@ -21,8 +21,7 @@ namespace Flawless.UI
 
         private void Update()
         {
-            _leapIndicator.fillAmount = 1 - PlayerController.LeapTimer / PlayerController.LeapDuration;
-
+            _leapIndicator.fillAmount = PlayerController.LeapTimer.GetProcess(true);
             _leapIndicator.color = !PlayerController.IsLeapReady ? ChargingColor : _originalColor;
         }
     }
