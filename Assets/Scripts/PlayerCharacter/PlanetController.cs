@@ -213,6 +213,16 @@ namespace Flawless.PlayerCharacter
             StateMachine.TransitTo("Move");
         }
 
+        public void SetControlled()
+        {
+            StateMachine.TransitTo("Controlled");
+        }
+
+        public void SetPlaying()
+        {
+            StateMachine.TransitTo("Move");
+        }
+
         #endregion
     }
 }

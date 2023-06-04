@@ -13,7 +13,7 @@ namespace Flawless.LifeSys
         #region Life Amount
 
         // Life Units Settings
-        public static float LifeUnit = 1000f;
+         public static readonly float LifeUnit = 1000f;
 
         [Header("Life Units")] public int MaxLifeUnits = 6;
 
@@ -61,13 +61,7 @@ namespace Flawless.LifeSys
                 }
                 else
                 {
-                    if (value > MaxLifeAmount)
-                    {
-                        _lifeAmount = MaxLifeAmount;
-                        return;
-                    }
-                    else
-                        _lifeAmount = value;
+                    _lifeAmount = value > MaxLifeAmount ? MaxLifeAmount : value;
                 }
 
                 OnLifeAmountChanged?.Invoke(LifeAmount, LifeUnit, LifeUnitsCount);
@@ -190,10 +184,15 @@ namespace Flawless.LifeSys
         {
             _isAbsorbing = true;
         }
+        
 
         private void OnAbsorbCancel(InputAction.CallbackContext context)
         {
             _isAbsorbing = false;
+            foreach (var planetLifeAmount in _otherPlanetLifeAmount)
+            {
+                OnAbsorbStateChanged?.Invoke(false, planetLifeAmount);
+            }
         }
 
         #endregion
