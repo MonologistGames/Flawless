@@ -13,14 +13,14 @@ namespace Flawless
         public Animator WhiteFieldAnimator;
         
         private PlanetController _planetController;
-        private PlayerLifeAmount _playerLifeAmount;
+        private PlayerLife _playerLife;
         
         private static readonly int Begin = Animator.StringToHash("Begin");
 
         private void Start()
         {
             _planetController = FindObjectOfType<PlanetController>();
-            _playerLifeAmount = FindObjectOfType<PlayerLifeAmount>();
+            _playerLife = FindObjectOfType<PlayerLife>();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -28,7 +28,7 @@ namespace Flawless
             if (!other.CompareTag("Player")) return;
             
             WhiteFieldAnimator.SetTrigger(Begin);
-            _playerLifeAmount.LifeAmount = 0;
+            _playerLife.LifeAmount = 0;
             
             StartCoroutine(Respawn());
         }

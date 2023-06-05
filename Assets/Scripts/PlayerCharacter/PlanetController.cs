@@ -24,7 +24,7 @@ namespace Flawless.PlayerCharacter
         public Camera TargetCamera;
 
         private PlayerStateMachine StateMachine { get; set; }
-        private PlayerLifeAmount LifeAmount { get; set; }
+        private PlayerLife Life { get; set; }
         
         #endregion
 
@@ -120,7 +120,7 @@ namespace Flawless.PlayerCharacter
             PlayerInput = GetComponent<PlayerInput>();
             Rigidbody = GetComponent<Rigidbody>();
 
-            LifeAmount = GetComponentInChildren<PlayerLifeAmount>();
+            Life = GetComponentInChildren<PlayerLife>();
 
             // Bind input actions
             MoveStick = PlayerInput.actions["MoveDirection"];
@@ -162,8 +162,11 @@ namespace Flawless.PlayerCharacter
 
         private void OnCollisionEnter(Collision other)
         {
-            var planet = other.gameObject.GetComponent<Planet.Planet>();
+            var planet = other.gameObject.GetComponent<PlanetLife>();
+            if (planet == null) return;
+            
             var normalDir = other.GetContact(0).normal;
+            planet.CollideAndDamageLife(Rigidbody, Life, normalDir);
         }
 
         #endregion

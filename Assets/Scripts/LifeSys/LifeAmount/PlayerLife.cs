@@ -8,7 +8,7 @@ using UnityEngine.Serialization;
 namespace Flawless.LifeSys
 {
     [RequireComponent(typeof(SphereCollider))]
-    public class PlayerLifeAmount : MonoBehaviour
+    public class PlayerLife : MonoBehaviour
     {
         #region Life Amount
 
@@ -89,11 +89,11 @@ namespace Flawless.LifeSys
         private PlayerInput _playerInput;
         private InputAction _absorbButton;
 
-        private readonly List<PlanetLifeAmount> _otherPlanetLifeAmount = new List<PlanetLifeAmount>();
+        private readonly List<PlanetLife> _otherPlanetLifeAmount = new List<PlanetLife>();
         private bool _isAbsorbing;
         private bool _isAbsorbBegun;
 
-        public event Action<bool, PlanetLifeAmount> OnAbsorbStateChanged;
+        public event Action<bool, PlanetLife> OnAbsorbStateChanged;
 
         private CinemachineImpulseSource _impulseSource;
 
@@ -154,7 +154,7 @@ namespace Flawless.LifeSys
         {
             if (!other.gameObject.CompareTag("Planet") || other.isTrigger) return;
 
-            var planetLifeAmount = other.GetComponent<PlanetLifeAmount>();
+            var planetLifeAmount = other.GetComponent<PlanetLife>();
             if (planetLifeAmount != null && !planetLifeAmount.IsAbsorbed)
             {
                 _otherPlanetLifeAmount.Add(planetLifeAmount);
@@ -165,7 +165,7 @@ namespace Flawless.LifeSys
         {
             if (!other.gameObject.CompareTag("Planet")) return;
 
-            var planetLifeAmount = other.GetComponent<PlanetLifeAmount>();
+            var planetLifeAmount = other.GetComponent<PlanetLife>();
             if (planetLifeAmount != null && !planetLifeAmount.IsAbsorbed)
             {
                 _otherPlanetLifeAmount.Remove(planetLifeAmount);
@@ -204,26 +204,26 @@ namespace Flawless.LifeSys
         /// <summary>
         /// End the absorb process, and set the absorbing planet to absorbed.
         /// </summary>
-        private void EndAbsorb(PlanetLifeAmount planetLifeAmount)
+        private void EndAbsorb(PlanetLife planetLife)
         {
-            if (!planetLifeAmount) return;
+            if (!planetLife) return;
 
-            OnAbsorbStateChanged?.Invoke(false, planetLifeAmount);
-            if (!planetLifeAmount.IsAbsorbed) return;
+            OnAbsorbStateChanged?.Invoke(false, planetLife);
+            if (!planetLife.IsAbsorbed) return;
 
-            planetLifeAmount.LifeAmount = 0;
-            planetLifeAmount.SetPlanetDead();
+            planetLife.LifeAmount = 0;
+            planetLife.SetPlanetDead();
         }
 
         /// <summary>
         /// Absorbing life on other planets.
         /// </summary>
         /// <param name="deltaTime">Delta time between two frames.</param>
-        /// <param name="planetLifeAmount">Planet life amount to absorb.</param>
+        /// <param name="planetLife">Planet life amount to absorb.</param>
         /// <returns>Whether absorbing is successful.</returns>
-        private bool Absorb(float deltaTime, PlanetLifeAmount planetLifeAmount)
+        private bool Absorb(float deltaTime, PlanetLife planetLife)
         {
-            if (planetLifeAmount.LifeAmount < AbsorbSpeed * deltaTime)
+            if (planetLife.LifeAmount < AbsorbSpeed * deltaTime)
             {
                 return false;
             }
@@ -234,13 +234,13 @@ namespace Flawless.LifeSys
                 return false;
             }
 
-            planetLifeAmount.IsAbsorbed = true;
+            planetLife.IsAbsorbed = true;
             var absorbAmount = deltaTime * AbsorbSpeed;
-            planetLifeAmount.LifeAmount -= AbsorbSpeed * deltaTime;
+            planetLife.LifeAmount -= AbsorbSpeed * deltaTime;
 
             this.LifeAmount += absorbAmount;
 
-            OnAbsorbStateChanged?.Invoke(true, planetLifeAmount);
+            OnAbsorbStateChanged?.Invoke(true, planetLife);
 
             return true;
         }
@@ -249,12 +249,10 @@ namespace Flawless.LifeSys
 
         #region APIs
 
-        public void CollideAndDamageLife()
+        public void CollideAndDamageLife(float damage)
         {
             // TODO: To make more detailed damage calculation and effects.
-
-            _lifeAmount -= CollideDamage;
-
+            _lifeAmount -= damage;
             // Camera shake
             _impulseSource.GenerateImpulse();
         }

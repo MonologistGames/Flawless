@@ -12,7 +12,7 @@ namespace Flawless.UI.LifeAmount
 
         private void Awake()
         {
-            GameObject.FindWithTag("Player").GetComponentInChildren<PlayerLifeAmount>().OnLifeAmountChanged +=
+            GameObject.FindWithTag("Player").GetComponentInChildren<PlayerLife>().OnLifeAmountChanged +=
                 UpdateLifeAmountUI;
         }
 

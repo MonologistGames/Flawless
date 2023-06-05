@@ -8,7 +8,7 @@ namespace Flawless.UI.LifeAmount
     {
         private CanvasGroup LifeAmountCanvas { get; set; }
         private bool IsCanvasOn { get; set; }
-        public PlanetLifeAmount LifeAmount;
+        public PlanetLife Life;
         public float ShowUpSpeed = 2f;
         public Image LifeFill;
 
@@ -32,7 +32,7 @@ namespace Flawless.UI.LifeAmount
                 LifeAmountCanvas.alpha -= Time.unscaledDeltaTime * ShowUpSpeed;
             }
             
-            LifeFill.fillAmount = LifeAmount.LifeAmount / PlanetLifeAmount.MaxLifeAmount;
+            LifeFill.fillAmount = Life.LifeAmount / PlanetLife.MaxLifeAmount;
         }
         
         #endregion

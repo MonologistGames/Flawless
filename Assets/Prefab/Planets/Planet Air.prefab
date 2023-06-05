@@ -1483,6 +1483,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lifeAmount: 2000
   IsAbsorbed: 0
+  CollideDamage: 200
+  CollideForce: 10
 --- !u!114 &2625401507382408382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1497,7 +1499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbsorbEffect: {fileID: 1668758274150633322}
   MeshRenderer: {fileID: 519242573751931721}
-  PlanetLifeAmount: {fileID: 2150844200646324472}
+  PlanetLife: {fileID: 2150844200646324472}
 --- !u!1 &6944448535998393509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,6 +1882,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b576d7e000e5b479c281669ea17aac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeAmount: {fileID: 2150844200646324472}
+  Life: {fileID: 0}
   ShowUpSpeed: 2
   LifeFill: {fileID: 5840034129283456552}

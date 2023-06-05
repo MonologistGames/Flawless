@@ -3,7 +3,7 @@ using UnityEngine.VFX;
 
 namespace Flawless.LifeSys
 {
-    public class PlayerLifeAmountEffect : MonoBehaviour
+    public class PlayerLifeVFX : MonoBehaviour
     {
         public MeshRenderer MeshRenderer;
         private static readonly int SwitchValue = Shader.PropertyToID("_SwitchValue");
@@ -12,7 +12,7 @@ namespace Flawless.LifeSys
         
         private void Start()
         {
-            FindObjectOfType<PlayerLifeAmount>().OnLifeAmountChanged += UpdateLifeAmountEffect;
+            FindObjectOfType<PlayerLife>().OnLifeAmountChanged += UpdateLifeAmountEffect;
         }
 
         private void UpdateLifeAmountEffect(float lifeAmount, float lifeUnit, int lifeUnitsCount)

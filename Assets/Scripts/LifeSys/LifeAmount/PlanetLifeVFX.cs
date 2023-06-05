@@ -1,16 +1,17 @@
 using Flawless.LifeSys;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.VFX;
 
 namespace Flawless
 {
-    public class PlanetLifeAmountEffect : MonoBehaviour
+    public class PlanetLifeVFX : MonoBehaviour
     {
         public VisualEffect AbsorbEffect;
 
         public MeshRenderer MeshRenderer;
         
-        public PlanetLifeAmount PlanetLifeAmount;
+        [FormerlySerializedAs("PlanetLifeAmount")] public PlanetLife PlanetLife;
 
         private float _initLifeAmount;
         private bool _isEffectOn;
@@ -20,16 +21,16 @@ namespace Flawless
         // Start is called before the first frame update
         void Start()
         {
-            _initLifeAmount = PlanetLifeAmount.LifeAmount;
+            _initLifeAmount = PlanetLife.LifeAmount;
             
-            FindObjectOfType<PlayerLifeAmount>().OnAbsorbStateChanged += UpdateAbsorbEffect;
-            PlanetLifeAmount.OnLifeAmountChanged += UpdateMaterial;
+            FindObjectOfType<PlayerLife>().OnAbsorbStateChanged += UpdateAbsorbEffect;
+            PlanetLife.OnLifeAmountChanged += UpdateMaterial;
         }
 
         // Update is called once per frame
-        private void UpdateAbsorbEffect(bool state, PlanetLifeAmount planetLifeAmount)
+        private void UpdateAbsorbEffect(bool state, PlanetLife planetLife)
         {
-            if (planetLifeAmount != PlanetLifeAmount || !PlanetLifeAmount) return;
+            if (planetLife != PlanetLife || !PlanetLife) return;
             if (_isEffectOn == state) return;
             _isEffectOn = state;
             AbsorbEffect.SetBool("IsAbsorbing", state);

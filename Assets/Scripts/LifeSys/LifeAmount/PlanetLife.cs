@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Flawless.LifeSys
 {
     [RequireComponent(typeof(Collider))]
-    public class PlanetLifeAmount : MonoBehaviour
+    public class PlanetLife : MonoBehaviour
     {
         /// <summary>
         /// A maximum life amount of a planet.
@@ -50,6 +50,23 @@ namespace Flawless.LifeSys
         public void SetPlanetDead()
         {
             // TODO: Set the planet dead effects.
+        }
+        
+        [Header("Collide Result")]
+        public float CollideDamage = 200f;
+        public float CollideForce = 10f;
+        
+        public virtual void CollideAndDamageLife(Rigidbody playerRigidbody, PlayerLife playerLife,
+            Vector3 normal)
+        {
+            var velocityDir = playerRigidbody.velocity.normalized;
+            var boundDirection = velocityDir +
+                                 Mathf.Abs(2 * Vector3.Dot(velocityDir, normal)) * normal;
+            
+            playerRigidbody.AddForce(boundDirection * CollideForce - playerRigidbody.velocity,
+                ForceMode.VelocityChange);
+            
+            playerLife.CollideAndDamageLife(CollideDamage);
         }
     }
 }
