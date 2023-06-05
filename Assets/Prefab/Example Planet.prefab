@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c3cbc2d86d9eb43b9fbb2b75716023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 631649159242379619}
+  PlanetGroup: {fileID: 0}
   OrbitCenter: {fileID: 0}
   OrbitAngleSpeed: 3
 --- !u!1 &1724394997983427762
@@ -737,3 +737,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f6d149f0fc44014d9141588000b87ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mass: 0
