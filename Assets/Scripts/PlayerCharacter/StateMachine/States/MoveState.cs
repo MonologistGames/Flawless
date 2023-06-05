@@ -8,7 +8,7 @@ namespace Flawless.PlayerCharacter
     {
         private readonly PlayerStateMachine _stateMachine;
         private readonly PlayerController _playerController;
-        
+
         private bool _isAccelerating;
 
         public MoveState(PlayerStateMachine stateMachine)
@@ -23,19 +23,27 @@ namespace Flawless.PlayerCharacter
         }
 
         public void Update()
-        { }
+        {
+        }
 
         public void FixedUpdate()
         {
             var accelerateVector = Vector3.zero;
             // Apply motivation and Gravitation
+            var lifeProcess = _playerController.Life.LifeAmount / _playerController.Life.MaxLifeAmount;
+            var acceleration = _playerController.Acceleration +
+                               lifeProcess * _playerController.BonusAcceleration;
+            var maxSpeed = _playerController.MaxSpeed + lifeProcess * _playerController.BonusAcceleration;
             if (_isAccelerating)
-                accelerateVector = _playerController.MoveDir * _playerController.Acceleration;
-
+                accelerateVector = _playerController.MoveDir * acceleration;
+            
             _playerController.Rigidbody.AddForce(accelerateVector, ForceMode.Acceleration);
 
-            _playerController.Rigidbody.velocity = _playerController.Velocity.normalized * 
-                                                   Mathf.Min(_playerController.IsOverDriving ?_playerController.MaxOverDriveSpeed : _playerController.MaxSpeed, 
+            _playerController.Rigidbody.velocity = _playerController.Velocity.normalized *
+                                                   Mathf.Min(
+                                                       _playerController.IsOverDriving
+                                                           ? _playerController.MaxOverDriveSpeed
+                                                           : maxSpeed,
                                                        _playerController.Velocity.magnitude);
         }
 
@@ -45,7 +53,8 @@ namespace Flawless.PlayerCharacter
         }
 
         public void OnDrawGizmos()
-        { }
+        {
+        }
 
         #region Input Bindings
 
@@ -88,15 +97,15 @@ namespace Flawless.PlayerCharacter
         private void OnLeap(InputAction.CallbackContext context)
         {
             if (!_playerController.IsLeapReady) return;
-            
+
             _playerController.LeapTimer.ResetTime();
             _playerController.LeapTimer.IsPaused = false;
             _playerController.IsLeapReady = false;
-            
+
             _playerController.OverDriveTimer.AddTime(_playerController.OverDriveDuration);
             _playerController.OverDriveTimer.IsPaused = false;
             _playerController.IsOverDriving = true;
-            
+
             _playerController.Rigidbody.AddForce(_playerController.LeapAcceleration * _playerController.MoveDir,
                 ForceMode.Impulse);
         }

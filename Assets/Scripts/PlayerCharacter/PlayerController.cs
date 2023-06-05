@@ -33,7 +33,7 @@ namespace Flawless.PlayerCharacter
         /// <summary>
         /// Life system component of player character.
         /// </summary>
-        private PlayerLife Life { get; set; }
+        public PlayerLife Life { get; set; }
         
         #endregion
 
