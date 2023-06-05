@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 6511698221307524608}
   - component: {fileID: 9087298100273188116}
   m_Layer: 0
-  m_Name: Death Area
+  m_Name: Death Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 7864650727017194097}
   - component: {fileID: 5371777659516065781}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Sun body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -381,3 +381,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f6d149f0fc44014d9141588000b87ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mass: 10
