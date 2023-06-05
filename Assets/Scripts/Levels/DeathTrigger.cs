@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Flawless.LifeSys;
 using Flawless.PlayerCharacter;
@@ -16,6 +17,8 @@ namespace Flawless
         private PlayerLife _playerLife;
         
         private static readonly int Begin = Animator.StringToHash("Begin");
+
+        public event Action OnPlayerDie;
 
         private void Start()
         {
@@ -38,6 +41,8 @@ namespace Flawless
             yield return new WaitForSeconds(FadeTime);
             _playerController.transform.position = RespawnPoint.position;
             _playerController.SetControlled();
+            OnPlayerDie?.Invoke();
+            
             yield return new WaitForSeconds(FadeTime);
             _playerController.SetPlaying();
         }

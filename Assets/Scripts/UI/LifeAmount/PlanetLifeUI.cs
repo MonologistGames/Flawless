@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Flawless.UI.LifeAmount
 {
-    public class PlanetLifeAmountUI : MonoBehaviour
+    public class PlanetLifeUI : MonoBehaviour
     {
         private CanvasGroup LifeAmountCanvas { get; set; }
         private bool IsCanvasOn { get; set; }
@@ -37,12 +37,12 @@ namespace Flawless.UI.LifeAmount
         
         #endregion
 
-        public void TurnCanvasOn(Collider other)
+        public void TurnCanvasOn()
         {
             IsCanvasOn = true;
         }
 
-        public void TurnCanvasOff(Collider other)
+        public void TurnCanvasOff()
         {
             IsCanvasOn = false;
         }

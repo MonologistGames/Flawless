@@ -75,7 +75,7 @@ namespace Flawless.PlayerCharacter
         [FormerlySerializedAs("MaxHyperSpeed")]
         [Header("OverDrive Mode")]
         [FormerlySerializedAs("MaxDashSpeed")] public float MaxOverDriveSpeed = 5f;
-
+        public bool IsOverDriving;
         #region Leap
         
         [Header("Leap")] public float LeapAcceleration = 10f;
@@ -99,7 +99,6 @@ namespace Flawless.PlayerCharacter
         public float OverDriveDuration = 0.5f;
         [HideInInspector]
         public Timer OverDriveTimer;
-        public bool IsOverDriving;
 
         #endregion
 

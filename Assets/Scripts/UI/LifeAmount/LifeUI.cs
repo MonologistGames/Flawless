@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Flawless.UI.LifeAmount
 {
-    public class LifeAmountUI : MonoBehaviour
+    public class LifeUI : MonoBehaviour
     {
         public float FillOffset = 0.2f;
         public List<Image> UnitFills;
