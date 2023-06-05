@@ -166,7 +166,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RespawnPoint: {fileID: 0}
   FadeTime: 1
-  WhiteFieldTransition: {fileID: 0}
+  WhiteFieldAnimator: {fileID: 0}
 --- !u!1 &6933824282034342974
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +196,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6933824282034342975}
-  - component: {fileID: 4549739043786485568}
   - component: {fileID: 7292578835145093006}
   m_Layer: 6
   m_Name: Sun
@@ -223,27 +222,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &4549739043786485568
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6933824282034342974}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 4.87
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7292578835145093006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,7 +246,6 @@ GameObject:
   - component: {fileID: 6933824282725501938}
   - component: {fileID: 6933824282725501937}
   - component: {fileID: 6933824282725501936}
-  - component: {fileID: 6933824282725501939}
   - component: {fileID: 7748508699309690745}
   - component: {fileID: 7864650727017194097}
   - component: {fileID: 5371777659516065781}
@@ -344,27 +321,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &6933824282725501939
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6933824282725501941}
-  m_Material: {fileID: 13400000, guid: deb4c9ce8cfc51e4b8703d5d203515b5, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.4
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &7748508699309690745
 SphereCollider:
   m_ObjectHideFlags: 0

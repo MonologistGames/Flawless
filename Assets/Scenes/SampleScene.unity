@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 50690620}
   - component: {fileID: 50690619}
   - component: {fileID: 50690618}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Life Absorbing Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -670,7 +670,7 @@ GameObject:
   - component: {fileID: 137178468}
   - component: {fileID: 137178470}
   - component: {fileID: 137178469}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: OrbitIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -960,7 +960,7 @@ GameObject:
   - component: {fileID: 158194784}
   - component: {fileID: 158194786}
   - component: {fileID: 158194785}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1088,7 +1088,7 @@ GameObject:
   - component: {fileID: 171710066}
   - component: {fileID: 171710068}
   - component: {fileID: 171710067}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1165,7 +1165,7 @@ GameObject:
   - component: {fileID: 171882065}
   - component: {fileID: 171882064}
   - component: {fileID: 171882063}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Name Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1314,7 +1314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 171948524}
   - component: {fileID: 171948523}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Example Planet
   m_TagString: Planet
   m_Icon: {fileID: 0}
@@ -1445,7 +1445,7 @@ GameObject:
   - component: {fileID: 182463154}
   - component: {fileID: 182463153}
   - component: {fileID: 182463152}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Planet Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1748,7 +1748,7 @@ GameObject:
   - component: {fileID: 289205861}
   - component: {fileID: 289205860}
   - component: {fileID: 289205859}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Atmos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1842,7 +1842,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 308897885}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1883,7 +1883,7 @@ GameObject:
   - component: {fileID: 315313161}
   - component: {fileID: 315313160}
   - component: {fileID: 315313159}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Order Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2467,7 +2467,7 @@ GameObject:
   - component: {fileID: 429207210}
   - component: {fileID: 429207212}
   - component: {fileID: 429207213}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2935,7 +2935,7 @@ GameObject:
   m_Component:
   - component: {fileID: 555005350}
   - component: {fileID: 555005351}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Moon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3364,7 +3364,7 @@ GameObject:
   - component: {fileID: 623637295}
   - component: {fileID: 623637294}
   - component: {fileID: 623637293}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Order Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3770,7 +3770,7 @@ GameObject:
   - component: {fileID: 817316183}
   - component: {fileID: 817316181}
   - component: {fileID: 817316182}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Planet Model
   m_TagString: Planet
   m_Icon: {fileID: 0}
@@ -3962,7 +3962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 832311925}
   - component: {fileID: 832311926}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Planet Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4153,7 +4153,7 @@ GameObject:
   - component: {fileID: 856012334}
   - component: {fileID: 856012333}
   - component: {fileID: 856012332}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: World Space UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4277,7 +4277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 863982711}
   - component: {fileID: 863982712}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Planet Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4405,7 +4405,7 @@ GameObject:
   - component: {fileID: 867731446}
   - component: {fileID: 867731448}
   - component: {fileID: 867731447}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4595,7 +4595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 929820523}
   - component: {fileID: 929820524}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4836,7 +4836,7 @@ GameObject:
   - component: {fileID: 956153014}
   - component: {fileID: 956153013}
   - component: {fileID: 956153020}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Planet Model
   m_TagString: Planet
   m_Icon: {fileID: 0}
@@ -5321,7 +5321,7 @@ GameObject:
   - component: {fileID: 982792509}
   - component: {fileID: 982792508}
   - component: {fileID: 982792507}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Order Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5472,7 +5472,7 @@ GameObject:
   - component: {fileID: 985084130}
   - component: {fileID: 985084129}
   - component: {fileID: 985084128}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Name Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5621,7 +5621,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1004382484}
   - component: {fileID: 1004382485}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5802,7 +5802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1029287668}
   - component: {fileID: 1029287669}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5886,7 +5886,7 @@ GameObject:
   - component: {fileID: 1059369862}
   - component: {fileID: 1059369864}
   - component: {fileID: 1059369863}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5952,7 +5952,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1089586063}
   - component: {fileID: 1089586064}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6280,7 +6280,7 @@ GameObject:
   - component: {fileID: 1157736211}
   - component: {fileID: 1157736210}
   - component: {fileID: 1157736209}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Moon Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6386,7 +6386,7 @@ GameObject:
   - component: {fileID: 1167163132}
   - component: {fileID: 1167163131}
   - component: {fileID: 1167163130}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Atmos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6677,7 +6677,7 @@ GameObject:
   - component: {fileID: 1218690404}
   - component: {fileID: 1218690403}
   - component: {fileID: 1218690405}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Planet VM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6987,7 +6987,7 @@ GameObject:
   - component: {fileID: 1263482134}
   - component: {fileID: 1263482132}
   - component: {fileID: 1263482133}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Planet Model
   m_TagString: Planet
   m_Icon: {fileID: 0}
@@ -7180,7 +7180,7 @@ GameObject:
   - component: {fileID: 1391045563}
   - component: {fileID: 1391045565}
   - component: {fileID: 1391045564}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: OrbitIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7760,7 +7760,7 @@ GameObject:
   - component: {fileID: 1459671402}
   - component: {fileID: 1459671404}
   - component: {fileID: 1459671403}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: OrbitIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8050,7 +8050,7 @@ GameObject:
   - component: {fileID: 1473827662}
   - component: {fileID: 1473827664}
   - component: {fileID: 1473827663}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Life Amount Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8253,7 +8253,7 @@ GameObject:
   - component: {fileID: 1522186636}
   - component: {fileID: 1522186638}
   - component: {fileID: 1522186637}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8327,7 +8327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1524323799}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Respawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8436,7 +8436,7 @@ GameObject:
   - component: {fileID: 1556758011}
   - component: {fileID: 1556758009}
   - component: {fileID: 1556758010}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Planet VM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8670,7 +8670,7 @@ GameObject:
   - component: {fileID: 1597053704}
   - component: {fileID: 1597053703}
   - component: {fileID: 1597053705}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: World Space UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8813,7 +8813,7 @@ GameObject:
   - component: {fileID: 1610955294}
   - component: {fileID: 1610955296}
   - component: {fileID: 1610955295}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Life Amount Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8889,7 +8889,7 @@ GameObject:
   - component: {fileID: 1625282206}
   - component: {fileID: 1625282208}
   - component: {fileID: 1625282207}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: OrbitIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9561,7 +9561,7 @@ GameObject:
   - component: {fileID: 1673832948}
   - component: {fileID: 1673832947}
   - component: {fileID: 1673832946}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Life Absorbing Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9723,7 +9723,7 @@ PrefabInstance:
     - target: {fileID: 487673097463274154, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 519242573751931721, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
@@ -9779,7 +9779,7 @@ PrefabInstance:
     - target: {fileID: 3178078076085906638, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3491624253056797878, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
@@ -11124,17 +11124,17 @@ PrefabInstance:
     - target: {fileID: 3735249441773677052, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3981672544093629490, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000070572220464919, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4226793436382775935, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
@@ -11159,12 +11159,12 @@ PrefabInstance:
     - target: {fileID: 4955489400460691008, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5399153655212503851, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5399153655212503851, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
@@ -11179,7 +11179,7 @@ PrefabInstance:
     - target: {fileID: 5621299475357727076, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5900620658815261658, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
@@ -11189,7 +11189,7 @@ PrefabInstance:
     - target: {fileID: 5900620658815261658, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5900620658815261658, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
@@ -11199,7 +11199,7 @@ PrefabInstance:
     - target: {fileID: 6033964247626349333, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6146064323702590369, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
@@ -11209,7 +11209,7 @@ PrefabInstance:
     - target: {fileID: 6251438601605434185, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6437494585859703718, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
@@ -11224,12 +11224,12 @@ PrefabInstance:
     - target: {fileID: 6523594726894953931, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6944448535998393509, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6957539364447030412, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
@@ -11244,12 +11244,12 @@ PrefabInstance:
     - target: {fileID: 7150877720344156348, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7859891883315212022, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7986761758392483623, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
@@ -11279,7 +11279,7 @@ PrefabInstance:
     - target: {fileID: 8360002858744193322, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8546751091984257421, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
@@ -11326,7 +11326,7 @@ GameObject:
   - component: {fileID: 1725255767}
   - component: {fileID: 1725255766}
   - component: {fileID: 1725255765}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Planet Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11418,7 +11418,7 @@ GameObject:
   - component: {fileID: 1734326976}
   - component: {fileID: 1734326974}
   - component: {fileID: 1734326975}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Planet VM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11777,7 +11777,7 @@ GameObject:
   - component: {fileID: 1843981238}
   - component: {fileID: 1843981240}
   - component: {fileID: 1843981239}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11843,7 +11843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1844908676}
   - component: {fileID: 1844908677}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Example Planet_2
   m_TagString: Planet
   m_Icon: {fileID: 0}
@@ -11894,7 +11894,7 @@ GameObject:
   - component: {fileID: 1855941270}
   - component: {fileID: 1855941272}
   - component: {fileID: 1855941271}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12102,7 +12102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1910724319}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12141,7 +12141,7 @@ GameObject:
   - component: {fileID: 1933752082}
   - component: {fileID: 1933752084}
   - component: {fileID: 1933752083}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12309,7 +12309,7 @@ GameObject:
   - component: {fileID: 1948250066}
   - component: {fileID: 1948250065}
   - component: {fileID: 1948250064}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Planet Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12399,7 +12399,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1950465576}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: =====Star Plane=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12514,7 +12514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1963049323}
   - component: {fileID: 1963049324}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Planet Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12699,7 +12699,7 @@ GameObject:
   - component: {fileID: 2068028121}
   - component: {fileID: 2068028120}
   - component: {fileID: 2068028119}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: World Space UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12824,7 +12824,7 @@ GameObject:
   - component: {fileID: 2070308392}
   - component: {fileID: 2070308394}
   - component: {fileID: 2070308393}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Life Amount Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12901,7 +12901,7 @@ GameObject:
   - component: {fileID: 2094632118}
   - component: {fileID: 2094632117}
   - component: {fileID: 2094632116}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Name Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13050,7 +13050,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2107583872}
   - component: {fileID: 2107583873}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Example Planet_1
   m_TagString: Planet
   m_Icon: {fileID: 0}
@@ -13103,7 +13103,7 @@ GameObject:
   - component: {fileID: 2109507068}
   - component: {fileID: 2109507067}
   - component: {fileID: 2109507066}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Life Absorbing Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13485,7 +13485,7 @@ GameObject:
   - component: {fileID: 2346632346765562630}
   - component: {fileID: 1972985672539870794}
   - component: {fileID: 7269177011887575160}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Star_Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14248,7 +14248,7 @@ GameObject:
   - component: {fileID: 6962830144958259856}
   - component: {fileID: 5874183758172472836}
   - component: {fileID: 5859582150139915508}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Atmos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14939,15 +14939,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1950465576}
     m_Modifications:
-    - target: {fileID: 6511698221307524608, guid: 0d7dfa647ff692c409da80df88c09d14,
+    - target: {fileID: 1330612531713451285, guid: 0d7dfa647ff692c409da80df88c09d14,
         type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3856498758809785519, guid: 0d7dfa647ff692c409da80df88c09d14,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6933824282034342974, guid: 0d7dfa647ff692c409da80df88c09d14,
         type: 3}
       propertyPath: m_Name
       value: Sun
+      objectReference: {fileID: 0}
+    - target: {fileID: 6933824282034342974, guid: 0d7dfa647ff692c409da80df88c09d14,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6933824282034342975, guid: 0d7dfa647ff692c409da80df88c09d14,
         type: 3}
@@ -15004,6 +15014,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6933824282725501941, guid: 0d7dfa647ff692c409da80df88c09d14,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9087298100273188116, guid: 0d7dfa647ff692c409da80df88c09d14,
         type: 3}
       propertyPath: RespawnPoint
@@ -15014,8 +15029,7 @@ PrefabInstance:
       propertyPath: WhiteFieldAnimator
       value: 
       objectReference: {fileID: 1018491412}
-    m_RemovedComponents:
-    - {fileID: 6933824282725501939, guid: 0d7dfa647ff692c409da80df88c09d14, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -15183,7 +15197,7 @@ PrefabInstance:
     - target: {fileID: 487673097463274154, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 519242573751931721, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
@@ -15213,7 +15227,7 @@ PrefabInstance:
     - target: {fileID: 3178078076085906638, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3491624253056797878, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
@@ -16558,17 +16572,17 @@ PrefabInstance:
     - target: {fileID: 3735249441773677052, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3981672544093629490, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000070572220464919, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4226793436382775935, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
@@ -16593,12 +16607,12 @@ PrefabInstance:
     - target: {fileID: 4955489400460691008, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5399153655212503851, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5519468426928774527, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
@@ -16608,7 +16622,7 @@ PrefabInstance:
     - target: {fileID: 5621299475357727076, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5900620658815261658, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
@@ -16618,7 +16632,7 @@ PrefabInstance:
     - target: {fileID: 5900620658815261658, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5900620658815261658, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
@@ -16628,7 +16642,7 @@ PrefabInstance:
     - target: {fileID: 6033964247626349333, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6146064323702590369, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
@@ -16638,7 +16652,7 @@ PrefabInstance:
     - target: {fileID: 6251438601605434185, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6437494585859703718, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
@@ -16653,7 +16667,7 @@ PrefabInstance:
     - target: {fileID: 6523594726894953931, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6771016904521609063, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
@@ -16665,7 +16679,7 @@ PrefabInstance:
     - target: {fileID: 6944448535998393509, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6957539364447030412, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
@@ -16680,12 +16694,12 @@ PrefabInstance:
     - target: {fileID: 7150877720344156348, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7859891883315212022, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7986761758392483623, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
@@ -16735,7 +16749,7 @@ PrefabInstance:
     - target: {fileID: 8360002858744193322, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8546751091984257421, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
