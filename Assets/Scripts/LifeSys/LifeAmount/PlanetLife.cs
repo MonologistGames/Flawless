@@ -47,7 +47,7 @@ namespace Flawless.LifeSys
         /// - Shader Effects
         /// - etc.
         /// </summary>4
-        public void SetPlanetDead()
+        public virtual void SetPlanetDead()
         {
             // TODO: Set the planet dead effects.
         }
@@ -56,6 +56,14 @@ namespace Flawless.LifeSys
         public float CollideDamage = 200f;
         public float CollideForce = 10f;
         
+        /// <summary>
+        /// Defines how a planet reacts to a player's collision.
+        /// Can be overridden by child classes to make different effects.
+        /// This function will automatically be called by <see cref="PlayerLife"/> when a collision happens.
+        /// </summary>
+        /// <param name="playerRigidbody">Player character's rigidbody.</param>
+        /// <param name="playerLife">Player's life component.</param>
+        /// <param name="normal">Normal on the contact.</param>
         public virtual void CollideAndDamageLife(Rigidbody playerRigidbody, PlayerLife playerLife,
             Vector3 normal)
         {
