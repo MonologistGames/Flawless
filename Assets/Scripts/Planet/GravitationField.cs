@@ -3,22 +3,12 @@ using UnityEngine;
 namespace Flawless.Planet
 {
     [RequireComponent(typeof(SphereCollider))]
-    [RequireComponent(typeof(Rigidbody))]
     public class GravitationField : MonoBehaviour
     {
         private const float GravitationFactor = 5f;
         private const float GravitationPower = 1.5f;
 
-        private Rigidbody _rigidbody;
-
-        #region MonoBehaviours
-
-        private void OnEnable()
-        {
-            _rigidbody = GetComponent<Rigidbody>();
-        }
-
-        #endregion
+        public float Mass;
 
         #region Trigger Events
 
@@ -34,7 +24,7 @@ namespace Flawless.Planet
 
             // TODO: Adjust Gravitation Calculation to have a more interesting movement controller
             Vector3 gravitation = (gravitationVector.normalized) *
-                                  (GravitationFactor * _rigidbody.mass /
+                                  (GravitationFactor * Mass /
                                    Mathf.Pow(gravitationVector.magnitude, GravitationPower)); //Calculate Gravitation
             
             inFieldRigidbody.AddForce(gravitation, ForceMode.Acceleration); //Apply Gravitation

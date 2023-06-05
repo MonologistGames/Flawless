@@ -74,15 +74,12 @@ namespace Flawless.LifeSys
 
         #endregion
 
-
         #region Absorb
 
         [Header("Absorb")] public float AbsorbSpeed = 100f;
         public float AbsorbRange = 2f;
 
         #endregion
-
-        [Header("Collide")] public float CollideDamage = 100f;
 
         #region Internal Components
 
