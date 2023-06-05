@@ -19,7 +19,7 @@ namespace Flawless.PlayerCharacter
         /// <summary>
         /// Player Input component.
         /// </summary>
-        public PlayerInput PlayerInput { get; private set; }
+        private PlayerInput PlayerInput { get; set; }
 
         /// <summary>
         /// Target camera that film the character and move along with.
@@ -109,9 +109,6 @@ namespace Flawless.PlayerCharacter
         public Vector3 Velocity => Rigidbody.velocity;
 
         #endregion
-        
-        [Header("Collide")]
-        public float CollideForce = 10f;
 
         #region MonoBehaviours
 
