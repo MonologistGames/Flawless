@@ -4,7 +4,7 @@ namespace Flawless.Planet
 {
     [RequireComponent(typeof(SphereCollider))]
     [RequireComponent(typeof(Rigidbody))]
-    public class PlanetGravitationField : MonoBehaviour
+    public class GravitationField : MonoBehaviour
     {
         private const float GravitationFactor = 5f;
         private const float GravitationPower = 1.5f;
@@ -25,6 +25,7 @@ namespace Flawless.Planet
         private void OnTriggerStay(Collider other)
         {
             var inFieldRigidbody = other.gameObject.GetComponent<Rigidbody>();
+            // Exclude gravity source itself and kinematic rigidbodies
             if (inFieldRigidbody == null || inFieldRigidbody.isKinematic || inFieldRigidbody.gameObject == this.gameObject)
                 return;
             

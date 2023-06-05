@@ -12,14 +12,14 @@ namespace Flawless
         public float FadeTime = 1f;
         public Animator WhiteFieldAnimator;
         
-        private PlanetController _planetController;
+        private PlayerController _playerController;
         private PlayerLife _playerLife;
         
         private static readonly int Begin = Animator.StringToHash("Begin");
 
         private void Start()
         {
-            _planetController = FindObjectOfType<PlanetController>();
+            _playerController = FindObjectOfType<PlayerController>();
             _playerLife = FindObjectOfType<PlayerLife>();
         }
 
@@ -36,10 +36,10 @@ namespace Flawless
         private IEnumerator Respawn()
         {
             yield return new WaitForSeconds(FadeTime);
-            _planetController.transform.position = RespawnPoint.position;
-            _planetController.SetControlled();
+            _playerController.transform.position = RespawnPoint.position;
+            _playerController.SetControlled();
             yield return new WaitForSeconds(FadeTime);
-            _planetController.SetPlaying();
+            _playerController.SetPlaying();
         }
     }
 }

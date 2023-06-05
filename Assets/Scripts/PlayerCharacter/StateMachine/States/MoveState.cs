@@ -7,14 +7,14 @@ namespace Flawless.PlayerCharacter
     public class MoveState : IState
     {
         private readonly PlayerStateMachine _stateMachine;
-        private readonly PlanetController _planetController;
+        private readonly PlayerController _playerController;
         
         private bool _isAccelerating;
 
         public MoveState(PlayerStateMachine stateMachine)
         {
             _stateMachine = stateMachine;
-            _planetController = stateMachine.PlanetController;
+            _playerController = stateMachine.PlayerController;
         }
 
         public void OnEnter()
@@ -30,13 +30,13 @@ namespace Flawless.PlayerCharacter
             var accelerateVector = Vector3.zero;
             // Apply motivation and Gravitation
             if (_isAccelerating)
-                accelerateVector = _planetController.MoveDir * _planetController.Acceleration;
+                accelerateVector = _playerController.MoveDir * _playerController.Acceleration;
 
-            _planetController.Rigidbody.AddForce(accelerateVector, ForceMode.Acceleration);
+            _playerController.Rigidbody.AddForce(accelerateVector, ForceMode.Acceleration);
 
-            _planetController.Rigidbody.velocity = _planetController.Velocity.normalized * 
-                                                   Mathf.Min(_planetController.IsOverDriving ?_planetController.MaxOverDriveSpeed : _planetController.MaxSpeed, 
-                                                       _planetController.Velocity.magnitude);
+            _playerController.Rigidbody.velocity = _playerController.Velocity.normalized * 
+                                                   Mathf.Min(_playerController.IsOverDriving ?_playerController.MaxOverDriveSpeed : _playerController.MaxSpeed, 
+                                                       _playerController.Velocity.magnitude);
         }
 
         public void OnExit()
@@ -51,18 +51,18 @@ namespace Flawless.PlayerCharacter
 
         private void AddInputCallbacks()
         {
-            _planetController.SpeedUpButton.started += OnSpeedUpStart;
-            _planetController.SpeedUpButton.canceled += OnSpeedUpCancel;
+            _playerController.SpeedUpButton.started += OnSpeedUpStart;
+            _playerController.SpeedUpButton.canceled += OnSpeedUpCancel;
 
-            _planetController.LeapButton.performed += OnLeap;
+            _playerController.LeapButton.performed += OnLeap;
         }
 
         private void RemoveInputCallbacks()
         {
-            _planetController.SpeedUpButton.started -= OnSpeedUpStart;
-            _planetController.SpeedUpButton.canceled -= OnSpeedUpCancel;
+            _playerController.SpeedUpButton.started -= OnSpeedUpStart;
+            _playerController.SpeedUpButton.canceled -= OnSpeedUpCancel;
 
-            _planetController.LeapButton.performed -= OnLeap;
+            _playerController.LeapButton.performed -= OnLeap;
         }
 
         #endregion
@@ -87,17 +87,17 @@ namespace Flawless.PlayerCharacter
 
         private void OnLeap(InputAction.CallbackContext context)
         {
-            if (!_planetController.IsLeapReady) return;
+            if (!_playerController.IsLeapReady) return;
             
-            _planetController.LeapTimer.ResetTime();
-            _planetController.LeapTimer.IsPaused = false;
-            _planetController.IsLeapReady = false;
+            _playerController.LeapTimer.ResetTime();
+            _playerController.LeapTimer.IsPaused = false;
+            _playerController.IsLeapReady = false;
             
-            _planetController.OverDriveTimer.AddTime(_planetController.OverDriveDuration);
-            _planetController.OverDriveTimer.IsPaused = false;
-            _planetController.IsOverDriving = true;
+            _playerController.OverDriveTimer.AddTime(_playerController.OverDriveDuration);
+            _playerController.OverDriveTimer.IsPaused = false;
+            _playerController.IsOverDriving = true;
             
-            _planetController.Rigidbody.AddForce(_planetController.LeapAcceleration * _planetController.MoveDir,
+            _playerController.Rigidbody.AddForce(_playerController.LeapAcceleration * _playerController.MoveDir,
                 ForceMode.Impulse);
         }
 

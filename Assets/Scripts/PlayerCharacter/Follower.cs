@@ -6,7 +6,7 @@ namespace Flawless.PlayerCharacter
 {
     public class Follower : MonoBehaviour
     {
-        public PlanetController FollowTarget;
+        public PlayerController FollowTarget;
 
         public float FollowSpeed = 5f;
         public float DistanceThreshold = 0.2f;
@@ -14,7 +14,8 @@ namespace Flawless.PlayerCharacter
 
         public Vector3 PositionOffset;
         public AnimationCurve SpeedCurve;
-
+        
+        // Toggles for function enables
         public bool IsLookingAt = true;
         public bool IsMovingTo = true;
 
@@ -25,6 +26,7 @@ namespace Flawless.PlayerCharacter
         {
             if (FollowTarget.Velocity != Vector3.zero)
                 _offset = Quaternion.LookRotation(FollowTarget.Velocity.normalized, Vector3.up) * PositionOffset;
+            
             // Update Rotation
             if (IsLookingAt)
             {
@@ -40,8 +42,10 @@ namespace Flawless.PlayerCharacter
                 var distance = Vector3.Distance(transform.position, FollowTarget.transform.position + _offset);
                 if (distance < DistanceThreshold) return;
 
-                transform.position += (FollowTarget.transform.position + _offset - transform.position).normalized *
-                                      (FollowSpeed * SpeedCurve.Evaluate(distance / 7f) * Time.deltaTime);
+                var position = transform.position;
+                position += (FollowTarget.transform.position + _offset - position).normalized *
+                            (FollowSpeed * SpeedCurve.Evaluate(distance / 7f) * Time.deltaTime);
+                transform.position = position;
             }
         }
     }

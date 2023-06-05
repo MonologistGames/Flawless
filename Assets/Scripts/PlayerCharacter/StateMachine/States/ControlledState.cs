@@ -6,17 +6,17 @@ namespace Flawless.PlayerCharacter
     public class ControlledState : IState
     {
         private PlayerStateMachine _stateMachine;
-        private PlanetController _planetController;
+        private PlayerController _playerController;
         
         public ControlledState(PlayerStateMachine playerStateMachine)
         {
             _stateMachine = playerStateMachine;
-            _planetController = playerStateMachine.PlanetController;
+            _playerController = playerStateMachine.PlayerController;
         }
 
         public void OnEnter()
         {
-            _planetController.Rigidbody.velocity = Vector3.zero;
+            _playerController.Rigidbody.velocity = Vector3.zero;
         }
 
         public void Update()

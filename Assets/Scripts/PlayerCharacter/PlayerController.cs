@@ -8,22 +8,31 @@ namespace Flawless.PlayerCharacter
 {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(PlayerInput))]
-    public class PlanetController : MonoBehaviour
+    public class PlayerController : MonoBehaviour
     {
         #region Internal Components Refs
         /// <summary>
         /// Rigidbody of the character planet.
         /// </summary>
         public Rigidbody Rigidbody { get; private set; }
-
+        
+        /// <summary>
+        /// Player Input component.
+        /// </summary>
         public PlayerInput PlayerInput { get; private set; }
 
         /// <summary>
         /// Target camera that film the character and move along with.
         /// </summary>
         public Camera TargetCamera;
-
+        
+        /// <summary>
+        /// State machine to control player movement state.
+        /// </summary>
         private PlayerStateMachine StateMachine { get; set; }
+        /// <summary>
+        /// Life system component of player character.
+        /// </summary>
         private PlayerLife Life { get; set; }
         
         #endregion
@@ -72,6 +81,9 @@ namespace Flawless.PlayerCharacter
         [Header("Leap")] public float LeapAcceleration = 10f;
 
         public float LeapDuration = 5f;
+        /// <summary>
+        /// Timer instance for leap count down.
+        /// </summary>
         [HideInInspector]
         public Timer LeapTimer;
 
@@ -90,12 +102,6 @@ namespace Flawless.PlayerCharacter
         public bool IsOverDriving;
 
         #endregion
-
-
-        /// <summary>
-        /// Gravitation the player planet get.
-        /// </summary>
-        public Vector3 Gravitation { get; set; }
 
         /// <summary>
         /// Current Velocity of the player planet.
@@ -147,7 +153,7 @@ namespace Flawless.PlayerCharacter
             OverDriveTimer = TimerManager.Instance.AddTimer("OverDriveTimer");
             OverDriveTimer.OnTimerEnd += () => IsOverDriving = false;
         }
-
+        
         private void Update()
         {
             StateMachine.Update();
@@ -159,7 +165,12 @@ namespace Flawless.PlayerCharacter
         }
 
         #region Collision Events
-
+        
+        /// <summary>
+        /// Automatically called when player planet collide with other objects.
+        /// Will call planet's CollideAndDamageLife method to react differently from planet to planet.
+        /// </summary>
+        /// <param name="other"></param>
         private void OnCollisionEnter(Collision other)
         {
             var planet = other.gameObject.GetComponent<PlanetLife>();
@@ -207,12 +218,19 @@ namespace Flawless.PlayerCharacter
         {
             StateMachine.TransitTo("Move");
         }
-
+        
+        /// <summary>
+        /// Set the player planet to controlled state.
+        /// Will not be affected by gravity and player input.
+        /// </summary>
         public void SetControlled()
         {
             StateMachine.TransitTo("Controlled");
         }
-
+        
+        /// <summary>
+        /// Recover from controlled state.
+        /// </summary>
         public void SetPlaying()
         {
             StateMachine.TransitTo("Move");

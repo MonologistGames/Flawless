@@ -13,7 +13,7 @@ namespace Flawless.Levels.Gates
         public Animator Animator;
         private static readonly int Launch = Animator.StringToHash("Launch");
 
-        private PlanetController Player { get; set; }
+        private PlayerController Player { get; set; }
         private Timer _jumpTimer;
 
         #region MonoBehaviours
@@ -38,7 +38,7 @@ namespace Flawless.Levels.Gates
             if (!other.gameObject.CompareTag("Player")) return;
             if (other.isTrigger) return;
 
-            var planetController = other.gameObject.GetComponentInParent<PlanetController>();
+            var planetController = other.gameObject.GetComponentInParent<PlayerController>();
             if (planetController == null) return;
             if (planetController.IsOverDriving)
             {
@@ -46,7 +46,7 @@ namespace Flawless.Levels.Gates
             }
         }
 
-        private void BeginJump(PlanetController player)
+        private void BeginJump(PlayerController player)
         {
             Player = player;
             Player.Rigidbody.velocity =

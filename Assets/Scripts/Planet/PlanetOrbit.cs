@@ -12,7 +12,9 @@ namespace Flawless.Planet
         public Transform Planet;
         public Transform OrbitCenter;
         public float OrbitAngleSpeed = 1f;
-        
+
+        #region Editor Validation
+
         private void OnValidate()
         {
             _orbitTrail = GetComponentInChildren<CircleDrawer>();
@@ -20,7 +22,10 @@ namespace Flawless.Planet
             if (!_orbitTrail || !OrbitCenter) return;
             _orbitTrail.Radius = Vector3.Distance(OrbitCenter.position, Planet.position);
             _orbitTrail.transform.position = OrbitCenter.position;
-        }
+        }        
+
+        #endregion
+
 
         #region MonoBehaviours
 

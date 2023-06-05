@@ -16,9 +16,7 @@ namespace Flawless.LifeSys
         
         [SerializeField]
         private float _lifeAmount = 1000f;
-        
-        public event Action<float> OnLifeAmountChanged; 
-
+        public event Action<float> OnLifeAmountChanged;
         public float LifeAmount
         {
             get => _lifeAmount;
