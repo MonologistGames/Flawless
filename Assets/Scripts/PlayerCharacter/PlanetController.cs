@@ -162,16 +162,8 @@ namespace Flawless.PlayerCharacter
 
         private void OnCollisionEnter(Collision other)
         {
-            if (!other.gameObject.CompareTag("Planet")) return;
-            
-            var velocityDir = Velocity.normalized;
+            var planet = other.gameObject.GetComponent<Planet.Planet>();
             var normalDir = other.GetContact(0).normal;
-            var boundDirection = velocityDir +
-                                 Mathf.Abs(2 * Vector3.Dot(velocityDir, normalDir)) * normalDir;
-            Rigidbody.AddForce(boundDirection * CollideForce - Velocity,
-                ForceMode.VelocityChange);
-            
-            LifeAmount.CollideAndDamageLife();
         }
 
         #endregion

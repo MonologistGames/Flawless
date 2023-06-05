@@ -27,10 +27,10 @@ namespace Flawless.PlayerCharacter
 
         public void FixedUpdate()
         {
-            var accelerateVector = _planetController.Gravitation;
+            var accelerateVector = Vector3.zero;
             // Apply motivation and Gravitation
             if (_isAccelerating)
-                accelerateVector += _planetController.MoveDir * _planetController.Acceleration;
+                accelerateVector = _planetController.MoveDir * _planetController.Acceleration;
 
             _planetController.Rigidbody.AddForce(accelerateVector, ForceMode.Acceleration);
 
