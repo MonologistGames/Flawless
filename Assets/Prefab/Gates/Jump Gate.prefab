@@ -134,9 +134,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JumpTimeFactor: 0.2
   JumpForce: 15
-  JumpLapse: 1
+  JumpLapse: 0.5
   OverDriveTime: 2
   Animator: {fileID: 6081126072396908824}
+  ControlledForce: 10
 --- !u!135 &5280336403639713853
 SphereCollider:
   m_ObjectHideFlags: 0
