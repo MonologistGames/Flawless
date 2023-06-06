@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLifeUnits: 6
-  _lifeUnitsCount: 3
+  _lifeUnitsCount: 1
   _lifeAmount: 0
   BaseDecreaseSpeed: 20
   AbsorbSpeed: 200
