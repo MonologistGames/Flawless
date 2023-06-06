@@ -50,11 +50,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Moss_BaseColor:
-        m_Texture: {fileID: 2800000, guid: 3d922e3d33389974fa4e5fb83479a991, type: 3}
+        m_Texture: {fileID: 2800000, guid: 907c64e4a31592a4a90b1a089af520fd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Moss_Light_BaseColor:
-        m_Texture: {fileID: 2800000, guid: 3d922e3d33389974fa4e5fb83479a991, type: 3}
+        m_Texture: {fileID: 2800000, guid: 907c64e4a31592a4a90b1a089af520fd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Moss_Light_Normal:
