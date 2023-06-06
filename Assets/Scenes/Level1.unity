@@ -1332,7 +1332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c3cbc2d86d9eb43b9fbb2b75716023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 863982711}
+  PlanetGroup: {fileID: 0}
   OrbitCenter: {fileID: 1263324459}
   OrbitAngleSpeed: 2
 --- !u!4 &171948524
@@ -3839,6 +3839,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lifeAmount: 4000
   IsAbsorbed: 0
+  CollideDamage: 200
+  CollideForce: 10
 --- !u!114 &817316182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3853,7 +3855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbsorbEffect: {fileID: 50690621}
   MeshRenderer: {fileID: 817316187}
-  PlanetLifeAmount: {fileID: 817316181}
+  PlanetLife: {fileID: 0}
 --- !u!114 &817316183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3866,6 +3868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f6d149f0fc44014d9141588000b87ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mass: 0
 --- !u!135 &817316184
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4242,7 +4245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b576d7e000e5b479c281669ea17aac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeAmount: {fileID: 817316181}
+  Life: {fileID: 0}
   ShowUpSpeed: 2
   LifeFill: {fileID: 2070308393}
 --- !u!114 &856012333
@@ -4942,6 +4945,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lifeAmount: 4000
   IsAbsorbed: 0
+  CollideDamage: 200
+  CollideForce: 10
 --- !u!114 &956153014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4954,6 +4959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f6d149f0fc44014d9141588000b87ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mass: 0
 --- !u!135 &956153015
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5087,7 +5093,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbsorbEffect: {fileID: 2109507069}
   MeshRenderer: {fileID: 956153018}
-  PlanetLifeAmount: {fileID: 956153013}
+  PlanetLife: {fileID: 0}
 --- !u!1 &972145052
 GameObject:
   m_ObjectHideFlags: 0
@@ -6964,6 +6970,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lifeAmount: 4000
   IsAbsorbed: 0
+  CollideDamage: 200
+  CollideForce: 10
 --- !u!114 &1263482133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6978,7 +6986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbsorbEffect: {fileID: 1673832949}
   MeshRenderer: {fileID: 1263482138}
-  PlanetLifeAmount: {fileID: 1263482132}
+  PlanetLife: {fileID: 0}
 --- !u!114 &1263482134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6991,6 +6999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f6d149f0fc44014d9141588000b87ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mass: 0
 --- !u!135 &1263482135
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8568,7 +8577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b576d7e000e5b479c281669ea17aac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeAmount: {fileID: 956153013}
+  Life: {fileID: 0}
   ShowUpSpeed: 2
   LifeFill: {fileID: 1473827663}
 --- !u!224 &1604340241 stripped
@@ -10166,7 +10175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c3cbc2d86d9eb43b9fbb2b75716023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1963049323}
+  PlanetGroup: {fileID: 0}
   OrbitCenter: {fileID: 1263324459}
   OrbitAngleSpeed: 2
 --- !u!1 &1855941269
@@ -11131,7 +11140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b576d7e000e5b479c281669ea17aac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeAmount: {fileID: 1263482132}
+  Life: {fileID: 0}
   ShowUpSpeed: 2
   LifeFill: {fileID: 1610955295}
 --- !u!114 &2068028120
@@ -11476,7 +11485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c3cbc2d86d9eb43b9fbb2b75716023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 832311925}
+  PlanetGroup: {fileID: 0}
   OrbitCenter: {fileID: 1263324459}
   OrbitAngleSpeed: 1.4
 --- !u!1 &2109507064
@@ -11929,12 +11938,11 @@ MonoBehaviour:
   MaxSpeed: 3
   BonusMaxSpeed: 1
   MaxOverDriveSpeed: 7
+  IsOverDriving: 0
   LeapAcceleration: 12
   LeapDuration: 5
   IsLeapReady: 0
   OverDriveDuration: 0.5
-  IsOverDriving: 0
-  CollideForce: 10
 --- !u!1 &919132149260465900
 GameObject:
   m_ObjectHideFlags: 0
@@ -12213,7 +12221,6 @@ MonoBehaviour:
   BaseDecreaseSpeed: 20
   AbsorbSpeed: 200
   AbsorbRange: 5
-  CollideDamage: 100
 --- !u!4 &2346632346765562630
 Transform:
   m_ObjectHideFlags: 0
