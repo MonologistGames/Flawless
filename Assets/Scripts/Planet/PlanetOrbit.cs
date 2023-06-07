@@ -17,7 +17,7 @@ namespace Flawless.Planet
         {
             // Update planet position
             PlanetGroup.RotateAround(OrbitCenter.position, OrbitCenter.up, OrbitAngleSpeed * Time.deltaTime);
-            PlanetGroup.eulerAngles = Vector3.zero;
+            // PlanetGroup.localEulerAngles = Vector3.zero;
         }
 
         #endregion

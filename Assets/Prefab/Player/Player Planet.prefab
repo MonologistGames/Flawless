@@ -68,12 +68,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLifeUnits: 6
-  _lifeUnitsCountCount: 2
+  _lifeUnitsCount: 2
   _lifeAmount: 0
   BaseDecreaseSpeed: 10
   AbsorbSpeed: 200
   AbsorbRange: 5
-  CollideDamage: 100
 --- !u!114 &8007779002352360889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,12 +281,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetCamera: {fileID: 0}
   Acceleration: 1
+  BonusAcceleration: 0.6
   MaxSpeed: 3
+  BonusMaxSpeed: 1
+  MaxOverDriveSpeed: 0
+  IsOverDriving: 0
   LeapAcceleration: 10
-  MaxDashSpeed: 0
   LeapDuration: 5
+  IsLeapReady: 0
   OverDriveDuration: 0.5
-  CollideForce: 10
 --- !u!1 &1518960233334517753
 GameObject:
   m_ObjectHideFlags: 0
