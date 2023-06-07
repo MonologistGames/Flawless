@@ -490,10 +490,10 @@ VisualEffect:
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 0.26573673, y: 0.95864046, z: 0.6934082, w: 1}
+      - m_Value: {x: 0.6985898, y: 0.07400087, z: 0.08487604, w: 1}
         m_Name: Light Color
         m_Overridden: 1
-      - m_Value: {x: 0.02724014, y: 0.06506826, z: 0.06238593, w: 1}
+      - m_Value: {x: 0.21404622, y: 0.22386487, z: 0.2390769, w: 1}
         m_Name: DarkColor
         m_Overridden: 1
     m_Uint:

@@ -2828,7 +2828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetGroup: {fileID: 1866518222}
   OrbitCenter: {fileID: 1263324459}
-  OrbitAngleSpeed: 6
+  OrbitAngleSpeed: 7
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -8700,6 +8700,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Death Trigger
       objectReference: {fileID: 0}
+    - target: {fileID: 5371777659516065781, guid: 0d7dfa647ff692c409da80df88c09d14,
+        type: 3}
+      propertyPath: Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6933824282034342974, guid: 0d7dfa647ff692c409da80df88c09d14,
         type: 3}
       propertyPath: m_Name
@@ -8764,6 +8769,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sun body
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748508699309690745, guid: 0d7dfa647ff692c409da80df88c09d14,
+        type: 3}
+      propertyPath: m_Radius
+      value: 3.62
       objectReference: {fileID: 0}
     - target: {fileID: 9087298100273188116, guid: 0d7dfa647ff692c409da80df88c09d14,
         type: 3}
