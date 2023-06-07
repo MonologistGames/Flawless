@@ -19,12 +19,13 @@ namespace Flawless.Planet.PlanetsFunctions
         public float rotateSpeedDead;
 
 
-        public Satellite Satellite;
+        private Satellite Satellite;
         
         private float _originAcceleration;
 
         private void Start()
         {
+            Satellite = GetComponentInChildren<Satellite>();
             Satellite.rotateSpeed = rotateSpeed;
         }
 
