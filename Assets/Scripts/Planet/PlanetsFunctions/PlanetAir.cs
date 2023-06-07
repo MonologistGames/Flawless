@@ -44,19 +44,7 @@ namespace Flawless.Planet.PlanetsFunctions
             _gravitationField.Mass = _mass * 2;
             isDead = true;
         }
-
-        public override void CollideAndDamageLife(Rigidbody playerRigidbody, PlayerLife playerLife, Vector3 normal)
-        {
-            var velocityDir = playerRigidbody.velocity.normalized;
-            var boundDirection = velocityDir +
-                                 Mathf.Abs(2 * Vector3.Dot(velocityDir, normal)) * normal;
-            
-            playerRigidbody.AddForce(boundDirection * CollideForce - playerRigidbody.velocity,
-                ForceMode.VelocityChange);
-            
-            playerLife.CollideAndDamageLife(CollideDamage);
-        }
-
+        
         private void Shrink()
         {
             _nowScale-= shrinkSpeed*Time.unscaledDeltaTime;

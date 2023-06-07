@@ -8,7 +8,7 @@ using Unity.VisualScripting;
 namespace Flawless.Planet.PlanetsFunctions
 {
     [RequireComponent(typeof(GravitationField))]
-    public class PlanetLayer : PlanetLife
+    public class PlanetRock : PlanetLife
     {
         private GravitationField _gravitationField;
         private float _mass;
@@ -26,6 +26,7 @@ namespace Flawless.Planet.PlanetsFunctions
         {
             _gravitationField.Mass = _mass * 1.5f;
         }
+        
         
     }
 }
