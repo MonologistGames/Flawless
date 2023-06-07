@@ -11,6 +11,7 @@ namespace Flawless.Levels.Gates
         public float JumpLapse = 0.5f;
         public float OverDriveTime = 2f;
         public Animator Animator;
+        public float ControlledForce = 20f;
         private static readonly int Launch = Animator.StringToHash("Launch");
 
         private PlayerController Player { get; set; }
@@ -35,11 +36,9 @@ namespace Flawless.Levels.Gates
 
         private void OnTriggerEnter(Collider other)
         {
-            if (!other.gameObject.CompareTag("Player")) return;
-            if (other.isTrigger) return;
-
-            var planetController = other.gameObject.GetComponentInParent<PlayerController>();
+            var planetController = other.gameObject.GetComponent<PlayerController>();
             if (planetController == null) return;
+            
             if (planetController.IsOverDriving)
             {
                 BeginJump(planetController);
@@ -49,9 +48,9 @@ namespace Flawless.Levels.Gates
         private void BeginJump(PlayerController player)
         {
             Player = player;
-            Player.Rigidbody.velocity =
-                (transform.position - Player.transform.position).normalized * Player.Velocity.magnitude;
             Player.Jump();
+            Player.Rigidbody.velocity =
+                (transform.position - Player.transform.position).normalized * ControlledForce;
 
             Player.OverDriveTimer.SetTime(OverDriveTime);
             Player.IsOverDriving = true;
