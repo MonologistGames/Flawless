@@ -208,7 +208,6 @@ MonoBehaviour:
   accelerationDead: 0.8
   rotateSpeed: 20
   rotateSpeedDead: 30
-  Satellite: {fileID: 1598382426756254320}
 --- !u!1 &1671141278556243844
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,8 +436,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: '#C01DER'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 64636c9f4d0502548a91b90095d430de, type: 2}
+  m_sharedMaterial: {fileID: -7006701302536684930, guid: 64636c9f4d0502548a91b90095d430de,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -788,8 +788,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u51BB\u661F"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 64636c9f4d0502548a91b90095d430de, type: 2}
+  m_sharedMaterial: {fileID: -7006701302536684930, guid: 64636c9f4d0502548a91b90095d430de,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

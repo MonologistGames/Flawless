@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.01883833, g: 0.033279993, b: 0.036297195, a: 1}
+  m_IndirectSpecularColor: {r: 0.018879257, g: 0.03337278, b: 0.036385275, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1733,6 +1733,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4611666475289959647, guid: a5612bac4901cb54199b16ea36fd9e40,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.x
+      value: 50.551003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4611666475289959647, guid: a5612bac4901cb54199b16ea36fd9e40,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.z
+      value: 214.20201
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994854691803288576, guid: a5612bac4901cb54199b16ea36fd9e40,
+        type: 3}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 487704814}
     - target: {fileID: 6826259540337487641, guid: a5612bac4901cb54199b16ea36fd9e40,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -2182,6 +2197,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2050425251461911611, guid: d4ba2b96a6ce17e4d83e97423129a2dd,
+        type: 3}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 487704814}
     - target: {fileID: 3431583186400446203, guid: d4ba2b96a6ce17e4d83e97423129a2dd,
         type: 3}
       propertyPath: m_Name
@@ -2196,6 +2216,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262588681750282298, guid: d4ba2b96a6ce17e4d83e97423129a2dd,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.x
+      value: 50.551003
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262588681750282298, guid: d4ba2b96a6ce17e4d83e97423129a2dd,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.z
+      value: 214.20201
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3537,8 +3567,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: '#201123'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 64636c9f4d0502548a91b90095d430de, type: 2}
+  m_sharedMaterial: {fileID: -7006701302536684930, guid: 64636c9f4d0502548a91b90095d430de,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7416,6 +7447,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3419835629173971449, guid: c861d11afc5b28d4491cdfdb0a9098d0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.x
+      value: 50.551003
+      objectReference: {fileID: 0}
+    - target: {fileID: 3419835629173971449, guid: c861d11afc5b28d4491cdfdb0a9098d0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.z
+      value: 214.20201
+      objectReference: {fileID: 0}
     - target: {fileID: 3604883853392197857, guid: c861d11afc5b28d4491cdfdb0a9098d0,
         type: 3}
       propertyPath: m_Radius
@@ -7431,6 +7472,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5899421630174934359, guid: c861d11afc5b28d4491cdfdb0a9098d0,
+        type: 3}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 487704814}
     - target: {fileID: 8534397187709925853, guid: c861d11afc5b28d4491cdfdb0a9098d0,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -8065,6 +8111,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sun
       objectReference: {fileID: 0}
+    - target: {fileID: 6933824282034342974, guid: 0d7dfa647ff692c409da80df88c09d14,
+        type: 3}
+      propertyPath: m_TagString
+      value: Sun
+      objectReference: {fileID: 0}
     - target: {fileID: 6933824282034342975, guid: 0d7dfa647ff692c409da80df88c09d14,
         type: 3}
       propertyPath: m_RootOrder
@@ -8139,7 +8190,7 @@ PrefabInstance:
         type: 3}
       propertyPath: WhiteFieldAnimator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1018491412}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8586,8 +8637,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u6C99\u661F"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 64636c9f4d0502548a91b90095d430de, type: 2}
+  m_sharedMaterial: {fileID: -7006701302536684930, guid: 64636c9f4d0502548a91b90095d430de,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8890,12 +8942,12 @@ VisualEffect:
       m_Array: []
     m_Vector3f:
       m_Array:
-      - m_Value: {x: 8.78, y: 0.004, z: 11.03}
+      - m_Value: {x: 50.551003, y: 0.004, z: 214.20201}
         m_Name: Player Position
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 1.5, y: 0.72300005, z: 0.24000004, w: 1}
+      - m_Value: {x: 0.24408913, y: 1.5680876, z: 1.520174, w: 1}
         m_Name: Light Color
         m_Overridden: 1
       - m_Value: {x: 0.5635124, y: 0.053456187, z: 0, w: 1}
@@ -8932,7 +8984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Property:
     m_Name: Player Position
-  Target: {fileID: 0}
+  Target: {fileID: 487704814}
 --- !u!114 &1294137769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11456,6 +11508,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Planet Air
       objectReference: {fileID: 0}
+    - target: {fileID: 3514776480014850896, guid: cfad2f0452d503949b6d681d4b71b0bd,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.x
+      value: 50.551003
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514776480014850896, guid: cfad2f0452d503949b6d681d4b71b0bd,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.z
+      value: 214.20201
+      objectReference: {fileID: 0}
+    - target: {fileID: 3939725340573304106, guid: cfad2f0452d503949b6d681d4b71b0bd,
+        type: 3}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 487704814}
     - target: {fileID: 4289510884212864156, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -12260,6 +12327,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Planet Layer
       objectReference: {fileID: 0}
+    - target: {fileID: 3125136119277057298, guid: fc4ee6d108fdb2e4d8e2a5deb49c5d15,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.x
+      value: 50.551003
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125136119277057298, guid: fc4ee6d108fdb2e4d8e2a5deb49c5d15,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.z
+      value: 214.20201
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561668594783019703, guid: fc4ee6d108fdb2e4d8e2a5deb49c5d15,
+        type: 3}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 487704814}
     - target: {fileID: 6184844953690008359, guid: fc4ee6d108fdb2e4d8e2a5deb49c5d15,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -13756,7 +13838,7 @@ MonoBehaviour:
   MapIconReference: {fileID: 11400000, guid: 888285f7a8436714ebf5cb0ae0fb7425, type: 2}
   UnitRatio: 0.08
   AreaName: "System-\u03B1"
-  PlayerPosition: {fileID: 0}
+  PlayerPosition: {fileID: 487704814}
   BlackPosition: {fileID: 388650721}
   PlayerIcon: {fileID: 511755888}
   BlackIcon: {fileID: 1604340242}

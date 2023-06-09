@@ -43,12 +43,13 @@ namespace Flawless.Planet.PlanetsFunctions
         /// <param name="other"></param>
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Player"))
-            {
+ 
                 var playerController = other.GetComponent<PlayerController>();
+                if (playerController == null) return;
+                
                 _originAcceleration = playerController.Acceleration;
                 playerController.Acceleration = acceleration;
-            }
+            
         }
 
         /// <summary>
@@ -57,10 +58,10 @@ namespace Flawless.Planet.PlanetsFunctions
         /// <param name="other"></param>
         private void OnTriggerExit(Collider other)
         {
-            if (other.CompareTag("Player"))
-            {
-                other.GetComponent<PlayerController>().Acceleration = _originAcceleration;
-            }
+            var playerController = other.GetComponent<PlayerController>();
+            if (playerController == null) return;
+            playerController.Acceleration = _originAcceleration;
+            
         }
         #endregion
     }

@@ -48,10 +48,11 @@ namespace Flawless.UI.LifeAmount
                 UnitFills[i].transform.parent.gameObject.SetActive(true);
                 UnitFills[i].fillAmount = 1;
             }
-
+            
+            if (unitCountFloor == lifeUnitsCount) return;
             UnitFills[unitCountFloor].transform.parent.gameObject.SetActive(true);
             UnitFills[unitCountFloor].fillAmount = fillValue * (1 - FillOffset) + FillOffset;
-
+            
             for (var i = unitCountCeil; i < lifeUnitsCount; i++)
             {
                 UnitFills[i].fillAmount = 0;

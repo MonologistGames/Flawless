@@ -12,22 +12,21 @@ namespace Flawless.Planet.PlanetsFunctions
     {
         private GravitationField _gravitationField;
         private float _mass;
-        
+
         private float _nowScale;
         private float _atmosScale;
-        [Header("Atmos")]
-        public Transform Atmos;
-        [Header("ShrinkVale")]
-        public float objectiveScale=0.6f;
+        [Header("Atmos")] public Transform Atmos;
+        [Header("ShrinkVale")] public float objectiveScale = 0.6f;
         public float shrinkSpeed = 0.1f;
-        
-        private bool isDead=false;
+
+        private bool isDead = false;
+
         public void Start()
         {
             _gravitationField = GetComponent<GravitationField>();
             _mass = _gravitationField.Mass;
-            
-            _nowScale= this.transform.localScale.x;
+
+            _nowScale = this.transform.localScale.x;
             _atmosScale = Atmos.localScale.x;
         }
 
@@ -44,13 +43,13 @@ namespace Flawless.Planet.PlanetsFunctions
             _gravitationField.Mass = _mass * 2;
             isDead = true;
         }
-        
+
         private void Shrink()
         {
-            _nowScale-= shrinkSpeed*Time.unscaledDeltaTime;
-            this.transform.localScale = new Vector3(_nowScale,_nowScale,_nowScale);
-            _atmosScale-= shrinkSpeed*Time.unscaledDeltaTime;
-            Atmos.localScale = new Vector3(_atmosScale,_atmosScale,_atmosScale);
+            _nowScale -= shrinkSpeed * Time.unscaledDeltaTime;
+            this.transform.localScale = new Vector3(_nowScale, _nowScale, _nowScale);
+            _atmosScale -= shrinkSpeed * Time.unscaledDeltaTime;
+            Atmos.localScale = new Vector3(_atmosScale, _atmosScale, _atmosScale);
         }
     }
 }

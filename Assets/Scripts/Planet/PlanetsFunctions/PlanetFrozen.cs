@@ -9,13 +9,14 @@ namespace Flawless.Planet.PlanetsFunctions
 {
     public class PlanetFrozen : PlanetLife
     {
-        [Header("Speed&Acceleration")]
-        public float maxSpeed = 2f;
+        [Header("Speed&Acceleration")] public float maxSpeed = 2f;
         public float acceleration = 1.6f;
+
         [Header("Speed&AccelerationAfterDead")]
         public float maxSpeedDead = 1.5f;
+
         public float accelerationDead = 0.8f;
-        
+
         private float _originMaxSpeed;
         private float _originAcceleration;
 
@@ -26,26 +27,26 @@ namespace Flawless.Planet.PlanetsFunctions
         }
 
         #region TriggerEvent
+
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Player"))
-            {
-                var playerController = other.GetComponent<PlayerController>();
-                _originMaxSpeed = playerController.MaxSpeed;
-                _originAcceleration = playerController.Acceleration;
-                playerController.MaxSpeed = maxSpeed;
-                playerController.Acceleration = acceleration;
-            }
+            var playerController = other.GetComponent<PlayerController>();
+            if (playerController == null) return;
+
+            _originMaxSpeed = playerController.MaxSpeed;
+            _originAcceleration = playerController.Acceleration;
+            playerController.MaxSpeed = maxSpeed;
+            playerController.Acceleration = acceleration;
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.CompareTag("Player"))
-            {
-                other.GetComponent<PlayerController>().MaxSpeed = _originMaxSpeed;
-                other.GetComponent<PlayerController>().Acceleration = _originAcceleration;
-            }
+            var playerController = other.GetComponent<PlayerController>();
+            if (playerController == null) return;
+            playerController.MaxSpeed = _originMaxSpeed;
+            playerController.Acceleration = _originAcceleration;
         }
+
         #endregion
     }
 }

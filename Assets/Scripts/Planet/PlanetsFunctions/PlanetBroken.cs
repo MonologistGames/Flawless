@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using Flawless.PlayerCharacter;
 using Flawless.LifeSys;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Flawless.Planet.PlanetsFunctions
 {
     public class PlanetBroken : PlanetLife
     {
-        [Header("Speed")]
-        public float maxSpeed = 4.5f;
+        [FormerlySerializedAs("maxSpeed")] [Header("Speed")]
+        public float MaxSpeed = 4.5f;
         private float _originMaxSpeed;
 
         private void OnTriggerEnter(Collider other)
@@ -19,7 +20,7 @@ namespace Flawless.Planet.PlanetsFunctions
             {
                 var playerController = other.GetComponent<PlayerController>();
                 _originMaxSpeed = playerController.MaxSpeed;
-                playerController.MaxSpeed = maxSpeed;
+                playerController.MaxSpeed = MaxSpeed;
             }
         }
 
