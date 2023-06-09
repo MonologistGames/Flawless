@@ -134,7 +134,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u91CD\u5C42\u661F"
+  m_text: "\u5DE8\u5CA9\u661F"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64636c9f4d0502548a91b90095d430de, type: 2}
   m_sharedMaterial: {fileID: -7006701302536684930, guid: 64636c9f4d0502548a91b90095d430de,
@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlanetVC: {fileID: 6097035846912697614}
-  Planets: {fileID: 0}
+  Planets: {fileID: 1511860087704434801}
 --- !u!1 &1511860087704434801
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,7 +497,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '#798537
+  m_text: '#062835
 
 '
   m_isRightToLeft: 0
@@ -1119,7 +1119,7 @@ MonoBehaviour:
   m_Priority: 11
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 2223359893384243258}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5

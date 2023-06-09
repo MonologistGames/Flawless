@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlanetVC: {fileID: 2706827191602847513}
-  Planets: {fileID: 0}
+  Planets: {fileID: 3431583186400446203}
 --- !u!1 &3431583186400446203
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,7 +1085,7 @@ MonoBehaviour:
   IsAbsorbed: 0
   CollideDamage: 200
   CollideForce: 2
-  maxSpeed: 6
+  MaxSpeed: 6
 --- !u!1 &7244807304727186778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,7 +1360,7 @@ MonoBehaviour:
   m_Priority: 11
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 1532646652903622738}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5

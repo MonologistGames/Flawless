@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlanetVC: {fileID: 2119894354516869915}
-  Planets: {fileID: 0}
+  Planets: {fileID: 2668802081087034398}
 --- !u!1 &2417051981204948361
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,7 +998,7 @@ MonoBehaviour:
   m_Priority: 11
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 1433782307484364206}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5
