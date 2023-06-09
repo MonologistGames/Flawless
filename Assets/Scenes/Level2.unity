@@ -10072,7 +10072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c3cbc2d86d9eb43b9fbb2b75716023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlanetGroup: {fileID: 1462536946}
+  PlanetGroup: {fileID: 1272950623}
   OrbitCenter: {fileID: 1141410122}
   OrbitAngleSpeed: 2
 --- !u!1 &1487480346 stripped
