@@ -69,6 +69,7 @@ namespace Flawless.LifeSys
         }
 
         public event Action<float, float, int> OnLifeAmountChanged;
+        public event Action OnAbsorbed; 
 
         public float BaseDecreaseSpeed = 10f;
 
@@ -207,6 +208,7 @@ namespace Flawless.LifeSys
 
             OnAbsorbStateChanged?.Invoke(false, planetLife);
             if (!planetLife.IsAbsorbed) return;
+            OnAbsorbed?.Invoke();
 
             planetLife.LifeAmount = 0;
             planetLife.SetPlanetDead();
