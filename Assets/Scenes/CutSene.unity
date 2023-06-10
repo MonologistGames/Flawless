@@ -1229,7 +1229,7 @@ MonoBehaviour:
   m_text: "\u6C99\u661F"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 442cbbda96759cf45917e3f0bf7a4038, type: 2}
-  m_sharedMaterial: {fileID: 651428839964969537, guid: 442cbbda96759cf45917e3f0bf7a4038,
+  m_sharedMaterial: {fileID: -4232809642956707842, guid: 442cbbda96759cf45917e3f0bf7a4038,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1333,7 +1333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c3cbc2d86d9eb43b9fbb2b75716023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 863982711}
+  PlanetGroup: {fileID: 0}
   OrbitCenter: {fileID: 1263324459}
   OrbitAngleSpeed: 2
 --- !u!4 &171948524
@@ -1605,12 +1605,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183479770}
   m_CullTransparentMesh: 1
---- !u!4 &191812678 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3491624253056797878, guid: cfad2f0452d503949b6d681d4b71b0bd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1710736399}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &238081390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1947,7 +1941,7 @@ MonoBehaviour:
   m_text: '#111507'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64636c9f4d0502548a91b90095d430de, type: 2}
-  m_sharedMaterial: {fileID: -7435431637697890666, guid: 64636c9f4d0502548a91b90095d430de,
+  m_sharedMaterial: {fileID: -7006701302536684930, guid: 64636c9f4d0502548a91b90095d430de,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2108,8 +2102,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.13831918, y: -0.339209, z: -0.050519332, w: -0.92911404}
-  m_LocalPosition: {x: -5.68, y: -0.31000003, z: -6.66}
+  m_LocalRotation: {x: 0.13831913, y: -0.339209, z: -0.050519317, w: -0.92911404}
+  m_LocalPosition: {x: -5.4, y: -0.17, z: -6.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2971,7 +2965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c3cbc2d86d9eb43b9fbb2b75716023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1157736207}
+  PlanetGroup: {fileID: 0}
   OrbitCenter: {fileID: 832311925}
   OrbitAngleSpeed: 1
 --- !u!1 &561089556
@@ -3428,7 +3422,7 @@ MonoBehaviour:
   m_text: '#201123'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64636c9f4d0502548a91b90095d430de, type: 2}
-  m_sharedMaterial: {fileID: -7435431637697890666, guid: 64636c9f4d0502548a91b90095d430de,
+  m_sharedMaterial: {fileID: -7006701302536684930, guid: 64636c9f4d0502548a91b90095d430de,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3791,6 +3785,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lifeAmount: 4000
   IsAbsorbed: 0
+  CollideDamage: 200
+  CollideForce: 10
 --- !u!114 &817316182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3805,7 +3801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbsorbEffect: {fileID: 50690621}
   MeshRenderer: {fileID: 817316187}
-  PlanetLifeAmount: {fileID: 817316181}
+  PlanetLife: {fileID: 817316181}
 --- !u!114 &817316183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3818,6 +3814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f6d149f0fc44014d9141588000b87ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mass: 0
 --- !u!135 &817316184
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4195,7 +4192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b576d7e000e5b479c281669ea17aac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeAmount: {fileID: 817316181}
+  Life: {fileID: 0}
   ShowUpSpeed: 2
   LifeFill: {fileID: 2070308393}
 --- !u!114 &856012333
@@ -4872,6 +4869,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lifeAmount: 4000
   IsAbsorbed: 0
+  CollideDamage: 200
+  CollideForce: 10
 --- !u!114 &956153014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4884,6 +4883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f6d149f0fc44014d9141588000b87ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mass: 0
 --- !u!135 &956153015
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5017,7 +5017,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbsorbEffect: {fileID: 2109507069}
   MeshRenderer: {fileID: 956153018}
-  PlanetLifeAmount: {fileID: 956153013}
+  PlanetLife: {fileID: 956153013}
 --- !u!1 &972145052
 GameObject:
   m_ObjectHideFlags: 0
@@ -5385,7 +5385,7 @@ MonoBehaviour:
   m_text: '#111507'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64636c9f4d0502548a91b90095d430de, type: 2}
-  m_sharedMaterial: {fileID: -7435431637697890666, guid: 64636c9f4d0502548a91b90095d430de,
+  m_sharedMaterial: {fileID: -7006701302536684930, guid: 64636c9f4d0502548a91b90095d430de,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5536,7 +5536,7 @@ MonoBehaviour:
   m_text: "\u7D2B\u7802\u88C2\u8C37"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 442cbbda96759cf45917e3f0bf7a4038, type: 2}
-  m_sharedMaterial: {fileID: 651428839964969537, guid: 442cbbda96759cf45917e3f0bf7a4038,
+  m_sharedMaterial: {fileID: -4232809642956707842, guid: 442cbbda96759cf45917e3f0bf7a4038,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -7122,12 +7122,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220367434}
   m_CullTransparentMesh: 1
---- !u!4 &1229717682 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3491624253056797878, guid: cfad2f0452d503949b6d681d4b71b0bd,
-    type: 3}
-  m_PrefabInstance: {fileID: 7081319939543796571}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1241544563
 GameObject:
   m_ObjectHideFlags: 0
@@ -7292,6 +7286,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lifeAmount: 4000
   IsAbsorbed: 0
+  CollideDamage: 200
+  CollideForce: 10
 --- !u!114 &1263482133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7306,7 +7302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbsorbEffect: {fileID: 1673832949}
   MeshRenderer: {fileID: 1263482138}
-  PlanetLifeAmount: {fileID: 1263482132}
+  PlanetLife: {fileID: 1263482132}
 --- !u!114 &1263482134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7319,6 +7315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f6d149f0fc44014d9141588000b87ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mass: 0
 --- !u!135 &1263482135
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9065,7 +9062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b576d7e000e5b479c281669ea17aac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeAmount: {fileID: 956153013}
+  Life: {fileID: 0}
   ShowUpSpeed: 2
   LifeFill: {fileID: 1473827663}
 --- !u!224 &1604340241 stripped
@@ -11445,6 +11442,16 @@ PrefabInstance:
       propertyPath: OrbitAngleSpeed
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4289510884212864156, guid: cfad2f0452d503949b6d681d4b71b0bd,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289510884212864156, guid: cfad2f0452d503949b6d681d4b71b0bd,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4573491721882722579, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -11525,6 +11532,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6647359880701607055, guid: cfad2f0452d503949b6d681d4b71b0bd,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6647359880701607055, guid: cfad2f0452d503949b6d681d4b71b0bd,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6944448535998393509, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_Layer
@@ -11588,31 +11605,14 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6944448535998393509, guid: cfad2f0452d503949b6d681d4b71b0bd,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1710736401}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfad2f0452d503949b6d681d4b71b0bd, type: 3}
---- !u!1 &1710736400 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6944448535998393509, guid: cfad2f0452d503949b6d681d4b71b0bd,
+--- !u!4 &1710736400 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6832619835407482361, guid: cfad2f0452d503949b6d681d4b71b0bd,
     type: 3}
   m_PrefabInstance: {fileID: 1710736399}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1710736401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710736400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcec0fa25b8001244a1c551b1ed97157, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MapTag: Planet
 --- !u!1 &1725255763
 GameObject:
   m_ObjectHideFlags: 0
@@ -12179,7 +12179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c3cbc2d86d9eb43b9fbb2b75716023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1963049323}
+  PlanetGroup: {fileID: 0}
   OrbitCenter: {fileID: 1263324459}
   OrbitAngleSpeed: 2
 --- !u!1 &1855941269
@@ -12814,8 +12814,8 @@ Transform:
   - {fileID: 1524323799}
   - {fileID: 1263324459}
   - {fileID: 171948524}
-  - {fileID: 1229717682}
-  - {fileID: 191812678}
+  - {fileID: 7081319939543796572}
+  - {fileID: 1710736400}
   - {fileID: 2107583872}
   - {fileID: 1844908676}
   m_Father: {fileID: 0}
@@ -13193,7 +13193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b576d7e000e5b479c281669ea17aac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeAmount: {fileID: 1263482132}
+  Life: {fileID: 0}
   ShowUpSpeed: 2
   LifeFill: {fileID: 1610955295}
 --- !u!114 &2068028120
@@ -13417,7 +13417,7 @@ MonoBehaviour:
   m_text: "\u7D2B\u7802\u88C2\u8C37"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 442cbbda96759cf45917e3f0bf7a4038, type: 2}
-  m_sharedMaterial: {fileID: 651428839964969537, guid: 442cbbda96759cf45917e3f0bf7a4038,
+  m_sharedMaterial: {fileID: -4232809642956707842, guid: 442cbbda96759cf45917e3f0bf7a4038,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -13539,7 +13539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c3cbc2d86d9eb43b9fbb2b75716023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 832311925}
+  PlanetGroup: {fileID: 0}
   OrbitCenter: {fileID: 1263324459}
   OrbitAngleSpeed: 2
 --- !u!1 &2109507064
@@ -13992,12 +13992,11 @@ MonoBehaviour:
   MaxSpeed: 3
   BonusMaxSpeed: 1
   MaxOverDriveSpeed: 7
+  IsOverDriving: 0
   LeapAcceleration: 12
   LeapDuration: 5
   IsLeapReady: 0
   OverDriveDuration: 0.5
-  IsOverDriving: 0
-  CollideForce: 10
 --- !u!1 &919132149260465900
 GameObject:
   m_ObjectHideFlags: 0
@@ -14277,7 +14276,6 @@ MonoBehaviour:
   BaseDecreaseSpeed: 20
   AbsorbSpeed: 200
   AbsorbRange: 5
-  CollideDamage: 100
 --- !u!4 &2346632346765562630
 Transform:
   m_ObjectHideFlags: 0
@@ -17089,6 +17087,16 @@ PrefabInstance:
       propertyPath: OrbitAngleSpeed
       value: 1.85
       objectReference: {fileID: 0}
+    - target: {fileID: 4289510884212864156, guid: cfad2f0452d503949b6d681d4b71b0bd,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289510884212864156, guid: cfad2f0452d503949b6d681d4b71b0bd,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4573491721882722579, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -17163,6 +17171,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6647359880701607055, guid: cfad2f0452d503949b6d681d4b71b0bd,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6647359880701607055, guid: cfad2f0452d503949b6d681d4b71b0bd,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6771016904521609063, guid: cfad2f0452d503949b6d681d4b71b0bd,
         type: 3}
@@ -17254,31 +17272,14 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6944448535998393509, guid: cfad2f0452d503949b6d681d4b71b0bd,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7081319939543796573}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfad2f0452d503949b6d681d4b71b0bd, type: 3}
---- !u!1 &7081319939543796572 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6944448535998393509, guid: cfad2f0452d503949b6d681d4b71b0bd,
+--- !u!4 &7081319939543796572 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6832619835407482361, guid: cfad2f0452d503949b6d681d4b71b0bd,
     type: 3}
   m_PrefabInstance: {fileID: 7081319939543796571}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7081319939543796573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7081319939543796572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcec0fa25b8001244a1c551b1ed97157, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MapTag: Planet
 --- !u!23 &7269177011887575160
 MeshRenderer:
   m_ObjectHideFlags: 0
