@@ -3,7 +3,12 @@ guid: 091b779d432af324cb65eca410ea2780
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lit
+    second: {fileID: 2100000, guid: 57a1cb6824ecaa346b914017df90a1b4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -33,9 +38,9 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Tail|Lit.001Action
-      takeName: Tail|Lit.001Action
-      internalID: 700840558101610202
+      name: Tail|Tail_Idel
+      takeName: Tail|Tail_Idel
+      internalID: -8587280834240804305
       firstFrame: 0
       lastFrame: 39
       wrapMode: 0
