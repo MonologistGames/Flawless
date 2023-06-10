@@ -50,7 +50,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Moss_BaseColor:
-        m_Texture: {fileID: 2800000, guid: 1212ddcab4f827e469539bcfd5c7a3b2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 907c64e4a31592a4a90b1a089af520fd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Moss_Light_BaseColor:
@@ -161,9 +161,9 @@ Material:
     - _Mud_Saturatiuon: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RimValue1: 0.468
+    - _RimValue1: 0
     - _RimValue2: 0.026
-    - _SwitchValue: 0.558
+    - _SwitchValue: 0
     m_Colors:
     - _Marble_BaseColor: {r: 0, g: 0, b: 0, a: 0}
     - _Marble_Normal: {r: 0, g: 0, b: 0, a: 0}

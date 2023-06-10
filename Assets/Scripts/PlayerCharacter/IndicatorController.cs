@@ -5,7 +5,7 @@ namespace Flawless.PlayerCharacter
 {
     public class IndicatorController : MonoBehaviour
     {
-        private PlanetController _planet;
+        private PlayerController _player;
         
         // Trail
         [Header("Trail")]
@@ -33,7 +33,7 @@ namespace Flawless.PlayerCharacter
 
         private void OnEnable()
         {
-            _planet = GetComponentInParent<PlanetController>();
+            _player = GetComponentInParent<PlayerController>();
         }
 
         private void Update()
@@ -51,8 +51,8 @@ namespace Flawless.PlayerCharacter
         // Update the direction of the motivation indicator
         private void UpdateIndicatorDirection()
         {
-            float angleY = Mathf.Asin(_planet.MoveDir.z) / Mathf.PI * 180f - 90f;
-            if (_planet.MoveDir.x > 0)
+            float angleY = Mathf.Asin(_player.MoveDir.z) / Mathf.PI * 180f - 90f;
+            if (_player.MoveDir.x > 0)
                 angleY = -angleY;
 
             Indicator.eulerAngles = new Vector3(90, angleY, 0);
@@ -62,23 +62,23 @@ namespace Flawless.PlayerCharacter
         private void UpdateTrailPosition()
         {
             // Set TrailRenderer enabled or disabled depending on the velocity of the planet
-            Trail.enabled = !(_planet.Velocity.sqrMagnitude < TrailLengthThreshold);
+            Trail.enabled = !(_player.Velocity.sqrMagnitude < TrailLengthThreshold);
             
             // Set the TrailRenderer at the opposite position of velocity
-            Trail.transform.position = _planet.transform.position - _planet.Velocity.normalized * TrailDistanceFromOrigin;
+            Trail.transform.position = _player.transform.position - _player.Velocity.normalized * TrailDistanceFromOrigin;
         }
         
         private void UpdateTrailColor()
         {
-            if (_planet.IsOverDriving) Trail.colorGradient = OverDriveColor;
+            if (_player.IsOverDriving) Trail.colorGradient = OverDriveColor;
             else Trail.colorGradient = NormalColor;
         }
         
         // Update the position and size of the velocity indicator
         private void UpdateVelocityIndicator()
         {
-            _velocity = _planet.Velocity;
-            _velocityMagnitudePercent = _velocity.magnitude / _planet.MaxSpeed;
+            _velocity = _player.Velocity;
+            _velocityMagnitudePercent = _velocity.magnitude / _player.MaxSpeed;
 
             // Calculate start and end position of the velocity indicator
             //var position = _planet.transform.position;

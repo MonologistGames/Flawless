@@ -10,9 +10,15 @@ namespace Utilities
             Scaled,
             Unscaled
         }
-
+        
+        /// <summary>
+        /// The count down type of the timer. Defines whether affects by Time.timeScale.
+        /// </summary>
         public TimeType Type;
-
+        
+        /// <summary>
+        /// Is the timer paused?
+        /// </summary>
         public bool IsPaused;
         
         public float DesiredTime;
@@ -49,13 +55,17 @@ namespace Utilities
 
         #endregion
 
+        #region Callbacks
+        /// <summary>
+        /// Update the timer and check if it ends.
+        /// </summary>
         public void Update()
         {
             if (IsPaused)
             {
                 return;
             }
-            
+            // Check if timer ends.
             if (TimeLeft <= 0)
             {
                 IsPaused = true;
@@ -63,6 +73,7 @@ namespace Utilities
                 return;
             }
             
+            // Update left time.
             switch (Type)
             {
                 case TimeType.Scaled:
@@ -73,27 +84,48 @@ namespace Utilities
                     break;
             }
         }
+
+
+        #endregion
         
+        #region APIs
+        /// <summary>
+        /// Reset the timer to original time value.
+        /// </summary>
         public void ResetTime()
         {
             TimeLeft = DesiredTime;
         }
         
+        /// <summary>
+        /// Add Time to the timer.
+        /// </summary>
+        /// <param name="time">Time amount to add.</param>
         public void AddTime(float time)
         {
             TimeLeft += time;
         }
-
+        
+        /// <summary>
+        /// Set timer directly to a time value.
+        /// </summary>
+        /// <param name="time">Time value to set.</param>
         public void SetTime(float time)
         {
             TimeLeft = time;
         }
-
+        
+        /// <summary>
+        /// Get timer process. Returns how far the timer goes.
+        /// </summary>
+        /// <param name="isClamped">Is this process clamped to 0 to 1.</param>
+        /// <returns>The process the timer goes.</returns>
         public float GetProcess(bool isClamped)
         {
             var process = (1 - TimeLeft / DesiredTime);
             if (isClamped) return Mathf.Clamp01(process);
             return process;
         }
+        #endregion
     }
 }

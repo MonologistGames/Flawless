@@ -4,11 +4,11 @@ namespace Flawless.PlayerCharacter
 {
     public class PlayerStateMachine : StateMachine
     {
-        public readonly PlanetController PlanetController;
+        public readonly PlayerController PlayerController;
         
-        public PlayerStateMachine(PlanetController planetController) : base()
+        public PlayerStateMachine(PlayerController playerController) : base()
         {
-            PlanetController = planetController;
+            PlayerController = playerController;
         }
 
         public override void Initialize()

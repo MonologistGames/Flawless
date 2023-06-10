@@ -16,15 +16,15 @@ namespace Flawless
 
         private void Start()
         {
-            
-            _material= GetComponent<Renderer>().material;
+            LightPos = GameObject.FindWithTag("Sun").transform;
+            _material = GetComponent<Renderer>().material;
             id = Shader.PropertyToID("_LightDir");
         }
 
         // Update is called once per frame
         void Update()
         {
-            _material.SetVector(id, Vector4.Normalize(LightPos.position-this.transform.position));
+            _material.SetVector(id, Vector4.Normalize(LightPos.position - this.transform.position));
         }
     }
 }
