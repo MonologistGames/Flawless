@@ -77,8 +77,6 @@ namespace Flawless
 
             if (isUnlocked)
             {
-                // TODO：解锁下一关
-                Debug.Log("Level unlocked!");
                 OpenGate.Unlock();
             }
         }
