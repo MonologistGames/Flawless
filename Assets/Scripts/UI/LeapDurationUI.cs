@@ -1,4 +1,3 @@
-using Flawless.LifeSys;
 using Flawless.PlayerCharacter;
 using UnityEngine;
 using UnityEngine.UI;

@@ -18,7 +18,6 @@ namespace FMODUnity
         public bool AllowFadeout = true;
         public bool TriggerOnce = false;
         public bool Preload = false;
-        public bool AllowNonRigidbodyDoppler = false;
         public ParamRef[] Params = new ParamRef[0];
         public bool OverrideAttenuation = false;
         public float OverrideMinDistance = -1.0f;
@@ -86,9 +85,9 @@ namespace FMODUnity
 
         private void UpdatePlayingStatus(bool force = false)
         {
-            // If at least one listener is within the max distance, ensure an event instance is playing
-            bool playInstance = StudioListener.DistanceSquaredToNearestListener(transform.position) <= (MaxDistance * MaxDistance);
-
+            // If at least once listener is within the max distance, ensure an event instance is playing
+            bool playInstance = StudioListener.DistanceToNearestListener(transform.position) <= MaxDistance;
+            
             if (force || playInstance != IsPlaying())
             {
                 if (playInstance)
@@ -112,14 +111,6 @@ namespace FMODUnity
             }
 
             HandleGameEvent(EmitterGameEvent.ObjectStart);
-
-            // If a Rigidbody is added, turn off "allowNonRigidbodyDoppler" option
-#if UNITY_PHYSICS_EXIST
-            if (AllowNonRigidbodyDoppler && GetComponent<Rigidbody>())
-            {
-                AllowNonRigidbodyDoppler = false;
-            }
-#endif
         }
 
         private void OnApplicationQuit()
@@ -267,7 +258,7 @@ namespace FMODUnity
 #endif
                     {
                         instance.set3DAttributes(RuntimeUtils.To3DAttributes(gameObject));
-                        RuntimeManager.AttachInstanceToGameObject(instance, transform, AllowNonRigidbodyDoppler);
+                        RuntimeManager.AttachInstanceToGameObject(instance, transform);
                     }
                 }
             }
@@ -312,10 +303,7 @@ namespace FMODUnity
             {
                 instance.stop(AllowFadeout ? FMOD.Studio.STOP_MODE.ALLOWFADEOUT : FMOD.Studio.STOP_MODE.IMMEDIATE);
                 instance.release();
-                if (!AllowFadeout)
-                {
-                    instance.clearHandle();
-                }
+                instance.clearHandle();
             }
         }
 

@@ -451,7 +451,7 @@ namespace FMODUnity
 
             if (!PlatformForBuildTarget.TryGetValue(target, out platform))
             {
-                error = string.Format("No FMOD platform found for build target {0}. " +
+                error = string.Format("No FMOD platform found for build target {0}.\n" +
                             "You may need to install a platform specific integration package from {1}.",
                             target, DownloadURL);
                 return false;
@@ -641,48 +641,38 @@ namespace FMODUnity
                     throw new BuildFailedException(error);
                 }
 
-                bool androidPatchBuildPrevious = Settings.Instance.AndroidPatchBuild;
-                if ((report.summary.options & BuildOptions.PatchPackage) == BuildOptions.PatchPackage)
-                {
-                    Settings.Instance.AndroidPatchBuild = true;
-                }
-                else
-                {
-                    Settings.Instance.AndroidPatchBuild = false;
-                }
-                if (androidPatchBuildPrevious != Settings.Instance.AndroidPatchBuild)
-                {
-                    EditorUtility.SetDirty(Settings.Instance);
-                }
-
                 EditorSettings.Instance.PreprocessBuild(report.summary.platform, binaryType);
             }
 
             public void OnPostprocessBuild(BuildReport report)
             {
                 Instance.PostprocessBuild(report.summary.platform);
-                Settings.Instance.AndroidPatchBuild = false;
             }
         }
 
-        public void CheckActiveBuildTarget()
+        public class BuildTargetChecker : IActiveBuildTargetChanged
         {
-            Settings.EditorSettings.CleanTemporaryFiles();
+            public int callbackOrder { get { return 0; } }
 
-            Platform.BinaryType binaryType = EditorUserBuildSettings.development
-                ? Platform.BinaryType.Logging
-                : Platform.BinaryType.Release;
-
-            string error;
-            if (!CanBuildTarget(EditorUserBuildSettings.activeBuildTarget, binaryType, out error))
+            public void OnActiveBuildTargetChanged(BuildTarget previous, BuildTarget current)
             {
-                RuntimeUtils.DebugLogWarning(error);
+                Settings.EditorSettings.CleanTemporaryFiles();
 
-                if (EditorWindow.HasOpenInstances<BuildPlayerWindow>())
+                Platform.BinaryType binaryType = EditorUserBuildSettings.development
+                    ? Platform.BinaryType.Logging
+                    : Platform.BinaryType.Release;
+
+                string error;
+                if (!Settings.EditorSettings.CanBuildTarget(current, binaryType, out error))
                 {
-                    GUIContent message =
-                        new GUIContent("FMOD detected issues with this platform!\nSee the Console for details.");
-                    EditorWindow.GetWindow<BuildPlayerWindow>().ShowNotification(message, 10);
+                    RuntimeUtils.DebugLogWarning(error);
+
+                    if (EditorWindow.HasOpenInstances<BuildPlayerWindow>())
+                    {
+                        GUIContent message =
+                            new GUIContent("FMOD detected issues with this platform!\nSee the Console for details.");
+                        EditorWindow.GetWindow<BuildPlayerWindow>().ShowNotification(message, 10);
+                    }
                 }
             }
         }

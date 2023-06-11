@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Monologist.Patterns.Singleton;
@@ -77,8 +76,6 @@ namespace Flawless
 
             if (isUnlocked)
             {
-                // TODO：解锁下一关
-                Debug.Log("Level unlocked!");
                 OpenGate.Unlock();
             }
         }
