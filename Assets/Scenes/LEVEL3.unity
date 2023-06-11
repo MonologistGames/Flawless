@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.01883833, g: 0.033279993, b: 0.036297195, a: 1}
+  m_IndirectSpecularColor: {r: 0.018838808, g: 0.033283193, b: 0.036291268, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1012,7 +1012,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
-  m_Bindings: []
+  m_Bindings:
+  - {fileID: 50690618}
   m_VisualEffect: {fileID: 50690621}
 --- !u!73398921 &50690620
 VFXRenderer:
@@ -1350,7 +1351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetGroup: {fileID: 137341267}
   OrbitCenter: {fileID: 1263324459}
-  OrbitAngleSpeed: 2
+  OrbitAngleSpeed: 1.25
 --- !u!1 &84377175
 GameObject:
   m_ObjectHideFlags: 0
@@ -5090,9 +5091,9 @@ GameObject:
   m_Component:
   - component: {fileID: 330585546}
   - component: {fileID: 330585545}
-  - component: {fileID: 330585544}
   - component: {fileID: 330585547}
   - component: {fileID: 330585548}
+  - component: {fileID: 330585549}
   m_Layer: 0
   m_Name: =====Main Camera=====
   m_TagString: MainCamera
@@ -5100,14 +5101,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &330585544
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330585543}
-  m_Enabled: 1
 --- !u!20 &330585545
 Camera:
   m_ObjectHideFlags: 0
@@ -5253,6 +5246,19 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &330585549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1 &339409900
 GameObject:
   m_ObjectHideFlags: 0
@@ -5862,7 +5868,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388650720}
   m_LocalRotation: {x: 0.36004734, y: -0.5680458, z: 0.38529876, w: 0.63185036}
-  m_LocalPosition: {x: -5.481, y: -2.183, z: -7.922}
+  m_LocalPosition: {x: 71.5, y: -34.2, z: 48.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6517,7 +6523,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
-  m_Bindings: []
+  m_Bindings:
+  - {fileID: 432236583}
   m_VisualEffect: {fileID: 432236586}
 --- !u!73398921 &432236585
 VFXRenderer:
@@ -13532,7 +13539,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
-  m_Bindings: []
+  m_Bindings:
+  - {fileID: 786172051}
   m_VisualEffect: {fileID: 786172054}
 --- !u!73398921 &786172053
 VFXRenderer:
@@ -15167,6 +15175,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845813068}
   m_CullTransparentMesh: 1
+--- !u!1001 &853895694
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5132967534128087968, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_Name
+      value: Life Gate_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465122396399064437, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465122396399064437, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -66.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465122396399064437, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465122396399064437, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -51.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465122396399064437, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465122396399064437, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465122396399064437, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465122396399064437, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465122396399064437, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465122396399064437, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465122396399064437, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 352846b14b2695a4ba056a18703e9f10, type: 3}
 --- !u!1 &856012330
 GameObject:
   m_ObjectHideFlags: 0
@@ -22272,7 +22353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetGroup: {fileID: 1427789972}
   OrbitCenter: {fileID: 1263324459}
-  OrbitAngleSpeed: 1.85
+  OrbitAngleSpeed: 1
 --- !u!1 &1179693022
 GameObject:
   m_ObjectHideFlags: 0
@@ -23464,7 +23545,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
-  m_Bindings: []
+  m_Bindings:
+  - {fileID: 1221401432}
   m_VisualEffect: {fileID: 1221401435}
 --- !u!73398921 &1221401434
 VFXRenderer:
@@ -26243,7 +26325,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
-  m_Bindings: []
+  m_Bindings:
+  - {fileID: 1347228249}
   m_VisualEffect: {fileID: 1347228252}
 --- !u!73398921 &1347228251
 VFXRenderer:
@@ -29584,7 +29667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetGroup: {fileID: 1463730263}
   OrbitCenter: {fileID: 1263324459}
-  OrbitAngleSpeed: 2
+  OrbitAngleSpeed: 0.75
 --- !u!1 &1539992285
 GameObject:
   m_ObjectHideFlags: 3
@@ -33576,7 +33659,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
-  m_Bindings: []
+  m_Bindings:
+  - {fileID: 1637343771}
   m_VisualEffect: {fileID: 1637343774}
 --- !u!73398921 &1637343773
 VFXRenderer:
@@ -33734,6 +33818,11 @@ PrefabInstance:
       propertyPath: PlanetVC
       value: 
       objectReference: {fileID: 838660861}
+    - target: {fileID: 2006680439052787727, guid: c8ccfcf7806404040bb1938b3a87c4ef,
+        type: 3}
+      propertyPath: CollideForce
+      value: 125
+      objectReference: {fileID: 0}
     - target: {fileID: 5169248927625398353, guid: c8ccfcf7806404040bb1938b3a87c4ef,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -34942,7 +35031,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
-  m_Bindings: []
+  m_Bindings:
+  - {fileID: 1673832946}
   m_VisualEffect: {fileID: 1673832949}
 --- !u!73398921 &1673832948
 VFXRenderer:
@@ -37843,7 +37933,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
-  m_Bindings: []
+  m_Bindings:
+  - {fileID: 1743912749}
   m_VisualEffect: {fileID: 1743912752}
 --- !u!73398921 &1743912751
 VFXRenderer:
@@ -41636,7 +41727,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
-  m_Bindings: []
+  m_Bindings:
+  - {fileID: 1950705832}
   m_VisualEffect: {fileID: 1950705835}
 --- !u!73398921 &1950705834
 VFXRenderer:
@@ -43207,6 +43299,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992615891}
   m_CullTransparentMesh: 1
+--- !u!1001 &1999390737
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5132967534128087968, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_Name
+      value: Life Gate_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465122396399064437, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465122396399064437, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -67.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465122396399064437, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465122396399064437, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465122396399064437, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465122396399064437, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465122396399064437, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465122396399064437, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465122396399064437, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465122396399064437, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465122396399064437, guid: 352846b14b2695a4ba056a18703e9f10,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 352846b14b2695a4ba056a18703e9f10, type: 3}
 --- !u!1 &2008256900
 GameObject:
   m_ObjectHideFlags: 0
@@ -43874,7 +44039,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
-  m_Bindings: []
+  m_Bindings:
+  - {fileID: 2030194636}
   m_VisualEffect: {fileID: 2030194639}
 --- !u!73398921 &2030194638
 VFXRenderer:
@@ -44234,7 +44400,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
-  m_Bindings: []
+  m_Bindings:
+  - {fileID: 2041389229}
   m_VisualEffect: {fileID: 2041389232}
 --- !u!73398921 &2041389231
 VFXRenderer:
@@ -44531,7 +44698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetGroup: {fileID: 1034186072}
   OrbitCenter: {fileID: 1263324459}
-  OrbitAngleSpeed: 2.5
+  OrbitAngleSpeed: 1
 --- !u!1 &2057659649
 GameObject:
   m_ObjectHideFlags: 0
@@ -46025,7 +46192,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
-  m_Bindings: []
+  m_Bindings:
+  - {fileID: 2109507066}
   m_VisualEffect: {fileID: 2109507069}
 --- !u!73398921 &2109507068
 VFXRenderer:

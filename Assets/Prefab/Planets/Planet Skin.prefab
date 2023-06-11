@@ -678,7 +678,7 @@ Transform:
   - {fileID: 8669546684370596664}
   - {fileID: 4055611631689703168}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &40503148588293178
 MonoBehaviour:
@@ -1106,7 +1106,7 @@ MonoBehaviour:
   _lifeAmount: 2400
   IsAbsorbed: 0
   CollideDamage: 100
-  CollideForce: 150
+  CollideForce: 125
   CollideForceAfterDead: 100
 --- !u!1 &6926495220070812120
 GameObject:
