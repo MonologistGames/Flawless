@@ -27,6 +27,46 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 142818
+--- !u!114 &-8690634108333749431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: ../Flawless/Assets/Fmod/flawlessaudio/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 638221156331908361
+  FileSizes:
+  - Name: Desktop
+    Value: 7391584
+  Exists: 1
+--- !u!114 &-6834478873116495154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../Flawless/Assets/Fmod/flawlessaudio/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638221156331528623
+  FileSizes:
+  - Name: Desktop
+    Value: 1036
+  Exists: 1
 --- !u!114 &-6773896209086871848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,7 +86,11 @@ MonoBehaviour:
     Data3: 729815961
     Data4: 293025701
   Banks:
-  - {fileID: 1738347798569789375}
+<<<<<<< HEAD
+  - {fileID: 7325278503641015538}
+=======
+  - {fileID: -2855113247188752151}
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -73,7 +117,11 @@ MonoBehaviour:
     Data3: -1316321883
     Data4: 2126305956
   Banks:
-  - {fileID: 1738347798569789375}
+<<<<<<< HEAD
+  - {fileID: 7325278503641015538}
+=======
+  - {fileID: -2855113247188752151}
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -125,7 +173,11 @@ MonoBehaviour:
     Data3: 1860302514
     Data4: -1876155292
   Banks:
-  - {fileID: 498709203494254868}
+<<<<<<< HEAD
+  - {fileID: -8690634108333749431}
+=======
+  - {fileID: -4765011121477228560}
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -133,26 +185,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 74333
---- !u!114 &-5861264463627864492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Fmod/flawlessaudio/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638220972791926127
-  FileSizes:
-  - Name: Desktop
-    Value: 1036
-  Exists: 1
 --- !u!114 &-5506938330581841197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +228,11 @@ MonoBehaviour:
     Data3: -695346536
     Data4: 1230569371
   Banks:
-  - {fileID: 1738347798569789375}
+<<<<<<< HEAD
+  - {fileID: 7325278503641015538}
+=======
+  - {fileID: -2855113247188752151}
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -204,6 +240,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1244
+--- !u!114 &-4765011121477228560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: ../Flawless/Assets/Fmod/flawlessaudio/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 638221041276201368
+  FileSizes:
+  - Name: Desktop
+    Value: 7391584
+  Exists: 1
 --- !u!114 &-4343558175696210296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +306,11 @@ MonoBehaviour:
     Data3: 2059226771
     Data4: -394905830
   Banks:
-  - {fileID: 1738347798569789375}
+<<<<<<< HEAD
+  - {fileID: 7325278503641015538}
+=======
+  - {fileID: -2855113247188752151}
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -278,6 +338,29 @@ MonoBehaviour:
   - Name: Desktop
     Value: 3591200
   Exists: 1
+<<<<<<< HEAD
+=======
+--- !u!114 &-2855113247188752151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Audio.bank
+  m_EditorClassIdentifier: 
+  Path: ../Flawless/Assets/Fmod/flawlessaudio/Build/Desktop/Audio.bank
+  Name: Audio
+  StudioPath: bank:/Audio
+  lastModified: 638221041276001349
+  FileSizes:
+  - Name: Desktop
+    Value: 3697184
+  Exists: 1
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
 --- !u!114 &-2363327076209902306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,7 +407,11 @@ MonoBehaviour:
     Data3: -1373128563
     Data4: 1609292668
   Banks:
-  - {fileID: 1738347798569789375}
+<<<<<<< HEAD
+  - {fileID: 7325278503641015538}
+=======
+  - {fileID: -2855113247188752151}
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -351,7 +438,11 @@ MonoBehaviour:
     Data3: -1474455404
     Data4: 764313423
   Banks:
-  - {fileID: 1738347798569789375}
+<<<<<<< HEAD
+  - {fileID: 7325278503641015538}
+=======
+  - {fileID: -2855113247188752151}
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -405,7 +496,11 @@ MonoBehaviour:
     Data3: 142304169
     Data4: -2120316546
   Banks:
-  - {fileID: 498709203494254868}
+<<<<<<< HEAD
+  - {fileID: -8690634108333749431}
+=======
+  - {fileID: -4765011121477228560}
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -494,6 +589,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6481
+--- !u!114 &-892805852617950103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../Flawless/Assets/Fmod/flawlessaudio/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638221156331539186
+  FileSizes:
+  - Name: Desktop
+    Value: 1718
+  Exists: 1
 --- !u!114 &-875817866074483040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,7 +628,11 @@ MonoBehaviour:
     Data3: 744434073
     Data4: -1979737321
   Banks:
-  - {fileID: 498709203494254868}
+<<<<<<< HEAD
+  - {fileID: -8690634108333749431}
+=======
+  - {fileID: -4765011121477228560}
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -521,6 +640,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 143000
+--- !u!114 &-871005099867216408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../Flawless/Assets/Fmod/flawlessaudio/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638221041276001349
+  FileSizes:
+  - Name: Desktop
+    Value: 1036
+  Exists: 1
 --- !u!114 &-772665233858174818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,7 +679,11 @@ MonoBehaviour:
     Data3: 1406633131
     Data4: 413270076
   Banks:
-  - {fileID: 1738347798569789375}
+<<<<<<< HEAD
+  - {fileID: 7325278503641015538}
+=======
+  - {fileID: -2855113247188752151}
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -588,10 +731,17 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 2201015438008230741}
-  - {fileID: 1738347798569789375}
-  - {fileID: -5861264463627864492}
-  - {fileID: 498709203494254868}
+<<<<<<< HEAD
+  - {fileID: -892805852617950103}
+  - {fileID: 7325278503641015538}
+  - {fileID: -6834478873116495154}
+  - {fileID: -8690634108333749431}
+=======
+  - {fileID: 1051929986932058853}
+  - {fileID: -2855113247188752151}
+  - {fileID: -871005099867216408}
+  - {fileID: -4765011121477228560}
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
   EditorEvents:
   - {fileID: -6463354550895470826}
   - {fileID: -2167142172948449217}
@@ -614,10 +764,17 @@ MonoBehaviour:
   - {fileID: -6134864849129708376}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -5861264463627864492}
+<<<<<<< HEAD
+  - {fileID: -6834478873116495154}
   StringsBanks:
-  - {fileID: 2201015438008230741}
-  cacheTime: 638221103020408569
+  - {fileID: -892805852617950103}
+  cacheTime: 638221156331908361
+=======
+  - {fileID: -871005099867216408}
+  StringsBanks:
+  - {fileID: 1051929986932058853}
+  cacheTime: 638221041276201368
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
   cacheVersion: 131603
 --- !u!114 &242357346052152829
 MonoBehaviour:
@@ -646,26 +803,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 121000
---- !u!114 &498709203494254868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Music.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Fmod/flawlessaudio/Build/Desktop/Music.bank
-  Name: Music
-  StudioPath: bank:/Music
-  lastModified: 638220972792396276
-  FileSizes:
-  - Name: Desktop
-    Value: 7391584
-  Exists: 1
 --- !u!114 &510391840243736417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -709,7 +846,11 @@ MonoBehaviour:
     Data3: -190745677
     Data4: 133261687
   Banks:
-  - {fileID: 1738347798569789375}
+<<<<<<< HEAD
+  - {fileID: 7325278503641015538}
+=======
+  - {fileID: -2855113247188752151}
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -717,6 +858,47 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4349
+<<<<<<< HEAD
+--- !u!114 &703298485124277055
+=======
+--- !u!114 &1051929986932058853
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+<<<<<<< HEAD
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/heartbeat/Parameter 1
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 62102963
+    data2: 4153443966
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+=======
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../Flawless/Assets/Fmod/flawlessaudio/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638221041276011350
+  FileSizes:
+  - Name: Desktop
+    Value: 1718
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
+  Exists: 1
 --- !u!114 &1276627328825359032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -736,7 +918,11 @@ MonoBehaviour:
     Data3: 2106313358
     Data4: -1875200911
   Banks:
-  - {fileID: 1738347798569789375}
+<<<<<<< HEAD
+  - {fileID: 7325278503641015538}
+=======
+  - {fileID: -2855113247188752151}
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -745,46 +931,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5468
---- !u!114 &1738347798569789375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Audio.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Fmod/flawlessaudio/Build/Desktop/Audio.bank
-  Name: Audio
-  StudioPath: bank:/Audio
-  lastModified: 638221103020408569
-  FileSizes:
-  - Name: Desktop
-    Value: 3697184
-  Exists: 1
---- !u!114 &2201015438008230741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Fmod/flawlessaudio/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638220972791946135
-  FileSizes:
-  - Name: Desktop
-    Value: 1718
-  Exists: 1
 --- !u!114 &2317436608246834765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -831,7 +977,11 @@ MonoBehaviour:
     Data3: 1308345232
     Data4: 1413897289
   Banks:
-  - {fileID: 1738347798569789375}
+<<<<<<< HEAD
+  - {fileID: 7325278503641015538}
+=======
+  - {fileID: -2855113247188752151}
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -905,7 +1055,11 @@ MonoBehaviour:
     Data3: 864455581
     Data4: 610015337
   Banks:
-  - {fileID: 1738347798569789375}
+<<<<<<< HEAD
+  - {fileID: 7325278503641015538}
+=======
+  - {fileID: -2855113247188752151}
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1014,12 +1168,20 @@ MonoBehaviour:
     Data3: 2063981502
     Data4: 1555978123
   Banks:
-  - {fileID: 1738347798569789375}
+<<<<<<< HEAD
+  - {fileID: 7325278503641015538}
+=======
+  - {fileID: -2855113247188752151}
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
+<<<<<<< HEAD
+  - {fileID: 5366668848053341188}
+=======
   - {fileID: 8764082825056693558}
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
   MinDistance: 1
   MaxDistance: 20
   Length: 14000
@@ -1070,7 +1232,11 @@ MonoBehaviour:
     Data3: -1619591015
     Data4: 2042615223
   Banks:
-  - {fileID: 1738347798569789375}
+<<<<<<< HEAD
+  - {fileID: 7325278503641015538}
+=======
+  - {fileID: -2855113247188752151}
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1078,6 +1244,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2935
+--- !u!114 &5366668848053341188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: "parameter:/\u751F\u7269/Parameter 1"
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 62102963
+    data2: 4153443966
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &5460157596227034889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1203,6 +1393,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 262
+--- !u!114 &7325278503641015538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Audio.bank
+  m_EditorClassIdentifier: 
+  Path: ../Flawless/Assets/Fmod/flawlessaudio/Build/Desktop/Audio.bank
+  Name: Audio
+  StudioPath: bank:/Audio
+  lastModified: 638221156331508701
+  FileSizes:
+  - Name: Desktop
+    Value: 3698336
+  Exists: 1
 --- !u!114 &7474636150320121417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1222,7 +1432,11 @@ MonoBehaviour:
     Data3: 97492883
     Data4: 573237917
   Banks:
-  - {fileID: 498709203494254868}
+<<<<<<< HEAD
+  - {fileID: -8690634108333749431}
+=======
+  - {fileID: -4765011121477228560}
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -1249,14 +1463,19 @@ MonoBehaviour:
     Data3: 861481370
     Data4: 499109571
   Banks:
-  - {fileID: 1738347798569789375}
+<<<<<<< HEAD
+  - {fileID: 7325278503641015538}
+=======
+  - {fileID: -2855113247188752151}
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: 703298485124277055}
   MinDistance: 1
   MaxDistance: 20
-  Length: 1767
+  Length: 3767
 --- !u!114 &8629518261985397275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1320,7 +1539,11 @@ MonoBehaviour:
     Data3: -1511251019
     Data4: -1837410312
   Banks:
-  - {fileID: 498709203494254868}
+<<<<<<< HEAD
+  - {fileID: -8690634108333749431}
+=======
+  - {fileID: -4765011121477228560}
+>>>>>>> aa4ea25b3499f7541d3462d94000549824833eb3
   IsStream: 1
   Is3D: 0
   IsOneShot: 1

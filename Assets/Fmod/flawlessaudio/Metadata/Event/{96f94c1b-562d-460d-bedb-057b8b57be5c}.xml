@@ -76,9 +76,6 @@
 		</relationship>
 	</object>
 	<object class="GroupTrack" id="{3b3a21fa-9efb-4091-a690-07848e3daa94}">
-		<relationship name="modules">
-			<destination>{770834fd-958e-4041-940a-8cf064b0fb84}</destination>
-		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{bc876f32-d714-4e00-aca6-8f9186d662b7}</destination>
 		</relationship>
@@ -86,7 +83,6 @@
 	<object class="Timeline" id="{e342272a-dab9-4323-b77b-44c5618171f7}">
 		<relationship name="modules">
 			<destination>{52df45e7-9e4f-4eae-9a98-7f3be9eaf742}</destination>
-			<destination>{770834fd-958e-4041-940a-8cf064b0fb84}</destination>
 		</relationship>
 		<relationship name="markers">
 			<destination>{80d3adbb-66a1-487e-9766-79bee2c0f2f7}</destination>
@@ -119,7 +115,7 @@
 	<object class="MixerBusPanner" id="{d72c6fa8-db1d-46f9-87bc-7d6754fa1ece}" />
 	<object class="SoundScatterer" id="{52df45e7-9e4f-4eae-9a98-7f3be9eaf742}">
 		<property name="length">
-			<value>10</value>
+			<value>14</value>
 		</property>
 		<property name="volume">
 			<value>1</value>
@@ -131,10 +127,10 @@
 			<value>90</value>
 		</property>
 		<property name="maximumTimeBetweenSounds">
-			<value>6500</value>
+			<value>7500</value>
 		</property>
 		<property name="maximumScatterDistance">
-			<value>7.5999999</value>
+			<value>6.4000001</value>
 		</property>
 		<property name="volumeRandomization">
 			<value>-14</value>
@@ -162,14 +158,6 @@
 		<relationship name="output">
 			<destination>{c5ec4a28-119f-4500-be6b-dba6cd546487}</destination>
 		</relationship>
-	</object>
-	<object class="SingleSound" id="{770834fd-958e-4041-940a-8cf064b0fb84}">
-		<property name="start">
-			<value>12</value>
-		</property>
-		<property name="length">
-			<value>2</value>
-		</property>
 	</object>
 	<object class="EventMixerGroup" id="{bc876f32-d714-4e00-aca6-8f9186d662b7}">
 		<property name="name">
@@ -201,7 +189,7 @@
 	</object>
 	<object class="TransitionMarker" id="{477bb689-4d93-4132-8edd-1bee35980086}">
 		<property name="position">
-			<value>7.976354679802955</value>
+			<value>8</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{e342272a-dab9-4323-b77b-44c5618171f7}</destination>
@@ -218,7 +206,7 @@
 	</object>
 	<object class="NamedMarker" id="{1dcac19a-5f05-40e1-adf8-c57045ad678f}">
 		<property name="position">
-			<value>12.375</value>
+			<value>12.850862068965517</value>
 		</property>
 		<property name="name">
 			<value>Marker A</value>
@@ -273,7 +261,7 @@
 			<value>0</value>
 		</property>
 		<property name="maximum">
-			<value>1</value>
+			<value>0.5</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{2d93eaee-2a08-4c89-a108-80eb98c7a14a}</destination>
