@@ -39,8 +39,9 @@ namespace Flawless
         private IEnumerator Respawn()
         {
             yield return new WaitForSeconds(FadeTime);
-            _playerController.transform.position = RespawnPoint.position;
             _playerController.SetControlled();
+            _playerController.Rigidbody.MovePosition(RespawnPoint.position);
+
             OnPlayerDie?.Invoke();
             
             yield return new WaitForSeconds(FadeTime);
