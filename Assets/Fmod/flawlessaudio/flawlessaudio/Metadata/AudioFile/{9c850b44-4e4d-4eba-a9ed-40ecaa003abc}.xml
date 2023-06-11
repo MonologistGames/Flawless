@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{9c850b44-4e4d-4eba-a9ed-40ecaa003abc}">
+		<property name="assetPath">
+			<value>生物/04.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>15.76</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1963359e-7042-4da4-8836-5298a3ffdb3d}</destination>
+		</relationship>
+	</object>
+</objects>
