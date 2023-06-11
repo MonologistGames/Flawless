@@ -1,22 +1,29 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Monologist.Patterns.Singleton;
 
 using System.Collections;
+using Flawless.Levels.Gates;
 using Flawless.LifeSys;
 
 namespace Flawless
 {
-    public class LevelManager : SingletonPersistent<LevelManager>
+    public class LevelManager : Singleton<LevelManager>
     {
         public GameObject LoadingPanel;
+        public OpenGate OpenGate;
         private PlanetLife[] _planets;
+        private int _currentSceneIndex;
 
         #region Monobehaviour Callbacks
 
-        
+        private void OnEnable()
+        {
+            Initialize();
+        }
 
-            #endregion
+        #endregion
         
         IEnumerator SceneChangeCoroutine(int index)
         {
@@ -42,18 +49,19 @@ namespace Flawless
             Initialize();
         }
 
-        public void ChangeToSceneIndex(int index)
+        public void ChangeToNextScene()
         {
-            StartCoroutine(SceneChangeCoroutine(index));
+            StartCoroutine(SceneChangeCoroutine(_currentSceneIndex + 1));
         }
 
-        public void GetPlanets()
+        private void GetPlanets()
         {
             _planets = FindObjectsOfType<PlanetLife>();
         }
 
         public void Initialize()
         {
+            _currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             GetPlanets();
             FindObjectOfType<PlayerLife>().OnAbsorbed += CheckSceneUnlocked;
         }
@@ -64,12 +72,14 @@ namespace Flawless
             
             foreach (var planetLife in _planets)
             {
-                isUnlocked &= planetLife.IsAbsorbed;
+                isUnlocked &= (planetLife.IsAbsorbed & planetLife.LifeAmount == 0);
             }
 
             if (isUnlocked)
             {
                 // TODO：解锁下一关
+                Debug.Log("Level unlocked!");
+                OpenGate.Unlock();
             }
         }
     }
