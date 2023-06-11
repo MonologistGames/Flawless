@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.018838808, g: 0.033283193, b: 0.036291268, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -399,7 +399,7 @@ VisualEffect:
       m_Array: []
     m_Vector3f:
       m_Array:
-      - m_Value: {x: -2.44, y: 0.004, z: -19.19}
+      - m_Value: {x: -11.83, y: 0.004, z: -7.52}
         m_Name: Player Position
         m_Overridden: 1
     m_Vector4f:
@@ -2102,8 +2102,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.13831913, y: -0.339209, z: -0.050519317, w: -0.92911404}
-  m_LocalPosition: {x: -5.4, y: -0.17, z: -6.32}
+  m_LocalRotation: {x: 0.36129084, y: -0.624343, z: 0.3979423, w: 0.56683934}
+  m_LocalPosition: {x: -10.9, y: 2.01, z: -7.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2442,7 +2442,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390461271}
   m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
-  m_LocalPosition: {x: -5.2466707, y: 14.004, z: -28.788052}
+  m_LocalPosition: {x: -21.830002, y: 14.004, z: -7.5199986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6465,8 +6465,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129876355}
-  m_LocalRotation: {x: 0.02278057, y: 0.97198796, z: -0.1062482, w: 0.20840296}
-  m_LocalPosition: {x: -7.7245774, y: 2.8561227, z: -7.43294}
+  m_LocalRotation: {x: -0.061708663, y: 0.91954356, z: 0.16059867, w: 0.3533267}
+  m_LocalPosition: {x: -5.83, y: -1.82, z: -15.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9960,7 +9960,7 @@ VisualEffect:
       m_Array: []
     m_Vector3f:
       m_Array:
-      - m_Value: {x: -2.44, y: 0.004, z: -19.19}
+      - m_Value: {x: -11.83, y: 0.004, z: -7.52}
         m_Name: Player Position
         m_Overridden: 1
     m_Vector4f:
@@ -12447,7 +12447,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 70
+  m_Priority: 40
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
@@ -12969,7 +12969,7 @@ PlayableDirector:
   m_GameObject: {fileID: 1981178844}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 22ca2f2fe79cfe949976a269a0ebbca9, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 42bc3827466b3fa438e161d92263c169, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -13673,7 +13673,7 @@ VisualEffect:
       m_Array: []
     m_Vector3f:
       m_Array:
-      - m_Value: {x: -2.44, y: 0.004, z: -19.19}
+      - m_Value: {x: -11.83, y: 0.004, z: -7.52}
         m_Name: Player Position
         m_Overridden: 1
     m_Vector4f:
