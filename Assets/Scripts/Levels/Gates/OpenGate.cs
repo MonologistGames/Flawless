@@ -15,8 +15,9 @@ namespace Flawless.Levels.Gates
         public PlayerController PlayerController;
         public CanvasGroup NormalCanvasGroup;
         public GameObject CinematicPanel;
-        
-        private bool _isUnlocked = false;
+
+        private bool _isUnlocked;
+        private static readonly int Open = Animator.StringToHash("Open");
 
         public void Unlock()
         {
@@ -30,10 +31,10 @@ namespace Flawless.Levels.Gates
             CinematicPanel.SetActive(true);
             NormalCanvasGroup.alpha = 0f;
             VirtualCamera.enabled = true;
-            PlayerController.SetControlled();;
+            PlayerController.SetControlled();
             yield return new WaitForSeconds(1f);
             OpenEffect.enabled = true;
-            OpenGateAnimator.SetTrigger("Open");
+            OpenGateAnimator.SetTrigger(Open);
             Trigger.enabled = true;
             yield return new WaitForSeconds(5f);   
             VirtualCamera.enabled = false;

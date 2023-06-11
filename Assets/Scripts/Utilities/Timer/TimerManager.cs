@@ -5,12 +5,11 @@ using Monologist.Patterns.Singleton;
 
 namespace Utilities
 {
-    public class TimerManager : SingletonPersistent<TimerManager>
+    public class TimerManager : Singleton<TimerManager>
     {
         private Dictionary<string, Timer> _timers = new Dictionary<string, Timer>();
 
         #region MonoBehaviour Callbacks
-
         private void Update()
         {
             foreach (var pair in _timers)

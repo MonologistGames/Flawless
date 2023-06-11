@@ -117,7 +117,7 @@ namespace Flawless.PlayerCharacter
         /// - Bind input actions
         /// - Initialize state machine
         /// </summary>
-        void Start()
+        void OnEnable()
         {
             PlayerInput = GetComponent<PlayerInput>();
             Rigidbody = GetComponent<Rigidbody>();
