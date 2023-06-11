@@ -1,0 +1,26 @@
+{9ad0e335-2d6a-4b19-9f20-67d2654457ae} bank:/Audio
+{6aac7d07-8111-4fc4-a69b-404a91b63720} bank:/Master
+{f2b15dd3-f06a-0386-20d2-cab4604531b8} bank:/Master.strings
+{06154b77-7b08-4f27-90bc-37be9bef61cc} bank:/Music
+{d4fde5a6-1c51-418d-b1ba-e3af40dda5d9} bus:/
+{0abea076-7bcc-4f5e-b170-34451b78221a} bus:/Reverb
+{2fd3845c-5dde-489d-a963-7b087e899e81} event:/BGM/BGM1
+{d86e50a7-0aa0-430b-b523-eca5f8577b92} event:/BGM/BGM2
+{ee5a15ba-44bd-4995-9929-5f2c179bff89} event:/BGM/BGM3
+{2811b920-fe51-41cb-939f-cf059dea2a22} event:/BGM/BGM4
+{0d4e4ddb-7903-4dd3-b2f6-e16e64242c90} event:/BGM/BGM_FINAL
+{a42f3c6d-3e21-46d5-b373-a1f47769f107} event:/Misc/deceleration
+{0e07e479-7727-459b-9a29-5933c3cebf1d} event:/Misc/heartbeat
+{c7d681b5-3229-47a1-8eca-8b7d71b43a90} event:/Misc/lowfrequency
+{e1662301-ae8e-49f4-a585-8ab1a4dabc7e} event:/Play/absorb
+{953be79d-7e94-4ca3-8db8-27ae7cdbeb5f} event:/Play/accelerate
+{a33dc777-a53b-4710-98da-8dd69bff5849} event:/Play/crash
+{5d84050b-c2b5-4af5-9498-1da84f7f8e2d} event:/UI/click_confirm
+{849c1629-ce2f-499e-90c3-fb4d495c4654} event:/UI/click_pre
+{96f94c1b-562d-460d-bedb-057b8b57be5c} event:/生物/生物
+{244bda9d-4c44-47af-9900-779fb7d5bf79} event:/门/开门
+{038843cc-75f1-4e4b-991b-802ba5377711} event:/门/景门
+{e0a44719-789f-44dc-9d8b-863369185c24} event:/门/杜门
+{f16dfedb-fecc-49a4-934e-bd7a1a3776e8} event:/门/生门
+{4d0bfe54-64c6-4f76-ab84-d7533c00a218} event:/门/终点
+{2d93eaee-2a08-4c89-a108-80eb98c7a14a} parameter:/Parameter/Parameter 1
