@@ -15,6 +15,7 @@ namespace Flawless.Levels.Gates
         public PlayerController PlayerController;
         public CanvasGroup NormalCanvasGroup;
         public GameObject CinematicPanel;
+        public FMODUnity.StudioEventEmitter OpenSound;
 
         private bool _isUnlocked;
         private static readonly int Open = Animator.StringToHash("Open");
@@ -33,6 +34,7 @@ namespace Flawless.Levels.Gates
             VirtualCamera.enabled = true;
             PlayerController.SetControlled();
             yield return new WaitForSeconds(1f);
+            OpenSound.Play();
             OpenEffect.enabled = true;
             OpenGateAnimator.SetTrigger(Open);
             Trigger.enabled = true;

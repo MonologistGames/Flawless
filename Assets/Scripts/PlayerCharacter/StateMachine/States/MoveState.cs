@@ -97,7 +97,8 @@ namespace Flawless.PlayerCharacter
         private void OnLeap(InputAction.CallbackContext context)
         {
             if (!_playerController.IsLeapReady) return;
-
+            
+            _playerController.LeapSound.Play();
             _playerController.LeapTimer.ResetTime();
             _playerController.LeapTimer.IsPaused = false;
             _playerController.IsLeapReady = false;

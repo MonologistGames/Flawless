@@ -11,6 +11,8 @@ namespace Flawless.Levels.Gates
         private Animator _animator;
         [FormerlySerializedAs("isTriggered")] public bool IsTriggered;
         public GameObject ShellObj;
+        public FMODUnity.StudioEventEmitter OpenSound;
+        public FMODUnity.StudioEventEmitter RejectSound;
 
         private void OnEnable()
         {
@@ -29,6 +31,8 @@ namespace Flawless.Levels.Gates
             if (!playerController.IsOverDriving)
             {
                 var a = playerController.Velocity.normalized * playerController.MaxSpeed;
+                RejectSound.Play();
+                
                 playerController.Rigidbody.velocity = Vector3.zero;
                 playerController.Rigidbody.AddForce(- a, ForceMode.VelocityChange);
                 _animator.SetTrigger("Fail");
@@ -36,6 +40,8 @@ namespace Flawless.Levels.Gates
             }
 
             IsTriggered = true;
+            
+            OpenSound.Play();
             playerController.Life.LifeUnitsCount++;
             _animator.SetTrigger("Success");
         }

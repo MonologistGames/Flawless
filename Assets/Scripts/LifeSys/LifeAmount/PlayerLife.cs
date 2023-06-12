@@ -95,6 +95,8 @@ namespace Flawless.LifeSys
 
         private CinemachineImpulseSource _impulseSource;
 
+        public FMODUnity.StudioEventEmitter AbsorbSound;
+
         #endregion
 
         #region Editor
@@ -181,12 +183,15 @@ namespace Flawless.LifeSys
         private void OnAbsorbStart(InputAction.CallbackContext context)
         {
             _isAbsorbing = true;
+            AbsorbSound.Play();
+            AbsorbSound.SetParameter("Parameter 1", 1);
         }
         
 
         private void OnAbsorbCancel(InputAction.CallbackContext context)
         {
             _isAbsorbing = false;
+            AbsorbSound.SetParameter("parameter 1", 0);
             foreach (var planetLifeAmount in _otherPlanetLifeAmount)
             {
                 OnAbsorbStateChanged?.Invoke(false, planetLifeAmount);

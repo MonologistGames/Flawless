@@ -171,7 +171,7 @@ Transform:
   - {fileID: 217604857897996674}
   - {fileID: 3200973240456149977}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4913074565262199923
 MonoBehaviour:
@@ -899,6 +899,7 @@ GameObject:
   - component: {fileID: 4682939371163881955}
   - component: {fileID: 7463606351645785787}
   - component: {fileID: 4836929861329222189}
+  - component: {fileID: 7818826159444658390}
   m_Layer: 0
   m_Name: Planet Model
   m_TagString: Planet
@@ -1085,7 +1086,38 @@ MonoBehaviour:
   IsAbsorbed: 0
   CollideDamage: 200
   CollideForce: 2
+  CollideSound: {fileID: 7818826159444658390}
   MaxSpeed: 6
+--- !u!114 &7818826159444658390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6038150590614475445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1556232329
+      Data2: 1192273211
+      Data3: -695346536
+      Data4: 1230569371
+    Path: event:/Play/crash
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7244807304727186778
 GameObject:
   m_ObjectHideFlags: 0

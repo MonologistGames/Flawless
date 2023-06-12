@@ -54,6 +54,8 @@ namespace Flawless.LifeSys
         public float CollideDamage = 200f;
         public float CollideForce = 10f;
         
+        public FMODUnity.StudioEventEmitter CollideSound;
+        
         /// <summary>
         /// Defines how a planet reacts to a player's collision.
         /// Can be overridden by child classes to make different effects.
@@ -67,12 +69,13 @@ namespace Flawless.LifeSys
         {
             var velocityDir = playerRigidbody.velocity.normalized;
             var boundDirection = velocityDir +
-                                 Mathf.Abs(2 * Vector3.Dot(velocityDir, normal)) * normal;
+                                 Mathf.Abs(1.5f * Vector3.Dot(velocityDir, normal)) * normal;
             
             playerRigidbody.AddForce(boundDirection * CollideForce - playerRigidbody.velocity,
                 ForceMode.VelocityChange);
             
             playerLife.CollideAndDamageLife(CollideDamage);
+            CollideSound.Play();
         }
     }
 }

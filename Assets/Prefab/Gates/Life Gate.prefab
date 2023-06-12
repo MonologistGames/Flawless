@@ -116,6 +116,8 @@ GameObject:
   - component: {fileID: 8465122396399064437}
   - component: {fileID: 617723808981012727}
   - component: {fileID: 3428338374060655590}
+  - component: {fileID: 23135095392306497}
+  - component: {fileID: 6120290391769783559}
   m_Layer: 0
   m_Name: Life Gate
   m_TagString: Untagged
@@ -137,7 +139,7 @@ Transform:
   m_Children:
   - {fileID: 546974504258879464}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &617723808981012727
 SphereCollider:
@@ -174,6 +176,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsTriggered: 0
   ShellObj: {fileID: 570705218599812198}
+  OpenSound: {fileID: 23135095392306497}
+  RejectSound: {fileID: 6120290391769783559}
+--- !u!114 &23135095392306497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5132967534128087968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -244449573
+      Data2: 1235549900
+      Data3: 2059226771
+      Data4: -394905830
+    Path: "event:/\u95E8/\u751F\u95E8"
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &6120290391769783559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5132967534128087968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
 --- !u!1 &5409742519133264420
 GameObject:
   m_ObjectHideFlags: 0

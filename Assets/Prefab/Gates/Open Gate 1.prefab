@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1720045412884625742}
   - component: {fileID: 2271068766301298993}
+  - component: {fileID: 4675395787901702766}
   m_Layer: 0
   m_Name: Open Gate 1
   m_TagString: Untagged
@@ -55,6 +56,37 @@ MonoBehaviour:
   PlayerController: {fileID: 0}
   NormalCanvasGroup: {fileID: 0}
   CinematicPanel: {fileID: 0}
+  OpenSound: {fileID: 4675395787901702766}
+--- !u!114 &4675395787901702766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631327567026939041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1292631636
+      Data2: 1333159110
+      Data3: 1406633131
+      Data4: 413270076
+    Path: "event:/\u95E8/\u7EC8\u70B9"
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1190110672626254244
 GameObject:
   m_ObjectHideFlags: 0

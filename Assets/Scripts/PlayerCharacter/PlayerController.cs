@@ -35,6 +35,8 @@ namespace Flawless.PlayerCharacter
         /// </summary>
         public PlayerLife Life { get; set; }
         
+        public FMODUnity.StudioEventEmitter LeapSound;
+        
         #endregion
 
         #region Input Actions

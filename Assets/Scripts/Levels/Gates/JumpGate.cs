@@ -16,6 +16,8 @@ namespace Flawless.Levels.Gates
 
         private PlayerController Player { get; set; }
         private Timer _jumpTimer;
+        
+        public FMODUnity.StudioEventEmitter JumpSound;
 
         #region MonoBehaviours
 
@@ -64,6 +66,7 @@ namespace Flawless.Levels.Gates
 
         private void EndJump()
         {
+            JumpSound.Play();
             transform.forward = Player.MoveDir;
             Animator.SetTrigger(Launch);
 
