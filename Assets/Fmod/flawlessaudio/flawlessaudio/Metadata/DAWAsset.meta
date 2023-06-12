@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 683d2b14dce71cc439f561b64b4f39ef
+<<<<<<<< HEAD:Assets/Fmod/flawlessaudio/flawlessaudio.meta
+guid: b116bcfdd711bdc4ca00d7e50345e838
+========
+guid: 3d69ce9eb48625941950df2140cfa84e
+>>>>>>>> audiofixed:Assets/Fmod/flawlessaudio/flawlessaudio/Metadata/DAWAsset.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
