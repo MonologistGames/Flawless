@@ -76,6 +76,7 @@ namespace Flawless.LifeSys
             
             playerLife.CollideAndDamageLife(CollideDamage);
             CollideSound.Play();
+            CollideSound.SetParameter("Parameter2",4f * (CollideDamage / 200f));
         }
     }
 }

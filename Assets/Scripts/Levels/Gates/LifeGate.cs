@@ -13,6 +13,7 @@ namespace Flawless.Levels.Gates
         public GameObject ShellObj;
         public FMODUnity.StudioEventEmitter OpenSound;
         public FMODUnity.StudioEventEmitter RejectSound;
+        public FMODUnity.StudioEventEmitter IdleSound;
 
         private void OnEnable()
         {
@@ -40,7 +41,8 @@ namespace Flawless.Levels.Gates
             }
 
             IsTriggered = true;
-            
+            IdleSound.SetParameter("Parameter 1", 0);
+            IdleSound.Stop();
             OpenSound.Play();
             playerController.Life.LifeUnitsCount++;
             _animator.SetTrigger("Success");

@@ -551,8 +551,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: Assets/Fmod/flawlessaudio/flawlessaudio.fspro
-  sourceBankPath: Assets/Fmod/flawlessaudio/Build
+  sourceProjectPath: Assets/Fmod/flawlessaudio/flawlessaudio/flawlessaudio.fspro
+  sourceBankPath: Assets/Fmod/flawlessaudio/flawlessaudio/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -582,16 +582,15 @@ MonoBehaviour:
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
   AndroidUseOBB: 0
-  AndroidPatchBuild: 0
   MeterChannelOrdering: 0
   StopEventsOutsideMaxDistance: 0
   BoltUnitOptionsBuildPending: 0
   EnableErrorCallback: 0
   SharedLibraryUpdateStage: 0
   SharedLibraryTimeSinceStart: 0
-  CurrentVersion: 131603
+  CurrentVersion: 131593
   HideSetupWizard: 1
-  LastEventReferenceScanVersion: 131603
+  LastEventReferenceScanVersion: 131593
   Platforms:
   - {fileID: -7128336662231939439}
   - {fileID: -5984517700256190539}

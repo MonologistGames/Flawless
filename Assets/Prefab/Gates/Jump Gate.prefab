@@ -139,7 +139,7 @@ MonoBehaviour:
   OverDriveTime: 2
   Animator: {fileID: 6081126072396908824}
   ControlledForce: 10
-  JumpSound: {fileID: 0}
+  JumpSound: {fileID: 6120946452176703324}
 --- !u!135 &5280336403639713853
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -189,11 +189,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -526104807
-      Data2: 1155299487
-      Data3: 864455581
-      Data4: 610015337
-    Path: "event:/\u95E8/\u675C\u95E8"
+      Data1: 942836641
+      Data2: 1244932068
+      Data3: -547114307
+      Data4: 2115586821
+    Path: "event:/\u95E8/JumpGate"
   Event: 
   PlayEvent: 0
   StopEvent: 0

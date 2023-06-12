@@ -12,6 +12,7 @@ namespace Flawless
         public Transform RespawnPoint;
         public float FadeTime = 1f;
         public Animator WhiteFieldAnimator;
+        public FMODUnity.StudioEventEmitter WhiteOutSound;
         
         private PlayerController _playerController;
         private PlayerLife _playerLife;
@@ -33,6 +34,7 @@ namespace Flawless
             WhiteFieldAnimator.SetTrigger(Begin);
             _playerLife.LifeAmount = 0;
             
+            WhiteOutSound.Play();
             StartCoroutine(Respawn());
         }
         

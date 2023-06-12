@@ -49,6 +49,7 @@ namespace Flawless.Levels.Gates
 
         private void BeginJump(PlayerController player)
         {
+            JumpSound.Play();
             Player = player;
             Player.Jump();
             Player.Rigidbody.velocity =
@@ -66,7 +67,7 @@ namespace Flawless.Levels.Gates
 
         private void EndJump()
         {
-            JumpSound.Play();
+           
             transform.forward = Player.MoveDir;
             Animator.SetTrigger(Launch);
 

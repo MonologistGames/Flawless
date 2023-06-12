@@ -96,6 +96,7 @@ namespace Flawless.LifeSys
         private CinemachineImpulseSource _impulseSource;
 
         public FMODUnity.StudioEventEmitter AbsorbSound;
+        public FMODUnity.StudioEventEmitter LifeSound;
 
         #endregion
 
