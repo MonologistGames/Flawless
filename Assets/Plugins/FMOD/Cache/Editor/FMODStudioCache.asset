@@ -199,7 +199,7 @@ MonoBehaviour:
   Path: ../Flawless/Assets/Fmod/flawlessaudio/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638221575267724480
+  lastModified: 638221586254694659
   FileSizes:
   - Name: Desktop
     Value: 7391584
@@ -293,7 +293,7 @@ MonoBehaviour:
   Path: ../Flawless/Assets/Fmod/flawlessaudio/Build/Desktop/Audio.bank
   Name: Audio
   StudioPath: bank:/Audio
-  lastModified: 638221575267514513
+  lastModified: 638221586254474587
   FileSizes:
   - Name: Desktop
     Value: 3697184
@@ -556,7 +556,7 @@ MonoBehaviour:
   Path: ../Flawless/Assets/Fmod/flawlessaudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638221575267524476
+  lastModified: 638221586254484560
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -657,7 +657,7 @@ MonoBehaviour:
   - {fileID: -871005099867216408}
   StringsBanks:
   - {fileID: 1051929986932058853}
-  cacheTime: 638221575267724480
+  cacheTime: 638221586254694659
   cacheVersion: 131603
 --- !u!114 &242357346052152829
 MonoBehaviour:
@@ -752,7 +752,7 @@ MonoBehaviour:
   Path: ../Flawless/Assets/Fmod/flawlessaudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638221575267524476
+  lastModified: 638221586254494591
   FileSizes:
   - Name: Desktop
     Value: 1718

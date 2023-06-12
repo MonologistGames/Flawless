@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_AbsorbScope
+  m_Name: AbsorbScope
   m_Shader: {fileID: -6465566751694194690, guid: 0e365daf4c1110b45b295a8b77166e7c,
     type: 3}
   m_Parent: {fileID: 0}
@@ -40,9 +40,9 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _powerValue: 2.98
+    - _powerValue: 1.3
     m_Colors:
-    - _Color: {r: 0.1123303, g: 0.8284954, b: 0.8773585, a: 0}
+    - _Color: {r: 0.3539643, g: 2.1368055, b: 2.264151, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &2430719436470378125
 MonoBehaviour:
