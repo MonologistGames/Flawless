@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{4a5069a5-371a-4306-99df-b171c355b94f}">
+		<property name="assetPath">
+			<value>SUB_DOWN.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.8557596371882086</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1963359e-7042-4da4-8836-5298a3ffdb3d}</destination>
+		</relationship>
+	</object>
+</objects>

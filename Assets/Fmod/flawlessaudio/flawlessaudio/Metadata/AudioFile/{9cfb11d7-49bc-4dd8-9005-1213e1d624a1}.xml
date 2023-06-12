@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{9cfb11d7-49bc-4dd8-9005-1213e1d624a1}">
+		<property name="assetPath">
+			<value>BGM/BGM1(1)_slow.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>168.16456249999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1963359e-7042-4da4-8836-5298a3ffdb3d}</destination>
+		</relationship>
+	</object>
+</objects>

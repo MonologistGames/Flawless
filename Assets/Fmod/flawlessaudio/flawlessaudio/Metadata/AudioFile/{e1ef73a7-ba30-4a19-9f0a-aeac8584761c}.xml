@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e1ef73a7-ba30-4a19-9f0a-aeac8584761c}">
+		<property name="assetPath">
+			<value>杜门_1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>5</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1963359e-7042-4da4-8836-5298a3ffdb3d}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -551,8 +551,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../Flawless/Assets/Fmod/flawlessaudio/flawlessaudio.fspro
-  sourceBankPath: ../Flawless/Assets/Fmod/flawlessaudio/Build
+  sourceProjectPath: Assets/Fmod/flawlessaudio/flawlessaudio.fspro
+  sourceBankPath: Assets/Fmod/flawlessaudio/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1

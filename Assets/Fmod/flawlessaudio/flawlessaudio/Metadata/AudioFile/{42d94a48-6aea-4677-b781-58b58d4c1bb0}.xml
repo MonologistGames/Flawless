@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{42d94a48-6aea-4677-b781-58b58d4c1bb0}">
+		<property name="assetPath">
+			<value>bounceoff_缩混.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.3772916666666668</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1963359e-7042-4da4-8836-5298a3ffdb3d}</destination>
+		</relationship>
+	</object>
+</objects>
