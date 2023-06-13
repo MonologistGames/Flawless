@@ -395,7 +395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lifeAmount: 800
   IsAbsorbed: 0
-  CollideDamage: 200
+  CollideDamage: 100
   CollideForce: 10
   CollideSound: {fileID: 2718104330832746591}
 --- !u!114 &2718104330832746591

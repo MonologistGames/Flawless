@@ -194,7 +194,7 @@ Transform:
   - {fileID: 3240941030300006243}
   - {fileID: 3608978982004685707}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9165512346782184238
 MonoBehaviour:
@@ -851,7 +851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lifeAmount: 1300
   IsAbsorbed: 0
-  CollideDamage: 200
+  CollideDamage: 100
   CollideForce: 10
   CollideSound: {fileID: 2708741494950995711}
   Atmos: {fileID: 3240941030300006243}
