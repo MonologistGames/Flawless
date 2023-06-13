@@ -48,6 +48,7 @@ namespace Flawless.LifeSys
         public virtual void SetPlanetDead()
         {
             // TODO: Set the planet dead effects.
+            Debug.Log(this.transform.parent.name + " dead");
         }
         
         [Header("Collide Result")]

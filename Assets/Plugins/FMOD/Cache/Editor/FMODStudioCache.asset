@@ -50,7 +50,7 @@ MonoBehaviour:
   - {fileID: -4872583798628113612}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -155,7 +155,7 @@ MonoBehaviour:
   - {fileID: -4872583798628113612}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -270,10 +270,10 @@ MonoBehaviour:
   Path: Assets/Fmod/flawlessaudio/flawlessaudio/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638221777008132007
+  lastModified: 638222962578791060
   FileSizes:
   - Name: Desktop
-    Value: 7391584
+    Value: 7392096
   Exists: 1
 --- !u!114 &-4433417636375536483
 MonoBehaviour:
@@ -499,7 +499,7 @@ MonoBehaviour:
   - {fileID: -2867168788338291051}
   StringsBanks:
   - {fileID: 6189939150568640307}
-  cacheTime: 638221777008132007
+  cacheTime: 638222962578791060
   cacheVersion: 131593
 --- !u!114 &103671430806397170
 MonoBehaviour:
@@ -780,7 +780,7 @@ MonoBehaviour:
   - {fileID: -4872583798628113612}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -858,7 +858,7 @@ MonoBehaviour:
   - {fileID: -4872583798628113612}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20

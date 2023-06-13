@@ -76,6 +76,9 @@
 		<relationship name="modules">
 			<destination>{ef7a38cc-9ddd-41da-a960-1c689470828b}</destination>
 		</relationship>
+		<relationship name="markers">
+			<destination>{35b52731-5b38-47bf-b13c-6de1062c7dc1}</destination>
+		</relationship>
 	</object>
 	<object class="ActionSheet" id="{23b98da1-2b3f-4a31-8081-b18d3ac660f4}">
 		<relationship name="modules">
@@ -123,6 +126,20 @@
 		</relationship>
 		<relationship name="output">
 			<destination>{e161aa1e-e0a3-499f-b5a3-bde3fc27c347}</destination>
+		</relationship>
+	</object>
+	<object class="LoopRegion" id="{35b52731-5b38-47bf-b13c-6de1062c7dc1}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="length">
+			<value>121</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{ff58b295-8393-4172-94c1-16756d511066}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{669901c8-9cf0-4e2e-95ea-8f0c1d125cbd}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{5f819727-3960-4598-9443-195f2c8b8b03}">

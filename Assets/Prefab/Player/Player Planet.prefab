@@ -73,6 +73,8 @@ MonoBehaviour:
   BaseDecreaseSpeed: 10
   AbsorbSpeed: 200
   AbsorbRange: 5
+  AbsorbScope: {fileID: 0}
+  AbsorbSound: {fileID: 0}
 --- !u!114 &8007779002352360889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,6 +282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetCamera: {fileID: 0}
+  LeapSound: {fileID: 0}
   Acceleration: 1
   BonusAcceleration: 0.6
   MaxSpeed: 3
@@ -1323,3 +1326,4 @@ MonoBehaviour:
   VelocityDistanceFromOrigin: 1
   IndicatorLength: 0.5
   VelocityLineRenderer: {fileID: 1386250734583855341}
+  ScaleFacter: 0.05

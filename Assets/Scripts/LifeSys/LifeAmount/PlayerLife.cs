@@ -18,7 +18,7 @@ namespace Flawless.LifeSys
         [Header("Life Units")] public int MaxLifeUnits = 6;
 
         [FormerlySerializedAs("_lifeUnitsCountCount")] [SerializeField]
-        private int _lifeUnitsCount = 2;
+        private int _lifeUnitsCount;
 
         public int LifeUnitsCount
         {
@@ -119,7 +119,7 @@ namespace Flawless.LifeSys
 
         #region MonoBehaviours
 
-        private void Start()
+        private void OnEnable()
         {
             _playerInput = GetComponentInParent<PlayerInput>();
             _impulseSource = GetComponent<CinemachineImpulseSource>();
@@ -214,13 +214,14 @@ namespace Flawless.LifeSys
         private void EndAbsorb(PlanetLife planetLife)
         {
             if (!planetLife) return;
-
-            OnAbsorbStateChanged?.Invoke(false, planetLife);
             if (!planetLife.IsAbsorbed) return;
-            OnAbsorbed?.Invoke();
+            if (planetLife.LifeAmount == 0) return;
+            
+            OnAbsorbStateChanged?.Invoke(false, planetLife);
 
             planetLife.LifeAmount = 0;
             planetLife.SetPlanetDead();
+            OnAbsorbed?.Invoke();            
         }
 
         /// <summary>

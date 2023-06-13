@@ -115,6 +115,7 @@ MonoBehaviour:
   VelocityDistanceFromOrigin: 1
   IndicatorLength: 0.5
   VelocityLineRenderer: {fileID: 8575869523178262235}
+  ScaleFacter: 0.03
 --- !u!1 &3021698415318914937
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 749161803a494456a7806c55727efa16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxLifeUnits: 6
+  MaxLifeUnits: 10
   _lifeUnitsCount: 1
   _lifeAmount: 0
   BaseDecreaseSpeed: 20
@@ -1039,7 +1040,7 @@ Transform:
   - {fileID: 8984930564368661147}
   - {fileID: 3859070684462379992}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &8810788841587432837
 Rigidbody:

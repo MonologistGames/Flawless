@@ -47,6 +47,7 @@ namespace Monologist.Patterns.Singleton
             {
                 _instance = this as T;
                 //DontDestroyOnLoad(gameObject);
+                SetPersistent(gameObject);
             }
             else
             {

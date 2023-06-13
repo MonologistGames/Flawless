@@ -17,7 +17,7 @@ namespace Flawless
 
         #region Monobehaviour Callbacks
 
-        private void OnEnable()
+        private void Start()
         {
             Initialize();
         }
@@ -28,7 +28,7 @@ namespace Flawless
         {   
             PlayerDataManager.Instance.ReadData();
             LoadingPanel.SetActive(true);
-            float loadTime = 1f;
+            float loadTime = 4f;
             AsyncOperation sceneLoad =  SceneManager.LoadSceneAsync(index);
             sceneLoad.allowSceneActivation = false;
 
@@ -43,11 +43,8 @@ namespace Flawless
                 loadTime -= Time.deltaTime;
                 yield return null;
             }
-            
-            LoadingPanel.SetActive(false);
+
             sceneLoad.allowSceneActivation = true;
-            Initialize();
-            PlayerDataManager.Instance.WriteData();
         }
 
         public void ChangeToNextScene()
@@ -62,6 +59,7 @@ namespace Flawless
 
         public void Initialize()
         {
+            PlayerDataManager.Instance.WriteData();
             _currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             GetPlanets();
             FindObjectOfType<PlayerLife>().OnAbsorbed += CheckSceneUnlocked;
@@ -70,7 +68,7 @@ namespace Flawless
         public void CheckSceneUnlocked()
         {
             var isUnlocked = true;
-            
+
             foreach (var planetLife in _planets)
             {
                 isUnlocked &= (planetLife.IsAbsorbed & planetLife.LifeAmount == 0);

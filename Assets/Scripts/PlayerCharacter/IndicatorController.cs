@@ -28,6 +28,7 @@ namespace Flawless.PlayerCharacter
         [Min(0f)] public float VelocityDistanceFromOrigin = 0.5f;
         [Min(0f)]public float IndicatorLength = 0.5f;
         public LineRenderer VelocityLineRenderer;
+        public float ScaleFacter = 0.03f;
 
         #region MonoBehaviours
 
@@ -38,6 +39,8 @@ namespace Flawless.PlayerCharacter
 
         private void Update()
         {
+            this.transform.localPosition = - _player.Velocity * ScaleFacter;
+            
             UpdateIndicatorDirection();
             
             UpdateTrailPosition();
