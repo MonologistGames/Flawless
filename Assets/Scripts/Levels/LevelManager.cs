@@ -25,7 +25,8 @@ namespace Flawless
         #endregion
         
         IEnumerator SceneChangeCoroutine(int index)
-        {
+        {   
+            PlayerDataManager.Instance.ReadData();
             LoadingPanel.SetActive(true);
             float loadTime = 1f;
             AsyncOperation sceneLoad =  SceneManager.LoadSceneAsync(index);
@@ -46,6 +47,7 @@ namespace Flawless
             LoadingPanel.SetActive(false);
             sceneLoad.allowSceneActivation = true;
             Initialize();
+            PlayerDataManager.Instance.WriteData();
         }
 
         public void ChangeToNextScene()

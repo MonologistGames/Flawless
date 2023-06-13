@@ -94,9 +94,10 @@ namespace Flawless.LifeSys
         public event Action<bool, PlanetLife> OnAbsorbStateChanged;
 
         private CinemachineImpulseSource _impulseSource;
-
+        
+        public Animator AbsorbScope;
+        
         public FMODUnity.StudioEventEmitter AbsorbSound;
-        public FMODUnity.StudioEventEmitter LifeSound;
 
         #endregion
 
@@ -186,6 +187,7 @@ namespace Flawless.LifeSys
             _isAbsorbing = true;
             AbsorbSound.Play();
             AbsorbSound.SetParameter("Parameter 1", 1);
+            AbsorbScope.SetBool("Absorbing", true);
         }
         
 
@@ -197,6 +199,7 @@ namespace Flawless.LifeSys
             {
                 OnAbsorbStateChanged?.Invoke(false, planetLifeAmount);
             }
+            AbsorbScope.SetBool("Absorbing", false);
         }
 
         #endregion

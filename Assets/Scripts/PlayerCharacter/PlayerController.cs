@@ -34,7 +34,7 @@ namespace Flawless.PlayerCharacter
         /// Life system component of player character.
         /// </summary>
         public PlayerLife Life { get; set; }
-        
+
         public FMODUnity.StudioEventEmitter LeapSound;
 
         #endregion
