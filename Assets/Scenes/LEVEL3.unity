@@ -9408,6 +9408,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1427789972}
     m_Modifications:
+    - target: {fileID: 27707720098122799, guid: b526a184687f34d4fa690186d4680c50,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.953717
+      objectReference: {fileID: 0}
+    - target: {fileID: 27707720098122799, guid: b526a184687f34d4fa690186d4680c50,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.30070576
+      objectReference: {fileID: 0}
+    - target: {fileID: 27707720098122799, guid: b526a184687f34d4fa690186d4680c50,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 27707720098122799, guid: b526a184687f34d4fa690186d4680c50,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 27707720098122799, guid: b526a184687f34d4fa690186d4680c50,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 1245470682360146175, guid: b526a184687f34d4fa690186d4680c50,
         type: 3}
       propertyPath: Target
@@ -9432,6 +9457,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702524471213820361, guid: b526a184687f34d4fa690186d4680c50,
+        type: 3}
+      propertyPath: CollideForce
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5015919671816353861, guid: b526a184687f34d4fa690186d4680c50,
         type: 3}
@@ -9582,6 +9612,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702524471213820361, guid: b526a184687f34d4fa690186d4680c50,
+        type: 3}
+      propertyPath: CollideForce
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5015919671816353861, guid: b526a184687f34d4fa690186d4680c50,
         type: 3}
