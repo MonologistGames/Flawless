@@ -17,5 +17,15 @@ namespace Flawless.PlayerCharacter
             StatePool.Add("Move", new MoveState(this));
             StatePool.Add("Controlled", new ControlledState(this));
         }
+        
+        public override void Enable()
+        {
+            CurrentState.OnEnter();
+        }
+        
+        public override void Disable()
+        {
+            CurrentState.OnExit();
+        }
     }
 }

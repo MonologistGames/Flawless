@@ -1,3 +1,4 @@
+using System;
 using Flawless.LifeSys;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -140,8 +141,7 @@ namespace Flawless.PlayerCharacter
 
             // Start state machine
             StateMachine.TransitTo("Move");
-            
-            
+
             // Initialize Timers
             LeapTimer = TimerManager.Instance.AddTimer( LeapDuration,"LeapTimer");
             LeapTimer.SetTime(0);
@@ -151,7 +151,13 @@ namespace Flawless.PlayerCharacter
             OverDriveTimer = TimerManager.Instance.AddTimer("OverDriveTimer");
             OverDriveTimer.OnTimerEnd += () => IsOverDriving = false;
         }
-        
+
+        private void OnDisable()
+        {
+            MoveStick.performed -= OnMoveInput;
+            StateMachine.Disable();
+        }
+
         private void Update()
         {
             StateMachine.Update();

@@ -15,6 +15,11 @@ namespace Monologist.Patterns.State
         public virtual void Initialize()
         { }
         
+        public virtual void Enable()
+        { }
+        public virtual void Disable()
+        { }
+        
         public void TransitTo(IState nextState)
         {
             CurrentState?.OnExit();

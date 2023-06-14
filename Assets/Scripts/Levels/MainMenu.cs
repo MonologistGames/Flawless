@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XInput;
 using UnityEngine.SceneManagement;
 
 namespace Flawless
@@ -8,10 +9,18 @@ namespace Flawless
     public class MainMenu : MonoBehaviour
     {
         public GameObject LoadingPanel;
+        private bool _playing = false;
         private void Update()
         {
-            if (Keyboard.current.anyKey.wasPressedThisFrame)
+            if (_playing)
             {
+                return;
+            }
+            
+            if (Keyboard.current.anyKey.isPressed || Mouse.current.leftButton.isPressed || Mouse.current.rightButton.isPressed
+                || (Gamepad.current != null && Gamepad.current.buttonSouth.isPressed))
+            {
+                _playing = true;
                 StartCoroutine(SceneChangeCoroutine(1));
             }
         }

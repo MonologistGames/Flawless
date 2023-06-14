@@ -129,6 +129,12 @@ namespace Flawless.LifeSys
             _absorbButton.canceled += OnAbsorbCancel;
         }
 
+        private void OnDisable()
+        {
+            _absorbButton.started -= OnAbsorbStart;
+            _absorbButton.canceled -= OnAbsorbCancel;
+        }
+
         private void Update()
         {
             // Life amount fade with time
