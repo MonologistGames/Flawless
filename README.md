@@ -15,4 +15,3 @@ Enjoy and have fun.
 
 # Tools
 - Jetbrains Rider
-- 
