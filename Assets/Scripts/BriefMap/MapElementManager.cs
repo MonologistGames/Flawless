@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Flawless.BriefMap;
+using Flawless.LifeSys;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,7 +18,7 @@ namespace Flawless
         public Transform BlackPosition;
 
         private List<Transform> _jumpGatePositions = new List<Transform>();
-        private List<Transform> _planetOrbits = new List<Transform>();
+        private List<PlanetLife> _planetLife = new List<PlanetLife>();
         private List<Transform> _sunPositions = new List<Transform>();
 
         private List<Image> _jumpGateIcons = new List<Image>();
@@ -39,7 +40,7 @@ namespace Flawless
                         _jumpGatePositions.Add(iconElement.transform);
                         break;
                     case "Planet":
-                        _planetOrbits.Add(iconElement.transform);
+                        _planetLife.Add(iconElement.GetComponentInChildren<PlanetLife>());
                         break;
                     case "Sun":
                         _sunPositions.Add(iconElement.transform);
@@ -56,7 +57,7 @@ namespace Flawless
 
 
             // Initialize Planets
-            foreach (var planetIcon in _planetOrbits.Select(planetOrbit =>
+            foreach (var planetIcon in _planetLife.Select(planetOrbit =>
                          Instantiate(MapIconReference.PlanetIcon, transform)))
             {
                 _planetIcons.Add(planetIcon.GetComponent<Image>());
@@ -91,10 +92,11 @@ namespace Flawless
             }
 
             // Update Planet Position
-            for (int i = 0; i < _planetOrbits.Count; i++)
+            for (int i = 0; i < _planetLife.Count; i++)
             {
-                var planetPosition = _planetOrbits[i].position;
+                var planetPosition = _planetLife[i].transform.position;
                 var planetIcon = _planetIcons[i];
+                planetIcon.color = _planetLife[i].IsAbsorbed ? Color.gray : Color.white;
                 distVector = (planetPosition - PlayerPosition.position) / UnitRatio;
                 planetIcon.rectTransform.anchoredPosition = PlayerIcon.rectTransform.anchoredPosition +
                                                             new Vector2(distVector.x, distVector.z);
